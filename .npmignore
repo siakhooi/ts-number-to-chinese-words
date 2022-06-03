@@ -1,0 +1,10 @@
+.github
+dist/test
+coverage
+src
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc.js
+jest.config.js
+tsconfig.json

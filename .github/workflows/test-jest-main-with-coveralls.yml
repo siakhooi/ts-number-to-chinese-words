@@ -1,0 +1,24 @@
+name: Test with Coverage Report
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Jest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm install
+      - run: npm test
+      - uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage
