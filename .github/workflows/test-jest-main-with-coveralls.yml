@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Jest
+    name: Testing with Jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
