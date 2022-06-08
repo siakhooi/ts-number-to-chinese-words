@@ -11,12 +11,6 @@ test.each([
   [7, '七'],
   [8, '八'],
   [9, '九'],
-])('default', (input: number, expected: string) => {
+])('integer-0-9', (input: number, expected: string) => {
   expect(numberToChineseWords(input)).toBe(expected);
-});
-test.each([[-1], [10]])('throw error', (input: number) => {
-  const errmsg = 'Not Supported';
-  expect(() => {
-    numberToChineseWords(input);
-  }).toThrowError(errmsg);
 });
