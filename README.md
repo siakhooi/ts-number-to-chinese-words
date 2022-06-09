@@ -5,10 +5,13 @@
 ## Status
 
 ![GitHub](https://img.shields.io/github/license/siakhooi/ts-number-to-chinese-words)
+![GitHub last commit](https://img.shields.io/github/last-commit/siakhooi/ts-number-to-chinese-words)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/ts-number-to-chinese-words)
 ![GitHub issues](https://img.shields.io/github/issues/siakhooi/ts-number-to-chinese-words)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/ts-number-to-chinese-words)
 ![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/ts-number-to-chinese-words)
 ![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/ts-number-to-chinese-words)
+![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/ts-number-to-chinese-words)
 ![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/ts-number-to-chinese-words)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/ts-number-to-chinese-words)
 ![test](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/test-jest-main-with-coveralls.yml/badge.svg)
@@ -21,6 +24,7 @@
 ![npm](https://img.shields.io/npm/v/@siakhooi/number-to-chinese-words?color=0e7fc0&label=NPM%20release)
 ![deploy npm](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/publish-npm.yml/badge.svg)
 ![npm](https://img.shields.io/npm/dt/@siakhooi/number-to-chinese-words)
+![npm type definitions](https://img.shields.io/npm/types/@siakhooi/number-to-chinese-words)
 ![npms.io (final)](https://img.shields.io/npms-io/final-score/@siakhooi/number-to-chinese-words)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/@siakhooi/number-to-chinese-words)
 ![npms.io (final)](https://img.shields.io/npms-io/quality-score/@siakhooi/number-to-chinese-words)
@@ -41,3 +45,9 @@
 const i = require('@siakhooi/number-to-chinese-words');
 console.log(i.numberToChineseWords(7));
 ```
+
+## Locations
+
+- <https://github.com/siakhooi/ts-number-to-chinese-words>
+- <https://www.npmjs.com/package/@siakhooi/number-to-chinese-words>
+- <https://coveralls.io/github/siakhooi/ts-number-to-chinese-words>
