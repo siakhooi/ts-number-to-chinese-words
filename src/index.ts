@@ -24,9 +24,10 @@ function getDigit_111(number: number): string {
 
   const char100 = getDigit_1(digit100) + CHARACTER_SET.HUNDRED;
   let char011 = '';
-  if (digit011 === 0) char011 = '';
-  else if (digit011 < 10) char011 = CHARACTER_SET.ZERO + getDigit_1(digit011);
-  else char011 = getDigit_11(digit011);
+
+  if (digit011 > 0 && digit011 < 10)
+    char011 = CHARACTER_SET.ZERO + getDigit_1(digit011);
+  else if (digit011 >= 10) char011 = getDigit_11(digit011);
 
   return char100 + char011;
 }
