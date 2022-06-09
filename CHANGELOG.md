@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.3 - 9 June 2022
+
+- User stories
+  - `#3`, As user, I want to translate integer number 100 to 999 (simplified)（百位）
+
 ## 0.0.2 - 8 June 2022
 
 - User stories
