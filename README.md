@@ -7,6 +7,8 @@
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub issues](https://img.shields.io/github/issues/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/ts-number-to-chinese-words?logo=github)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/siakhooi/ts-number-to-chinese-words?logo=github)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/ts-number-to-chinese-words?logo=github)
 ![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/ts-number-to-chinese-words?logo=github)
@@ -44,12 +46,12 @@
 
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
-![visitors](https://xvisitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
 
 ## Features
 
 - Translate numbers into Chinese characters for:
-  - Integer 0-999
+  - Integer 0-9999
   - Simplified Chinese
 
 ## Usage
