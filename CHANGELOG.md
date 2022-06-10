@@ -3,6 +3,7 @@
 ## `1.0.0`
 
 - change version to `1.0.0`
+- update readme with sample outputs
 
 ## `0.0.6` - 10 June 2022
 
