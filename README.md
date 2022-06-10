@@ -51,7 +51,7 @@
 ## Features
 
 - Translate numbers into Chinese characters for:
-  - Integer 0-9999
+  - Integer 0-9999,9999
   - Simplified Chinese
 
 ## Usage
