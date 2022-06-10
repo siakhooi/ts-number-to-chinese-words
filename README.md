@@ -57,9 +57,28 @@
 ## Usage
 
 ```javascript
-const i = require('@siakhooi/number-to-chinese-words');
-console.log(i.numberToChineseWords(7));
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(7));
 ```
+
+### Example
+
+|       number | output                                         |
+| -----------: | ---------------------------------------------- |
+|            0 | 零                                             |
+|           17 | 一十七                                         |
+|          999 | 九百九十九                                     |
+|         9999 | 九千九百九十九                                 |
+|        10101 | 一万零一百零一                                 |
+|       100001 | 一十万零一                                     |
+|      3004500 | 三百万四千五百                                 |
+|     10000001 | 一千万零一                                     |
+|     43033039 | 四千三百零三万三千零三十九                     |
+|     12345678 | 一千二百三十四万五千六百七十八                 |
+|    100000000 | 一亿                                           |
+|   1010101010 | 一十亿一千零一十万一千零一十                   |
+|  10101010101 | 一百零一亿零一百零一万零一百零一               |
+| 999999999999 | 九千九百九十九亿九千九百九十九万九千九百九十九 |
 
 ## Locations
 

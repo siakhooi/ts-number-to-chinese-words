@@ -1,4 +1,4 @@
-import {numberToChineseWords} from '../main/index';
+import {convertNumber} from '../main/index';
 
 test.each([
   [100, '一百'],
@@ -20,5 +20,5 @@ test.each([
   [492, '四百九十二'],
   [999, '九百九十九'],
 ])('integer-100-999', (input: number, expected: string) => {
-  expect(numberToChineseWords(input)).toBe(expected);
+  expect(convertNumber(input)).toBe(expected);
 });
