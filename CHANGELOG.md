@@ -2,7 +2,10 @@
 
 ## `0.0.6`
 
-- refactoring `src` into `src/main` and `src/test`
+- `#6`, As user, I want to translate integer number 1,0000,0000 to 9999,9999,9999 (simplified)（亿位-千亿位）
+- refactor `src` into `src/main` and `src/test`
+- refactor test files
+- change to sonar ci analysis
 
 ## `0.0.5` - 10 June 2022
 
