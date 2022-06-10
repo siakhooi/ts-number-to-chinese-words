@@ -1,6 +1,10 @@
 # Change Log
 
-## `0.0.6`
+## `1.0.0`
+
+- change version to `1.0.0`
+
+## `0.0.6` - 10 June 2022
 
 - `#6`, As user, I want to translate integer number 1,0000,0000 to 9999,9999,9999 (simplified)（亿位-千亿位）
 - refactor `src` into `src/main` and `src/test`
