@@ -1,5 +1,9 @@
 # Change Log
 
+## `0.0.6`
+
+- refactoring `src` into `src/main` and `src/test`
+
 ## `0.0.5` - 10 June 2022
 
 - `#5`, As user, I want to translate integer number 1,0000 to 9999,9999 (simplified)（萬位-千萬位）

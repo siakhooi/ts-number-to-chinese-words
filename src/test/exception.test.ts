@@ -1,4 +1,4 @@
-import {numberToChineseWords} from '../index';
+import {numberToChineseWords} from '../main/index';
 
 test.each([[-10], [-1], [10.6], [50.55], [100000000], [999999999]])(
   'Not Supported error',
