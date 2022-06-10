@@ -1,4 +1,4 @@
-import {numberToChineseWords} from '../main/index';
+import {convertNumber} from '../main/index';
 
 test.each([
   [10000, '一万'],
@@ -30,5 +30,5 @@ test.each([
   [12345678, '一千二百三十四万五千六百七十八'],
   [99999999, '九千九百九十九万九千九百九十九'],
 ])('integer-10000-99999999', (input: number, expected: string) => {
-  expect(numberToChineseWords(input)).toBe(expected);
+  expect(convertNumber(input)).toBe(expected);
 });

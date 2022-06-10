@@ -57,8 +57,8 @@
 ## Usage
 
 ```javascript
-const i = require('@siakhooi/number-to-chinese-words');
-console.log(i.numberToChineseWords(7));
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(7));
 ```
 
 ### Example

@@ -123,7 +123,7 @@ function getDigit_111122223333(number: number): string {
 
   return char100000000 + char10000 + char01111;
 }
-export function numberToChineseWords(number: number): string {
+export function convertNumber(number: number): string {
   if (number < 0 || number > 999999999999) throw ERR_NOT_SUPPORTED;
   if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
