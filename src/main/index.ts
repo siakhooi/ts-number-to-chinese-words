@@ -13,8 +13,8 @@ function getDigit_1(number: number): string {
   return CHARACTER_SET.BASE.charAt(number);
 }
 function getDigit_11(number: number): string {
-  const digit10 = (number / 10) | 0;
-  const digit01 = number % 10 | 0;
+  const digit10 = Math.floor(number / 10);
+  const digit01 = number % 10;
 
   const char10 = getDigit_1(digit10) + CHARACTER_SET.TEN;
   const char01 = digit01 === 0 ? '' : getDigit_1(digit01);
@@ -22,8 +22,8 @@ function getDigit_11(number: number): string {
   return char10 + char01;
 }
 function getDigit_111(number: number): string {
-  const digit100 = (number / 100) | 0;
-  const digit011 = number % 100 | 0;
+  const digit100 = Math.floor(number / 100);
+  const digit011 = number % 100;
 
   const char100 = getDigit_1(digit100) + CHARACTER_SET.HUNDRED;
   let char011 = '';
@@ -35,8 +35,8 @@ function getDigit_111(number: number): string {
   return char100 + char011;
 }
 function getDigit_1111(number: number): string {
-  const digit1000 = (number / 1000) | 0;
-  const digit0111 = number % 1000 | 0;
+  const digit1000 = Math.floor(number / 1000);
+  const digit0111 = number % 1000;
 
   const char1000 = getDigit_1(digit1000) + CHARACTER_SET.THOUSAND;
 
@@ -52,8 +52,8 @@ function getDigit_1111(number: number): string {
 }
 
 function getDigit_1111w(number: number): string {
-  const digit10000 = (number / 10000) | 0;
-  const digit01111 = number % 10000 | 0;
+  const digit10000 = Math.floor(number / 10000);
+  const digit01111 = number % 10000;
 
   const char10000 = getDigit_9999(digit10000) + CHARACTER_SET.TENTHOUSAND;
 
@@ -65,13 +65,13 @@ function getDigit_1111w(number: number): string {
   return char10000 + char01111;
 }
 function getDigit_1111yi(number: number): string {
-  const digit10000w = (number / 100000000) | 0;
-  const digit01111w = number % 100000000 | 0;
+  const digit10000w = Math.floor(number / 100000000);
+  const digit01111w = number % 100000000;
 
   let char10000w = getDigit_9999(digit10000w) + CHARACTER_SET.HUNDREDMILLION;
 
-  const digit10000 = (digit01111w / 10000) | 0;
-  const digit01111 = digit01111w % 10000 | 0;
+  const digit10000 = Math.floor(digit01111w / 10000);
+  const digit01111 = digit01111w % 10000;
 
   let char10000 = '';
   if (digit10000 > 0) {
