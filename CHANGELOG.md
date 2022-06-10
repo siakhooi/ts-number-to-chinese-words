@@ -2,9 +2,10 @@
 
 ## `1.0.0`
 
-- change version to `1.0.0`
+- `#21`, change version to `1.0.0`
 - update readme with sample outputs
 - change function name to `convertNumber`
+- code refactoring
 
 ## `0.0.6` - 10 June 2022
 
