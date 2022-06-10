@@ -1,6 +1,6 @@
 # Change Log
 
-## `1.0.0`
+## `1.0.0` - 10 June 2022
 
 - `#21`, change version to `1.0.0`
 - update readme with sample outputs
