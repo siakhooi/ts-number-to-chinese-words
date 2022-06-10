@@ -1,4 +1,4 @@
-import {numberToChineseWords} from '../index';
+import {numberToChineseWords} from '../main/index';
 
 test.each([
   [100, '一百'],

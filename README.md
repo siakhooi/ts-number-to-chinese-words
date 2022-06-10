@@ -14,7 +14,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/ts-number-to-chinese-words?logo=github)
-![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/test-jest-main-with-coveralls.yml/badge.svg)
+![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/test-jest-main.yml/badge.svg)
 ![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/publish-gpr.yml/badge.svg)
 ![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/publish-npm.yml/badge.svg)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/ts-number-to-chinese-words?label=GPR%20release&logo=github)
@@ -51,7 +51,7 @@
 ## Features
 
 - Translate numbers into Chinese characters for:
-  - Integer 0-9999,9999
+  - Integer 0-9999,9999,9999
   - Simplified Chinese
 
 ## Usage
