@@ -1,5 +1,9 @@
 # Change Log
 
+## `1.1.0`
+
+- code refactoring - functions rename
+
 ## `1.0.0` - 10 June 2022
 
 - `#21`, change version to `1.0.0`
