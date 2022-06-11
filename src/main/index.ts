@@ -6,6 +6,7 @@ const CHARACTER_SET = {
   THOUSAND: '千',
   TENTHOUSAND: '万',
   HUNDREDMILLION: '亿',
+  NEGATIVE: '负',
 };
 const ERR_NOT_SUPPORTED = 'Not Supported';
 
@@ -98,10 +99,13 @@ function convert_100000000_to_999999999999(number: number): string {
 }
 
 export function convertNumber(number: number): string {
-  if (number < 0 || number > 999999999999) throw ERR_NOT_SUPPORTED;
+  if (number < -999999999999 || number > 999999999999) throw ERR_NOT_SUPPORTED;
   if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
-  if (number < 10000) return convert_0_to_9999(number);
-  else if (number < 100000000) return convert_10000_to_99999999(number);
-  return convert_100000000_to_999999999999(number);
+  const sign = number < 0 ? CHARACTER_SET.NEGATIVE : '';
+  if (number < 0) number = -number;
+
+  if (number < 10000) return sign + convert_0_to_9999(number);
+  else if (number < 100000000) return sign + convert_10000_to_99999999(number);
+  return sign + convert_100000000_to_999999999999(number);
 }
