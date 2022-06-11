@@ -1,5 +1,10 @@
 # Change Log
 
+## `1.1.0` - 11 June 2022
+
+- `#12`, As user, i want to translate negative numbers （負數）
+- code refactoring - functions rename
+
 ## `1.0.0` - 10 June 2022
 
 - `#21`, change version to `1.0.0`

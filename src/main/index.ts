@@ -6,101 +6,106 @@ const CHARACTER_SET = {
   THOUSAND: '千',
   TENTHOUSAND: '万',
   HUNDREDMILLION: '亿',
+  NEGATIVE: '负',
 };
 const ERR_NOT_SUPPORTED = 'Not Supported';
 
-function getDigit_1(number: number): string {
+function convert_0_to_9(number: number): string {
   return CHARACTER_SET.BASE.charAt(number);
 }
-function getDigit_11(number: number): string {
-  const digit10 = Math.floor(number / 10);
-  const digit01 = number % 10;
+function convert_10_to_99(number: number): string {
+  const quotient = Math.floor(number / 10);
+  const remainder = number % 10;
 
-  const char10 = getDigit_1(digit10) + CHARACTER_SET.TEN;
-  const char01 = digit01 === 0 ? '' : getDigit_1(digit01);
+  const char_quotient = convert_0_to_9(quotient) + CHARACTER_SET.TEN;
+  const char_remainder = remainder === 0 ? '' : convert_0_to_9(remainder);
 
-  return char10 + char01;
+  return char_quotient + char_remainder;
 }
-function getDigit_111(number: number): string {
-  const digit100 = Math.floor(number / 100);
-  const digit011 = number % 100;
+function convert_100_to_999(number: number): string {
+  const quotient = Math.floor(number / 100);
+  const remainder = number % 100;
 
-  const char100 = getDigit_1(digit100) + CHARACTER_SET.HUNDRED;
-  let char011 = '';
+  const char_quotient = convert_0_to_9(quotient) + CHARACTER_SET.HUNDRED;
+  let char_remainder = '';
 
-  if (digit011 > 0 && digit011 < 10)
-    char011 = CHARACTER_SET.ZERO + getDigit_1(digit011);
-  else if (digit011 >= 10) char011 = getDigit_11(digit011);
+  if (remainder > 0 && remainder < 10)
+    char_remainder = CHARACTER_SET.ZERO + convert_0_to_9(remainder);
+  else if (remainder >= 10) char_remainder = convert_10_to_99(remainder);
 
-  return char100 + char011;
+  return char_quotient + char_remainder;
 }
-function getDigit_1111(number: number): string {
-  const digit1000 = Math.floor(number / 1000);
-  const digit0111 = number % 1000;
+function convert_1000_to_9999(number: number): string {
+  const quotient = Math.floor(number / 1000);
+  const remainder = number % 1000;
 
-  const char1000 = getDigit_1(digit1000) + CHARACTER_SET.THOUSAND;
+  const char_quotient = convert_0_to_9(quotient) + CHARACTER_SET.THOUSAND;
 
-  let char0111 = '';
+  let char_remainder = '';
 
-  if (digit0111 > 0 && digit0111 < 10)
-    char0111 = CHARACTER_SET.ZERO + getDigit_1(digit0111);
-  else if (digit0111 >= 10 && digit0111 < 100)
-    char0111 = CHARACTER_SET.ZERO + getDigit_11(digit0111);
-  else if (digit0111 >= 100) char0111 = getDigit_111(digit0111);
+  if (remainder > 0 && remainder < 10)
+    char_remainder = CHARACTER_SET.ZERO + convert_0_to_9(remainder);
+  else if (remainder >= 10 && remainder < 100)
+    char_remainder = CHARACTER_SET.ZERO + convert_10_to_99(remainder);
+  else if (remainder >= 100) char_remainder = convert_100_to_999(remainder);
 
-  return char1000 + char0111;
+  return char_quotient + char_remainder;
+}
+function convert_0_to_9999(number: number): string {
+  if (number < 10) return convert_0_to_9(number);
+  else if (number < 100) return convert_10_to_99(number);
+  else if (number < 1000) return convert_100_to_999(number);
+  else return convert_1000_to_9999(number);
 }
 
-function getDigit_1111w(number: number): string {
-  const digit10000 = Math.floor(number / 10000);
-  const digit01111 = number % 10000;
+function convert_10000_to_99999999(number: number): string {
+  const quotient = Math.floor(number / 10000);
+  const remainder = number % 10000;
 
-  const char10000 = getDigit_9999(digit10000) + CHARACTER_SET.TENTHOUSAND;
+  const char_quotient = convert_0_to_9999(quotient) + CHARACTER_SET.TENTHOUSAND;
 
-  let char01111 = '';
-  if (digit01111 > 0) char01111 = getDigit_9999(digit01111);
-  if (digit01111 > 0 && digit01111 < 1000)
-    char01111 = CHARACTER_SET.ZERO + char01111;
+  let char_remainder = '';
+  if (remainder > 0) char_remainder = convert_0_to_9999(remainder);
+  if (remainder > 0 && remainder < 1000)
+    char_remainder = CHARACTER_SET.ZERO + char_remainder;
 
-  return char10000 + char01111;
+  return char_quotient + char_remainder;
 }
-function getDigit_1111yi(number: number): string {
-  const digit10000w = Math.floor(number / 100000000);
-  const digit01111w = number % 100000000;
+function convert_100000000_to_999999999999(number: number): string {
+  const quotient1 = Math.floor(number / 100000000);
+  const remainder1 = number % 100000000;
 
-  let char10000w = getDigit_9999(digit10000w) + CHARACTER_SET.HUNDREDMILLION;
+  let char_quotient1 =
+    convert_0_to_9999(quotient1) + CHARACTER_SET.HUNDREDMILLION;
 
-  const digit10000 = Math.floor(digit01111w / 10000);
-  const digit01111 = digit01111w % 10000;
+  const quotient2 = Math.floor(remainder1 / 10000);
+  const remainder2 = remainder1 % 10000;
 
-  let char10000 = '';
-  if (digit10000 > 0) {
-    char10000 = getDigit_9999(digit10000) + CHARACTER_SET.TENTHOUSAND;
-    if (digit10000 < 1000) char10000w += CHARACTER_SET.ZERO;
+  let char_quotient2 = '';
+  if (quotient2 > 0) {
+    char_quotient2 = convert_0_to_9999(quotient2) + CHARACTER_SET.TENTHOUSAND;
+    if (quotient2 < 1000) char_quotient1 += CHARACTER_SET.ZERO;
   }
 
-  let char01111 = '';
-  if (digit01111 > 0) {
-    char01111 = getDigit_9999(digit01111);
+  let char_remainder2 = '';
+  if (remainder2 > 0) {
+    char_remainder2 = convert_0_to_9999(remainder2);
 
-    if (digit01111 < 1000 || (digit01111 >= 1000 && digit10000 === 0))
-      char01111 = CHARACTER_SET.ZERO + char01111;
+    if (remainder2 < 1000 || (remainder2 >= 1000 && quotient2 === 0))
+      char_remainder2 = CHARACTER_SET.ZERO + char_remainder2;
   }
 
-  return char10000w + char10000 + char01111;
-}
-function getDigit_9999(number: number): string {
-  if (number < 10) return getDigit_1(number);
-  else if (number < 100) return getDigit_11(number);
-  else if (number < 1000) return getDigit_111(number);
-  else return getDigit_1111(number);
+  return char_quotient1 + char_quotient2 + char_remainder2;
 }
 
 export function convertNumber(number: number): string {
-  if (number < 0 || number > 999999999999) throw ERR_NOT_SUPPORTED;
+  if (number < -999999999999 || number > 999999999999) throw ERR_NOT_SUPPORTED;
   if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
-  if (number < 10000) return getDigit_9999(number);
-  else if (number < 100000000) return getDigit_1111w(number);
-  return getDigit_1111yi(number);
+  const sign = number < 0 ? CHARACTER_SET.NEGATIVE : '';
+  if (number < 0) number = -number;
+
+  if (number < 10000) return sign + convert_0_to_9999(number);
+  else if (number < 100000000) return sign + convert_10000_to_99999999(number);
+  return sign + convert_100000000_to_999999999999(number);
 }
