@@ -6,6 +6,7 @@ const CHARACTER_SET = {
   THOUSAND: '千',
   TENTHOUSAND: '万',
   HUNDREDMILLION: '亿',
+  TRILLION: '兆',
   NEGATIVE: '负',
 };
 const ERR_NOT_SUPPORTED = 'Not Supported';
@@ -98,8 +99,51 @@ function convert_1_0000_0000_to_9999_9999_9999(number: number): string {
   return char_quotient1 + char_quotient2 + char_remainder2;
 }
 
+function convert_1_0000_0000_0000_to_9999_9999_9999_9999(
+  number: number
+): string {
+  let char_segment1 = '';
+  let char_zero_2 = '';
+  let char_segment2 = '';
+  let char_zero_3 = '';
+  let char_segment3 = '';
+  let char_zero_4 = '';
+  let char_segment4 = '';
+
+  const segment1 = Math.floor(number / 1_0000_0000_0000);
+  const segment_2_to_4 = number % 1_0000_0000_0000;
+  const segment2 = Math.floor(segment_2_to_4 / 1_0000_0000);
+  const segment_3_to_4 = segment_2_to_4 % 1_0000_0000;
+  const segment3 = Math.floor(segment_3_to_4 / 1_0000);
+  const segment4 = segment_3_to_4 % 1_0000;
+
+  char_segment1 = convert_0_to_9999(segment1) + CHARACTER_SET.TRILLION;
+  if (segment2 > 0)
+    char_segment2 = convert_0_to_9999(segment2) + CHARACTER_SET.HUNDREDMILLION;
+  if (segment3 > 0)
+    char_segment3 = convert_0_to_9999(segment3) + CHARACTER_SET.TENTHOUSAND;
+  if (segment4 > 0) char_segment4 = convert_0_to_9999(segment4);
+
+  if (segment4 > 0 && segment4 < 1000) char_zero_4 = CHARACTER_SET.ZERO;
+  if (segment3 > 0 && segment3 < 1000) char_zero_3 = CHARACTER_SET.ZERO;
+  if (segment2 > 0 && segment2 < 1000) char_zero_2 = CHARACTER_SET.ZERO;
+
+  if (segment4 >= 1000 && segment3 === 0) char_zero_3 = CHARACTER_SET.ZERO;
+  if (segment3 >= 1000 && segment2 === 0) char_zero_2 = CHARACTER_SET.ZERO;
+
+  return (
+    char_segment1 +
+    char_zero_2 +
+    char_segment2 +
+    char_zero_3 +
+    char_segment3 +
+    char_zero_4 +
+    char_segment4
+  );
+}
+
 export function convertNumber(number: number): string {
-  if (number < -9999_9999_9999 || number > 9999_9999_9999)
+  if (number < -Number.MAX_SAFE_INTEGER || number > Number.MAX_SAFE_INTEGER)
     throw ERR_NOT_SUPPORTED;
   if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
@@ -109,5 +153,7 @@ export function convertNumber(number: number): string {
   if (number < 1_0000) return sign + convert_0_to_9999(number);
   else if (number < 1_0000_0000)
     return sign + convert_1_0000_to_9999_9999(number);
-  return sign + convert_1_0000_0000_to_9999_9999_9999(number);
+  else if (number < 1_0000_0000_0000)
+    return sign + convert_1_0000_0000_to_9999_9999_9999(number);
+  else return sign + convert_1_0000_0000_0000_to_9999_9999_9999_9999(number);
 }

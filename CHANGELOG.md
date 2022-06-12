@@ -1,7 +1,8 @@
 # Change Log
 
-## `1.2.0`
+## `1.2.0` - 12 June 2022
 
+- `#23`, As user, I want to translate integer number up to 9999,9999,9999,9999 (simplified)（兆位-千兆位）
 - add sonar to non-main branch
 - code refactor - add numeric separator
 
