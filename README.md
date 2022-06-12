@@ -51,7 +51,7 @@
 ## Features
 
 - Translate numbers into Chinese characters for:
-  - Integer 0-9999,9999,9999
+  - Integer -9999,9999,9999 to +9999,9999,9999
   - Simplified Chinese
 
 ## Usage
@@ -79,6 +79,7 @@ console.log(NumberToChinese.convertNumber(7));
 |   1010101010 | 一十亿一千零一十万一千零一十                   |
 |  10101010101 | 一百零一亿零一百零一万零一百零一               |
 | 999999999999 | 九千九百九十九亿九千九百九十九万九千九百九十九 |
+|          -17 | 负一十七                                       |
 
 ## Locations
 
