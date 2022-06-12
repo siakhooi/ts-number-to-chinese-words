@@ -11,6 +11,34 @@ test.each([
   [7, '七'],
   [8, '八'],
   [9, '九'],
-])('integer-0-9', (input: number, expected: string) => {
+])('integer-0-9 - default', (input: number, expected: string) => {
   expect(convertNumber(input)).toBe(expected);
+});
+test.each([
+  [0, '零'],
+  [1, '一'],
+  [2, '二'],
+  [3, '三'],
+  [4, '四'],
+  [5, '五'],
+  [6, '六'],
+  [7, '七'],
+  [8, '八'],
+  [9, '九'],
+])('integer-0-9 - simplified', (input: number, expected: string) => {
+  expect(convertNumber(input, {useTraditional: false})).toBe(expected);
+});
+test.each([
+  [0, '零'],
+  [1, '一'],
+  [2, '二'],
+  [3, '三'],
+  [4, '四'],
+  [5, '五'],
+  [6, '六'],
+  [7, '七'],
+  [8, '八'],
+  [9, '九'],
+])('integer-0-9 - traditional', (input: number, expected: string) => {
+  expect(convertNumber(input, {useTraditional: true})).toBe(expected);
 });

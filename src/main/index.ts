@@ -12,10 +12,23 @@ const CHARACTER_SET_SIMPLIFIED_NORMAL = {
   NEGATIVE: '负',
 };
 
+const CHARACTER_SET_TRADITIONAL_NORMAL = {
+  BASE: '零一二三四五六七八九',
+  ZERO: '零',
+  TEN: '十',
+  HUNDRED: '百',
+  THOUSAND: '千',
+  TENTHOUSAND: '萬',
+  HUNDREDMILLION: '億',
+  TRILLION: '兆',
+  NEGATIVE: '負',
+};
 class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
-  constructor() {
-    this.characterSet = CHARACTER_SET_SIMPLIFIED_NORMAL;
+  constructor(options: options) {
+    this.characterSet = options.useTraditional
+      ? CHARACTER_SET_TRADITIONAL_NORMAL
+      : CHARACTER_SET_SIMPLIFIED_NORMAL;
   }
 
   convert_0_to_9(number: number): string {
@@ -147,8 +160,11 @@ class Convertor {
     else return sign + this.convert_1_0000_0000_to_9999_9999_9999_9999(number);
   }
 }
-
-export function convertNumber(number: number): string {
-  const convertor = new Convertor();
+type options = {useTraditional: boolean};
+export function convertNumber(
+  number: number,
+  options: options = {useTraditional: false}
+): string {
+  const convertor = new Convertor(options);
   return convertor.convertNumber(number);
 }

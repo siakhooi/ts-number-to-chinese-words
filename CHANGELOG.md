@@ -1,7 +1,8 @@
 # Change Log
 
-## `1.3.0`
+## `1.3.0` - 12 June 2022
 
+- `#10`, As user, I want to translate into traditional （繁體）
 - add coveralls to non-main branch
 - code refactor - convert to class
 
