@@ -16,6 +16,11 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
           name: coverage-report
