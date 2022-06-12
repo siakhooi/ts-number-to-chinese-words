@@ -5,6 +5,7 @@
 - `#23`, As user, I want to translate integer number up to 9999,9999,9999,9999 (simplified)（兆位-千兆位）
 - add sonar to non-main branch
 - code refactor - add numeric separator
+- code refactor - remove convert_1_0000_0000_to_9999_9999_9999
 
 ## `1.1.0` - 11 June 2022
 

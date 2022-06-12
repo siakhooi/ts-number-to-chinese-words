@@ -72,36 +72,7 @@ function convert_1_0000_to_9999_9999(number: number): string {
 
   return char_quotient + char_remainder;
 }
-function convert_1_0000_0000_to_9999_9999_9999(number: number): string {
-  const quotient1 = Math.floor(number / 1_0000_0000);
-  const remainder1 = number % 1_0000_0000;
-
-  let char_quotient1 =
-    convert_0_to_9999(quotient1) + CHARACTER_SET.HUNDREDMILLION;
-
-  const quotient2 = Math.floor(remainder1 / 1_0000);
-  const remainder2 = remainder1 % 1_0000;
-
-  let char_quotient2 = '';
-  if (quotient2 > 0) {
-    char_quotient2 = convert_0_to_9999(quotient2) + CHARACTER_SET.TENTHOUSAND;
-    if (quotient2 < 1000) char_quotient1 += CHARACTER_SET.ZERO;
-  }
-
-  let char_remainder2 = '';
-  if (remainder2 > 0) {
-    char_remainder2 = convert_0_to_9999(remainder2);
-
-    if (remainder2 < 1000 || (remainder2 >= 1000 && quotient2 === 0))
-      char_remainder2 = CHARACTER_SET.ZERO + char_remainder2;
-  }
-
-  return char_quotient1 + char_quotient2 + char_remainder2;
-}
-
-function convert_1_0000_0000_0000_to_9999_9999_9999_9999(
-  number: number
-): string {
+function convert_1_0000_0000_to_9999_9999_9999_9999(number: number): string {
   let char_segment1 = '';
   let char_zero_2 = '';
   let char_segment2 = '';
@@ -117,7 +88,8 @@ function convert_1_0000_0000_0000_to_9999_9999_9999_9999(
   const segment3 = Math.floor(segment_3_to_4 / 1_0000);
   const segment4 = segment_3_to_4 % 1_0000;
 
-  char_segment1 = convert_0_to_9999(segment1) + CHARACTER_SET.TRILLION;
+  if (segment1 > 0)
+    char_segment1 = convert_0_to_9999(segment1) + CHARACTER_SET.TRILLION;
   if (segment2 > 0)
     char_segment2 = convert_0_to_9999(segment2) + CHARACTER_SET.HUNDREDMILLION;
   if (segment3 > 0)
@@ -126,10 +98,12 @@ function convert_1_0000_0000_0000_to_9999_9999_9999_9999(
 
   if (segment4 > 0 && segment4 < 1000) char_zero_4 = CHARACTER_SET.ZERO;
   if (segment3 > 0 && segment3 < 1000) char_zero_3 = CHARACTER_SET.ZERO;
-  if (segment2 > 0 && segment2 < 1000) char_zero_2 = CHARACTER_SET.ZERO;
+  if (segment1 > 0 && segment2 > 0 && segment2 < 1000)
+    char_zero_2 = CHARACTER_SET.ZERO;
 
   if (segment4 >= 1000 && segment3 === 0) char_zero_3 = CHARACTER_SET.ZERO;
-  if (segment3 >= 1000 && segment2 === 0) char_zero_2 = CHARACTER_SET.ZERO;
+  if (segment1 > 0 && segment3 >= 1000 && segment2 === 0)
+    char_zero_2 = CHARACTER_SET.ZERO;
 
   return (
     char_segment1 +
@@ -153,7 +127,5 @@ export function convertNumber(number: number): string {
   if (number < 1_0000) return sign + convert_0_to_9999(number);
   else if (number < 1_0000_0000)
     return sign + convert_1_0000_to_9999_9999(number);
-  else if (number < 1_0000_0000_0000)
-    return sign + convert_1_0000_0000_to_9999_9999_9999(number);
-  else return sign + convert_1_0000_0000_0000_to_9999_9999_9999_9999(number);
+  else return sign + convert_1_0000_0000_to_9999_9999_9999_9999(number);
 }
