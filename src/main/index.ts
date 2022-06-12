@@ -58,9 +58,9 @@ function convert_0_to_9999(number: number): string {
   else return convert_1000_to_9999(number);
 }
 
-function convert_10000_to_99999999(number: number): string {
-  const quotient = Math.floor(number / 10000);
-  const remainder = number % 10000;
+function convert_1_0000_to_9999_9999(number: number): string {
+  const quotient = Math.floor(number / 1_0000);
+  const remainder = number % 1_0000;
 
   const char_quotient = convert_0_to_9999(quotient) + CHARACTER_SET.TENTHOUSAND;
 
@@ -71,15 +71,15 @@ function convert_10000_to_99999999(number: number): string {
 
   return char_quotient + char_remainder;
 }
-function convert_100000000_to_999999999999(number: number): string {
-  const quotient1 = Math.floor(number / 100000000);
-  const remainder1 = number % 100000000;
+function convert_1_0000_0000_to_9999_9999_9999(number: number): string {
+  const quotient1 = Math.floor(number / 1_0000_0000);
+  const remainder1 = number % 1_0000_0000;
 
   let char_quotient1 =
     convert_0_to_9999(quotient1) + CHARACTER_SET.HUNDREDMILLION;
 
-  const quotient2 = Math.floor(remainder1 / 10000);
-  const remainder2 = remainder1 % 10000;
+  const quotient2 = Math.floor(remainder1 / 1_0000);
+  const remainder2 = remainder1 % 1_0000;
 
   let char_quotient2 = '';
   if (quotient2 > 0) {
@@ -99,13 +99,15 @@ function convert_100000000_to_999999999999(number: number): string {
 }
 
 export function convertNumber(number: number): string {
-  if (number < -999999999999 || number > 999999999999) throw ERR_NOT_SUPPORTED;
+  if (number < -9999_9999_9999 || number > 9999_9999_9999)
+    throw ERR_NOT_SUPPORTED;
   if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
   const sign = number < 0 ? CHARACTER_SET.NEGATIVE : '';
   if (number < 0) number = -number;
 
-  if (number < 10000) return sign + convert_0_to_9999(number);
-  else if (number < 100000000) return sign + convert_10000_to_99999999(number);
-  return sign + convert_100000000_to_999999999999(number);
+  if (number < 1_0000) return sign + convert_0_to_9999(number);
+  else if (number < 1_0000_0000)
+    return sign + convert_1_0000_to_9999_9999(number);
+  return sign + convert_1_0000_0000_to_9999_9999_9999(number);
 }

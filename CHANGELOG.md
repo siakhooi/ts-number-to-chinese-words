@@ -1,5 +1,10 @@
 # Change Log
 
+## `1.2.0`
+
+- add sonar to non-main branch
+- code refactor - add numeric separator
+
 ## `1.1.0` - 11 June 2022
 
 - `#12`, As user, i want to translate negative numbers （負數）
