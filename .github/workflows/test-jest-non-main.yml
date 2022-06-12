@@ -16,6 +16,10 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
+      - name: Upload to Coveralls.io
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
