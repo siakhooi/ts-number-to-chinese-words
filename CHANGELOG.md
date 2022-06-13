@@ -3,6 +3,7 @@
 ## `1.4.0`
 
 - combine test workflows into 1 workflow.
+- add codecov.io
 
 ## `1.3.0` - 12 June 2022
 

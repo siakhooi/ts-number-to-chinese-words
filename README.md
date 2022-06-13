@@ -31,6 +31,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/siakhooi/ts-number-to-chinese-words/badge.svg?branch=main)](https://coveralls.io/github/siakhooi/ts-number-to-chinese-words?branch=main)
 ![Coveralls](https://img.shields.io/coveralls/github/siakhooi/ts-number-to-chinese-words?logo=coveralls)
+![Codecov](https://img.shields.io/codecov/c/github/siakhooi/ts-number-to-chinese-words?logo=codecov)
 
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
