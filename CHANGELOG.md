@@ -1,7 +1,8 @@
 # Change Log
 
-## `1.4.0`
+## `1.4.0` - 13 June 2022
 
+- `#24`, As user, i want to optionally display 正 for positive numbers （正數）
 - combine test workflows into 1 workflow.
 - add codecov.io
 

@@ -10,6 +10,7 @@ const CHARACTER_SET_SIMPLIFIED_NORMAL = {
   HUNDREDMILLION: '亿',
   TRILLION: '兆',
   NEGATIVE: '负',
+  POSITIVE: '正',
 };
 
 const CHARACTER_SET_TRADITIONAL_NORMAL = {
@@ -22,6 +23,7 @@ const CHARACTER_SET_TRADITIONAL_NORMAL = {
   HUNDREDMILLION: '億',
   TRILLION: '兆',
   NEGATIVE: '負',
+  POSITIVE: '正',
 };
 class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
@@ -29,6 +31,7 @@ class Convertor {
     this.characterSet = options.useTraditional
       ? CHARACTER_SET_TRADITIONAL_NORMAL
       : CHARACTER_SET_SIMPLIFIED_NORMAL;
+    if (!options.displayPositive) this.characterSet.POSITIVE = '';
   }
 
   convert_0_to_9(number: number): string {
@@ -151,7 +154,8 @@ class Convertor {
       throw ERR_NOT_SUPPORTED;
     if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
-    const sign = number < 0 ? this.characterSet.NEGATIVE : '';
+    const sign =
+      number < 0 ? this.characterSet.NEGATIVE : this.characterSet.POSITIVE;
     if (number < 0) number = -number;
 
     if (number < 1_0000) return sign + this.convert_0_to_9999(number);
@@ -160,7 +164,10 @@ class Convertor {
     else return sign + this.convert_1_0000_0000_to_9999_9999_9999_9999(number);
   }
 }
-type options = {useTraditional: boolean};
+type options = {
+  useTraditional?: boolean;
+  displayPositive?: boolean;
+};
 export function convertNumber(
   number: number,
   options: options = {useTraditional: false}

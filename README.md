@@ -53,7 +53,8 @@
 
 - Translate numbers into Chinese characters for:
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
-  - Simplified Chinese or Traditional Chinese
+  - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
+  - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
 
 ## Usage
 
@@ -63,6 +64,9 @@ console.log(NumberToChinese.convertNumber(7));
 
 const NumberToChinese = require('@siakhooi/number-to-chinese-words');
 console.log(NumberToChinese.convertNumber(7, {useTraditional: true}));
+
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
 ```
 
 ### Example
