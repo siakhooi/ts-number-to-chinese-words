@@ -14,7 +14,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/ts-number-to-chinese-words?logo=github)
-![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/test-jest-main.yml/badge.svg)
+![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/quality-check.yml/badge.svg)
 ![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/publish-gpr.yml/badge.svg)
 ![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/publish-npm.yml/badge.svg)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/ts-number-to-chinese-words?label=GPR%20release&logo=github)
@@ -31,6 +31,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/siakhooi/ts-number-to-chinese-words/badge.svg?branch=main)](https://coveralls.io/github/siakhooi/ts-number-to-chinese-words?branch=main)
 ![Coveralls](https://img.shields.io/coveralls/github/siakhooi/ts-number-to-chinese-words?logo=coveralls)
+![Codecov](https://img.shields.io/codecov/c/github/siakhooi/ts-number-to-chinese-words?logo=codecov)
 
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
@@ -52,7 +53,8 @@
 
 - Translate numbers into Chinese characters for:
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
-  - Simplified Chinese or Traditional Chinese
+  - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
+  - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
 
 ## Usage
 
@@ -62,6 +64,9 @@ console.log(NumberToChinese.convertNumber(7));
 
 const NumberToChinese = require('@siakhooi/number-to-chinese-words');
 console.log(NumberToChinese.convertNumber(7, {useTraditional: true}));
+
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
 ```
 
 ### Example
