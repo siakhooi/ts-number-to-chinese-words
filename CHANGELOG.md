@@ -1,5 +1,9 @@
 # Change Log
 
+## `1.4.0`
+
+- combine test workflows into 1 workflow.
+
 ## `1.3.0` - 12 June 2022
 
 - `#10`, As user, I want to translate into traditional （繁體）
