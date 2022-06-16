@@ -1,5 +1,8 @@
 name: Quality Check
-on: push
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
   test:
