@@ -33,6 +33,10 @@
 ![Coveralls](https://img.shields.io/coveralls/github/siakhooi/ts-number-to-chinese-words?logo=coveralls)
 ![Codecov](https://img.shields.io/codecov/c/github/siakhooi/ts-number-to-chinese-words?logo=codecov)
 
+![Codacy coverage](https://img.shields.io/codacy/coverage/153d0b6d94ba4e289514cd3b0f51a992)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/153d0b6d94ba4e289514cd3b0f51a992)](https://www.codacy.com/gh/siakhooi/ts-hello-typescript/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-hello-typescript&utm_campaign=Badge_Grade)
+![Codacy grade](https://img.shields.io/codacy/grade/153d0b6d94ba4e289514cd3b0f51a992)
+
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
@@ -96,3 +100,5 @@ console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
 - <https://www.npmjs.com/package/@siakhooi/number-to-chinese-words>
 - <https://coveralls.io/github/siakhooi/ts-number-to-chinese-words>
 - <https://sonarcloud.io/project/overview?id=siakhooi_ts-number-to-chinese-words>
+- <https://app.codecov.io/gh/siakhooi/ts-number-to-chinese-words>
+- <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>

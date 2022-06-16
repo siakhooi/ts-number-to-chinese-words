@@ -1,5 +1,9 @@
 # Change Log
 
+## `1.5.0`
+
+- add codacy.com
+
 ## `1.4.0` - 13 June 2022
 
 - `#24`, As user, i want to optionally display 正 for positive numbers （正數）
