@@ -40,3 +40,9 @@ test.each([
     convertNumber(input, {useTraditional: true});
   }).toThrowError(errmsg);
 });
+test('Not Supported error - traditional+capital', () => {
+  const errmsg = 'Not Supported';
+  expect(() => {
+    convertNumber(1, {useTraditional: true, useCapital: true});
+  }).toThrowError(errmsg);
+});

@@ -13,6 +13,19 @@ const CHARACTER_SET_SIMPLIFIED_NORMAL = {
   POSITIVE: '正',
 };
 
+const CHARACTER_SET_SIMPLIFIED_CAPITAL = {
+  BASE: '零壹贰叁肆伍陆柒捌玖',
+  ZERO: '零',
+  TEN: '拾',
+  HUNDRED: '佰',
+  THOUSAND: '仟',
+  TENTHOUSAND: '萬',
+  HUNDREDMILLION: '億',
+  TRILLION: '兆',
+  NEGATIVE: '负',
+  POSITIVE: '正',
+};
+
 const CHARACTER_SET_TRADITIONAL_NORMAL = {
   BASE: '零一二三四五六七八九',
   ZERO: '零',
@@ -29,8 +42,17 @@ class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
   constructor(options: options) {
     this.characterSet = options.useTraditional
-      ? CHARACTER_SET_TRADITIONAL_NORMAL
-      : CHARACTER_SET_SIMPLIFIED_NORMAL;
+      ? {...CHARACTER_SET_TRADITIONAL_NORMAL}
+      : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
+
+    if (options.useCapital) {
+      if (options.useTraditional) {
+        throw ERR_NOT_SUPPORTED;
+      } else {
+        this.characterSet = {...CHARACTER_SET_SIMPLIFIED_CAPITAL};
+      }
+    }
+
     if (!options.displayPositive) this.characterSet.POSITIVE = '';
   }
 
@@ -154,8 +176,9 @@ class Convertor {
       throw ERR_NOT_SUPPORTED;
     if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
 
-    const sign =
-      number < 0 ? this.characterSet.NEGATIVE : this.characterSet.POSITIVE;
+    let sign = '';
+    if (number < 0) sign = this.characterSet.NEGATIVE;
+    if (number > 0) sign = this.characterSet.POSITIVE;
     if (number < 0) number = -number;
 
     if (number < 1_0000) return sign + this.convert_0_to_9999(number);
@@ -167,10 +190,15 @@ class Convertor {
 type options = {
   useTraditional?: boolean;
   displayPositive?: boolean;
+  useCapital?: boolean;
 };
 export function convertNumber(
   number: number,
-  options: options = {useTraditional: false}
+  options: options = {
+    useTraditional: false,
+    displayPositive: false,
+    useCapital: false,
+  }
 ): string {
   const convertor = new Convertor(options);
   return convertor.convertNumber(number);

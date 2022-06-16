@@ -3,6 +3,7 @@
 ## `1.5.0`
 
 - add codacy.com
+- `#11`, As user, I want to translate into capital numbers (大写数字) - simplified
 
 ## `1.4.0` - 13 June 2022
 

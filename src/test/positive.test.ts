@@ -1,6 +1,7 @@
 import {convertNumber} from '../main/index';
 
 test.each([
+  [0, '零'],
   [1, '正一'],
   [100, '正一百'],
   [1_0000, '正一万'],

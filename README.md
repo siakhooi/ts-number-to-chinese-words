@@ -59,6 +59,7 @@
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
   - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
+  - optionally use capital (大写) for simplified. (`options: {useCapital: true}`)
 
 ## Usage
 
@@ -71,9 +72,14 @@ console.log(NumberToChinese.convertNumber(7, {useTraditional: true}));
 
 const NumberToChinese = require('@siakhooi/number-to-chinese-words');
 console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
+
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 ```
 
 ### Example
+
+#### Simplified and Traditional
 
 |           number | Simplified                                             | Traditional                                            |
 | ---------------: | ------------------------------------------------------ | ------------------------------------------------------ |
@@ -92,7 +98,13 @@ console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
 |      10101010101 | 一百零一亿零一百零一万零一百零一                       | 一百零一億零一百零一萬零一百零一                       |
 |     999999999999 | 九千九百九十九亿九千九百九十九万九千九百九十九         | 九千九百九十九億九千九百九十九萬九千九百九十九         |
 | 9007199254740991 | 九千零七兆一千九百九十二亿五千四百七十四万零九百九十一 | 九千零七兆一千九百九十二億五千四百七十四萬零九百九十一 |
-|              -17 | 负一十七                                               | 負一十七                                               |
+
+#### display positive
+
+| number | `displayPositive=true` | `displayPositive=false` |
+| -----: | ---------------------- | ----------------------- |
+|    -17 | 负一十七               | 负一十七                |
+|     17 | 正一十七               | 一十七                  |
 
 ## Locations
 
