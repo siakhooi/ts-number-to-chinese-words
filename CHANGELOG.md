@@ -1,7 +1,8 @@
 # Change Log
 
-## `1.5.1`
+## `1.5.1` - 17 June 2022
 
+- `#29`, As user, I want to translate into capital numbers (大写数字) - traditional
 - fix bugs
 - refactor test for `0`, `1-9`
 

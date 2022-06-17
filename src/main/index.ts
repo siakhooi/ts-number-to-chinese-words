@@ -38,20 +38,28 @@ const CHARACTER_SET_TRADITIONAL_NORMAL = {
   NEGATIVE: '負',
   POSITIVE: '正',
 };
+const CHARACTER_SET_TRADITIONAL_CAPITAL = {
+  BASE: '零壹貳參肆伍陸柒捌玖',
+  ZERO: '零',
+  TEN: '拾',
+  HUNDRED: '佰',
+  THOUSAND: '仟',
+  TENTHOUSAND: '萬',
+  HUNDREDMILLION: '億',
+  TRILLION: '兆',
+  NEGATIVE: '負',
+  POSITIVE: '正',
+};
 class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
   constructor(options: options) {
     this.characterSet = options.useTraditional
-      ? {...CHARACTER_SET_TRADITIONAL_NORMAL}
+      ? options.useCapital
+        ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
+        : {...CHARACTER_SET_TRADITIONAL_NORMAL}
+      : options.useCapital
+      ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
       : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
-
-    if (options.useCapital) {
-      if (options.useTraditional) {
-        throw ERR_NOT_SUPPORTED;
-      } else {
-        this.characterSet = {...CHARACTER_SET_SIMPLIFIED_CAPITAL};
-      }
-    }
 
     if (!options.displayPositive) this.characterSet.POSITIVE = '';
   }
