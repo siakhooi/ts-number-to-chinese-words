@@ -1,9 +1,15 @@
 import {convertNumber, options} from '../main/index';
-import {merge} from './TestUtils';
+import {generate} from './TestUtils';
 import {data, POSITIVE} from './data-9';
 
-test.each(data)('/1-9/+ve/default', (input: number, expected: string) => {
-  expect(convertNumber(input)).toBe(expected);
+//  ____       _     _____
+// / ___|  ___| |_  |__  /___ _ __ ___
+// \___ \ / _ \ __|   / // _ \ '__/ _ \
+//  ___) |  __/ |_   / /|  __/ | | (_) |
+// |____/ \___|\__| /____\___|_|  \___/
+
+test.each(data)('/1-9/+ve/default', (input: number, expected: string[]) => {
+  expect(convertNumber(input)).toBe(expected[0]);
 });
 
 const optionExpectSimplified: options[] = [
@@ -11,25 +17,14 @@ const optionExpectSimplified: options[] = [
   {useTraditional: false},
   {useTraditional: true},
   {displayPositive: false},
+  {useTraditional: true, displayPositive: false},
+  {useTraditional: false, displayPositive: false},
   {useCapital: false},
 ];
 
-test.each(merge(data, optionExpectSimplified))(
+test.each(generate(optionExpectSimplified, data))(
   '/1-9/+ve/simplified',
-  (input: number, expected: string, e1, options: options) => {
-    expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-
-const optionExpectCapital: options[] = [
-  {useCapital: true},
-  {useCapital: true, useTraditional: false},
-  {useCapital: true, displayPositive: false},
-  {useCapital: true, useTraditional: false, displayPositive: false},
-];
-test.each(merge(data, optionExpectCapital))(
-  '/1-9/+ve/capital',
-  (input: number, e1, expected: string, options: options) => {
+  (options: options, input: number, expected: string) => {
     expect(convertNumber(input, options)).toBe(expected);
   }
 );
@@ -43,21 +38,69 @@ const optionExpectSimplifiedPositive: options[] = [
   {displayPositive: true, useTraditional: false, useCapital: false},
 ];
 
-test.each(merge(data, optionExpectSimplifiedPositive))(
+test.each(generate(optionExpectSimplifiedPositive, data))(
   '/1-9/+ve/simplified+positive',
-  (input: number, expected: string, e1, options: options) => {
+  (options: options, input: number, expected: string) => {
     expected = POSITIVE + expected;
     expect(convertNumber(input, options)).toBe(expected);
   }
 );
+
+//  ____       _      ___
+// / ___|  ___| |_   / _ \ _ __   ___
+// \___ \ / _ \ __| | | | | '_ \ / _ \
+//  ___) |  __/ |_  | |_| | | | |  __/
+// |____/ \___|\__|  \___/|_| |_|\___|
+
+const optionExpectCapital: options[] = [
+  {useCapital: true},
+  {useCapital: true, useTraditional: false},
+  {useCapital: true, displayPositive: false},
+  {useCapital: true, useTraditional: false, displayPositive: false},
+];
+test.each(generate(optionExpectCapital, data, 1))(
+  '/1-9/+ve/capital',
+  (options: options, input: number, expected: string) => {
+    expect(convertNumber(input, options)).toBe(expected);
+  }
+);
+
 const optionExpectCapitalPositive: options[] = [
   {displayPositive: true, useCapital: true},
   {displayPositive: true, useCapital: true, useTraditional: false},
 ];
 
-test.each(merge(data, optionExpectCapitalPositive))(
+test.each(generate(optionExpectCapitalPositive, data, 1))(
   '/1-9/+ve/capital+positive',
-  (input: number, e1, expected: string, options: options) => {
+  (options: options, input: number, expected: string) => {
+    expected = POSITIVE + expected;
+    expect(convertNumber(input, options)).toBe(expected);
+  }
+);
+
+//  ____       _     _____
+// / ___|  ___| |_  |_   _|_      _____
+// \___ \ / _ \ __|   | | \ \ /\ / / _ \
+//  ___) |  __/ |_    | |  \ V  V / (_) |
+// |____/ \___|\__|   |_|   \_/\_/ \___/
+
+const optionExpectCapitalTraditional: options[] = [
+  {useCapital: true, useTraditional: true},
+];
+
+test.each(generate(optionExpectCapitalTraditional, data, 2))(
+  '/1-9/+ve/capital+traditional',
+  (options: options, input: number, expected: string) => {
+    expect(convertNumber(input, options)).toBe(expected);
+  }
+);
+const optionExpectCapitalTraditionalPositive: options[] = [
+  {useCapital: true, useTraditional: true, displayPositive: true},
+];
+
+test.each(generate(optionExpectCapitalTraditionalPositive, data, 2))(
+  '/1-9/+ve/capital+traditional+positive',
+  (options: options, input: number, expected: string) => {
     expected = POSITIVE + expected;
     expect(convertNumber(input, options)).toBe(expected);
   }
