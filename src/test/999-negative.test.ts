@@ -1,6 +1,6 @@
 import {convertNumber, options} from '../main/index';
 import {generate} from './TestUtils';
-import {data, NEGATIVE} from './data-9';
+import {data, NEGATIVE} from './data-999';
 
 //  ____       _     _____
 // / ___|  ___| |_  |__  /___ _ __ ___
@@ -8,7 +8,7 @@ import {data, NEGATIVE} from './data-9';
 //  ___) |  __/ |_   / /|  __/ | | (_) |
 // |____/ \___|\__| /____\___|_|  \___/
 
-test.each(data)('/1-9/-ve/default', (input: number, expected: string[]) => {
+test.each(data)('/999/-ve/default', (input: number, expected: string[]) => {
   const expectedValue = NEGATIVE.SIMPLIFIED + expected[0];
   expect(convertNumber(-input)).toBe(expectedValue);
 });
@@ -21,7 +21,7 @@ const optionExpectSimplified: options[] = [
 ];
 
 test.each(generate(optionExpectSimplified, data))(
-  '/1-9/-ve/simplified',
+  '/999/-ve/simplified',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
     expect(convertNumber(-input, options)).toBe(expected);
@@ -37,7 +37,7 @@ const optionExpectTraditional: options[] = [
 ];
 
 test.each(generate(optionExpectTraditional, data))(
-  '/1-9/-ve/traditional',
+  '/999/-ve/traditional',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
@@ -59,7 +59,7 @@ const optionExpectCapitalSimplified: options[] = [
   {useCapital: true, useTraditional: false, displayPositive: true},
 ];
 test.each(generate(optionExpectCapitalSimplified, data, 1))(
-  '/1-9/-ve/capital',
+  '/999/-ve/capital',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
     expect(convertNumber(-input, options)).toBe(expected);
@@ -78,7 +78,7 @@ const optionExpectCapitalTraditional: options[] = [
   {useCapital: true, useTraditional: true, displayPositive: true},
 ];
 test.each(generate(optionExpectCapitalTraditional, data, 2))(
-  '/1-9/-ve/capital+traditional',
+  '/999/-ve/capital+traditional',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
