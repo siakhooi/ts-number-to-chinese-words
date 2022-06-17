@@ -187,7 +187,7 @@ class Convertor {
     else return sign + this.convert_1_0000_0000_to_9999_9999_9999_9999(number);
   }
 }
-type options = {
+export type options = {
   useTraditional?: boolean;
   displayPositive?: boolean;
   useCapital?: boolean;

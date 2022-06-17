@@ -3,7 +3,7 @@
 ## `1.5.1`
 
 - fix bugs
-- refactor test for `0`
+- refactor test for `0`, `1-9`
 
 ## `1.5.0` - 16 June 2022
 

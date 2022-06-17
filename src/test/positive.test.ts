@@ -1,8 +1,6 @@
 import {convertNumber} from '../main/index';
 
 test.each([
-  [0, '零'],
-  [1, '正一'],
   [100, '正一百'],
   [1_0000, '正一万'],
   [1_0000_0000, '正一亿'],
@@ -16,7 +14,6 @@ test.each([
   expect(convertNumber(input, {displayPositive: true})).toBe(expected);
 });
 test.each([
-  [1, '正一'],
   [100, '正一百'],
   [1001, '正一千零一'],
   [1_0000, '正一萬'],
