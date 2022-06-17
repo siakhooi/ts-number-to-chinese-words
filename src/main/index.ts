@@ -19,8 +19,8 @@ const CHARACTER_SET_SIMPLIFIED_CAPITAL = {
   TEN: '拾',
   HUNDRED: '佰',
   THOUSAND: '仟',
-  TENTHOUSAND: '萬',
-  HUNDREDMILLION: '億',
+  TENTHOUSAND: '万',
+  HUNDREDMILLION: '亿',
   TRILLION: '兆',
   NEGATIVE: '负',
   POSITIVE: '正',
@@ -192,14 +192,7 @@ type options = {
   displayPositive?: boolean;
   useCapital?: boolean;
 };
-export function convertNumber(
-  number: number,
-  options: options = {
-    useTraditional: false,
-    displayPositive: false,
-    useCapital: false,
-  }
-): string {
+export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);
   return convertor.convertNumber(number);
 }
