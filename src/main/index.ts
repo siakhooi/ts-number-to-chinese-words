@@ -1,57 +1,21 @@
-const ERR_NOT_SUPPORTED = 'Not Supported';
+import {
+  ERR_NOT_SUPPORTED,
+  CHARACTER_SET_SIMPLIFIED_NORMAL,
+  CHARACTER_SET_SIMPLIFIED_CAPITAL,
+  CHARACTER_SET_TRADITIONAL_NORMAL,
+  CHARACTER_SET_TRADITIONAL_CAPITAL,
+} from './Constants';
 
-const CHARACTER_SET_SIMPLIFIED_NORMAL = {
-  BASE: '零一二三四五六七八九',
-  ZERO: '零',
-  TEN: '十',
-  HUNDRED: '百',
-  THOUSAND: '千',
-  TENTHOUSAND: '万',
-  HUNDREDMILLION: '亿',
-  TRILLION: '兆',
-  NEGATIVE: '负',
-  POSITIVE: '正',
-};
-
-const CHARACTER_SET_SIMPLIFIED_CAPITAL = {
-  BASE: '零壹贰叁肆伍陆柒捌玖',
-  ZERO: '零',
-  TEN: '拾',
-  HUNDRED: '佰',
-  THOUSAND: '仟',
-  TENTHOUSAND: '萬',
-  HUNDREDMILLION: '億',
-  TRILLION: '兆',
-  NEGATIVE: '负',
-  POSITIVE: '正',
-};
-
-const CHARACTER_SET_TRADITIONAL_NORMAL = {
-  BASE: '零一二三四五六七八九',
-  ZERO: '零',
-  TEN: '十',
-  HUNDRED: '百',
-  THOUSAND: '千',
-  TENTHOUSAND: '萬',
-  HUNDREDMILLION: '億',
-  TRILLION: '兆',
-  NEGATIVE: '負',
-  POSITIVE: '正',
-};
 class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
   constructor(options: options) {
     this.characterSet = options.useTraditional
-      ? {...CHARACTER_SET_TRADITIONAL_NORMAL}
+      ? options.useCapital
+        ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
+        : {...CHARACTER_SET_TRADITIONAL_NORMAL}
+      : options.useCapital
+      ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
       : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
-
-    if (options.useCapital) {
-      if (options.useTraditional) {
-        throw ERR_NOT_SUPPORTED;
-      } else {
-        this.characterSet = {...CHARACTER_SET_SIMPLIFIED_CAPITAL};
-      }
-    }
 
     if (!options.displayPositive) this.characterSet.POSITIVE = '';
   }
@@ -187,19 +151,12 @@ class Convertor {
     else return sign + this.convert_1_0000_0000_to_9999_9999_9999_9999(number);
   }
 }
-type options = {
+export type options = {
   useTraditional?: boolean;
   displayPositive?: boolean;
   useCapital?: boolean;
 };
-export function convertNumber(
-  number: number,
-  options: options = {
-    useTraditional: false,
-    displayPositive: false,
-    useCapital: false,
-  }
-): string {
+export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);
   return convertor.convertNumber(number);
 }

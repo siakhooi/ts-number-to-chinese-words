@@ -1,6 +1,13 @@
 # Change Log
 
-## `1.5.0`
+## `1.5.1` - 17 June 2022
+
+- `#29`, As user, I want to translate into capital numbers (大写数字) - traditional
+- Fix bugs
+- Refactor test for `0`, `1-9`
+- Refactor into `Constants.ts`
+
+## `1.5.0` - 16 June 2022
 
 - add codacy.com
 - `#11`, As user, I want to translate into capital numbers (大写数字) - simplified

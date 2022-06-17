@@ -59,7 +59,7 @@
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
   - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
-  - optionally use capital (大写) for simplified. (`options: {useCapital: true}`)
+  - optionally use capital (大写). (`options: {useCapital: true}`)
 
 ## Usage
 
@@ -105,6 +105,13 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 | -----: | ---------------------- | ----------------------- |
 |    -17 | 负一十七               | 负一十七                |
 |     17 | 正一十七               | 一十七                  |
+
+#### capital
+
+| number | `useCapital=true` | `useCapital=true,useTraditional=true` |
+| -----: | ----------------- | ------------------------------------- |
+|   -107 | 负壹佰零柒        | 負壹佰零柒                            |
+|   2345 | 贰仟叁佰肆拾伍    | 貳仟叁佰肆拾伍                        |
 
 ## Locations
 
