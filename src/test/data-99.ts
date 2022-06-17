@@ -20,9 +20,3 @@ export const data: [number, string[]][] = [
   [99, ['九十九', '玖拾玖', '玖拾玖']],
   [90, ['九十', '玖拾', '玖拾']],
 ];
-
-export const NEGATIVE = {
-  SIMPLIFIED: '负',
-  TRADITIONAL: '負',
-};
-export const POSITIVE = '正';

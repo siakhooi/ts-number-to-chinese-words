@@ -16,9 +16,3 @@ export const data: [number, string[]][] = [
   [888, ['八百八十八', '捌佰捌拾捌', '捌佰捌拾捌']],
   [999, ['九百九十九', '玖佰玖拾玖', '玖佰玖拾玖']],
 ];
-
-export const NEGATIVE = {
-  SIMPLIFIED: '负',
-  TRADITIONAL: '負',
-};
-export const POSITIVE = '正';
