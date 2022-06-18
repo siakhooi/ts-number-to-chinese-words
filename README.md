@@ -112,7 +112,7 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 | number | `useCapital=true` | `useCapital=true,useTraditional=true` |
 | -----: | ----------------- | ------------------------------------- |
 |   -107 | 负壹佰零柒        | 負壹佰零柒                            |
-|   2345 | 贰仟叁佰肆拾伍    | 貳仟叁佰肆拾伍                        |
+|   2345 | 贰仟叁佰肆拾伍    | 貳仟參佰肆拾伍                        |
 
 ## Locations
 

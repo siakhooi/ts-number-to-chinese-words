@@ -1,8 +1,9 @@
 # Change Log
 
-## unrelease
+## unrelease `1.6.1`
 
 - refactor tests
+- fix bug in capital simplified
 
 ## `1.6.0` - 17 June 2022
 
