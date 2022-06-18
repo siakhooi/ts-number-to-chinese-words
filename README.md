@@ -20,6 +20,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/ts-number-to-chinese-words?label=GPR%20release&logo=github)
 ![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/ts-number-to-chinese-words/total?color=33cb56&logo=github)
 ![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/ts-number-to-chinese-words?logo=github)
+[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
 
 ![npm](https://img.shields.io/npm/v/@siakhooi/number-to-chinese-words?color=0e7fc0&label=NPM%20release&logo=npm)
 ![npm](https://img.shields.io/npm/dt/@siakhooi/number-to-chinese-words?logo=npm)
@@ -111,7 +112,7 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 | number | `useCapital=true` | `useCapital=true,useTraditional=true` |
 | -----: | ----------------- | ------------------------------------- |
 |   -107 | 负壹佰零柒        | 負壹佰零柒                            |
-|   2345 | 贰仟叁佰肆拾伍    | 貳仟叁佰肆拾伍                        |
+|   2345 | 贰仟叁佰肆拾伍    | 貳仟參佰肆拾伍                        |
 
 ## Locations
 

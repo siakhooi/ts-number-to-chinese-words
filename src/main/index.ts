@@ -9,15 +9,26 @@ import {
 class Convertor {
   characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
   constructor(options: options) {
-    this.characterSet = options.useTraditional
-      ? options.useCapital
-        ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
-        : {...CHARACTER_SET_TRADITIONAL_NORMAL}
-      : options.useCapital
-      ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
-      : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
-
+    this.characterSet = this.getCharacterSet(
+      options.useTraditional,
+      options.useCapital
+    );
     if (!options.displayPositive) this.characterSet.POSITIVE = '';
+  }
+
+  private getCharacterSet(
+    useTraditional = false,
+    useCapital = false
+  ): typeof CHARACTER_SET_SIMPLIFIED_NORMAL {
+    if (useTraditional) {
+      return useCapital
+        ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
+        : {...CHARACTER_SET_TRADITIONAL_NORMAL};
+    } else {
+      return useCapital
+        ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
+        : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
+    }
   }
 
   convert_0_to_9(number: number): string {

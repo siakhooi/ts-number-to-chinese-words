@@ -1,6 +1,6 @@
 import {convertNumber, options} from '../main/index';
 import {generate} from './TestUtils';
-import {data, NEGATIVE} from './data-99';
+import {data, NEGATIVE} from './data';
 
 //  ____       _     _____
 // / ___|  ___| |_  |__  /___ _ __ ___
@@ -8,7 +8,7 @@ import {data, NEGATIVE} from './data-99';
 //  ___) |  __/ |_   / /|  __/ | | (_) |
 // |____/ \___|\__| /____\___|_|  \___/
 
-test.each(data)('/99/-ve/default', (input: number, expected: string[]) => {
+test.each(data)('/1-9999/-ve/default', (input: number, expected: string[]) => {
   const expectedValue = NEGATIVE.SIMPLIFIED + expected[0];
   expect(convertNumber(-input)).toBe(expectedValue);
 });
@@ -21,25 +21,9 @@ const optionExpectSimplified: options[] = [
 ];
 
 test.each(generate(optionExpectSimplified, data))(
-  '/99/-ve/simplified',
+  '/1-9999/-ve/simplified',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
-    expect(convertNumber(-input, options)).toBe(expected);
-  }
-);
-const optionExpectTraditional: options[] = [
-  {useTraditional: true},
-  {useTraditional: true, displayPositive: false},
-  {useTraditional: true, displayPositive: true},
-  {useTraditional: true, useCapital: false},
-  {useTraditional: true, useCapital: false, displayPositive: false},
-  {useTraditional: true, useCapital: false, displayPositive: true},
-];
-
-test.each(generate(optionExpectTraditional, data))(
-  '/99/-ve/traditional',
-  (options: options, input: number, expected: string) => {
-    expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
   }
 );
@@ -49,19 +33,18 @@ test.each(generate(optionExpectTraditional, data))(
 // \___ \ / _ \ __| | | | | '_ \ / _ \
 //  ___) |  __/ |_  | |_| | | | |  __/
 // |____/ \___|\__|  \___/|_| |_|\___|
-
-const optionExpectCapitalSimplified: options[] = [
-  {useCapital: true},
-  {useCapital: true, useTraditional: false},
-  {useCapital: true, displayPositive: false},
-  {useCapital: true, displayPositive: true},
-  {useCapital: true, useTraditional: false, displayPositive: false},
-  {useCapital: true, useTraditional: false, displayPositive: true},
+const optionExpectTraditional: options[] = [
+  {useTraditional: true},
+  {useTraditional: true, displayPositive: false},
+  {useTraditional: true, displayPositive: true},
+  {useTraditional: true, useCapital: false},
+  {useTraditional: true, useCapital: false, displayPositive: false},
+  {useTraditional: true, useCapital: false, displayPositive: true},
 ];
-test.each(generate(optionExpectCapitalSimplified, data, 1))(
-  '/99/-ve/capital',
+test.each(generate(optionExpectTraditional, data, 1))(
+  '/1-9999/-ve/traditional',
   (options: options, input: number, expected: string) => {
-    expected = NEGATIVE.SIMPLIFIED + expected;
+    expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
   }
 );
@@ -72,13 +55,35 @@ test.each(generate(optionExpectCapitalSimplified, data, 1))(
 //  ___) |  __/ |_    | |  \ V  V / (_) |
 // |____/ \___|\__|   |_|   \_/\_/ \___/
 
+const optionExpectCapitalSimplified: options[] = [
+  {useCapital: true},
+  {useCapital: true, useTraditional: false},
+  {useCapital: true, displayPositive: false},
+  {useCapital: true, displayPositive: true},
+  {useCapital: true, useTraditional: false, displayPositive: false},
+  {useCapital: true, useTraditional: false, displayPositive: true},
+];
+test.each(generate(optionExpectCapitalSimplified, data, 2))(
+  '/1-9999/-ve/capital',
+  (options: options, input: number, expected: string) => {
+    expected = NEGATIVE.SIMPLIFIED + expected;
+    expect(convertNumber(-input, options)).toBe(expected);
+  }
+);
+
+//  ____       _     _____ _
+// / ___|  ___| |_  |_   _| |__  _ __ ___  ___
+// \___ \ / _ \ __|   | | | '_ \| '__/ _ \/ _ \
+//  ___) |  __/ |_    | | | | | | | |  __/  __/
+// |____/ \___|\__|   |_| |_| |_|_|  \___|\___|
+
 const optionExpectCapitalTraditional: options[] = [
   {useCapital: true, useTraditional: true},
   {useCapital: true, useTraditional: true, displayPositive: false},
   {useCapital: true, useTraditional: true, displayPositive: true},
 ];
-test.each(generate(optionExpectCapitalTraditional, data, 2))(
-  '/99/-ve/capital+traditional',
+test.each(generate(optionExpectCapitalTraditional, data, 3))(
+  '/1-9999/-ve/capital+traditional',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
