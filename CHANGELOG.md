@@ -1,8 +1,12 @@
 # Change Log
 
-## unrelease `1.6.1` - 18 June 2022
+## unrelease
 
-- refactor tests
+- add CodeClimate
+
+## `1.6.1` - 18 June 2022
+
+- refactor tests (99 to 9999_9999)
 - fix bug in capital simplified
 - refactor to remove nested ternary operator
 
