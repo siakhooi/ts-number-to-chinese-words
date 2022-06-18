@@ -27,6 +27,12 @@ test.each(generate(optionExpectSimplified, data))(
     expect(convertNumber(-input, options)).toBe(expected);
   }
 );
+
+//  ____       _      ___
+// / ___|  ___| |_   / _ \ _ __   ___
+// \___ \ / _ \ __| | | | | '_ \ / _ \
+//  ___) |  __/ |_  | |_| | | | |  __/
+// |____/ \___|\__|  \___/|_| |_|\___|
 const optionExpectTraditional: options[] = [
   {useTraditional: true},
   {useTraditional: true, displayPositive: false},
@@ -35,20 +41,13 @@ const optionExpectTraditional: options[] = [
   {useTraditional: true, useCapital: false, displayPositive: false},
   {useTraditional: true, useCapital: false, displayPositive: true},
 ];
-
-test.each(generate(optionExpectTraditional, data))(
+test.each(generate(optionExpectTraditional, data, 1))(
   '/1-9999/-ve/traditional',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
   }
 );
-
-//  ____       _      ___
-// / ___|  ___| |_   / _ \ _ __   ___
-// \___ \ / _ \ __| | | | | '_ \ / _ \
-//  ___) |  __/ |_  | |_| | | | |  __/
-// |____/ \___|\__|  \___/|_| |_|\___|
 
 //  ____       _     _____
 // / ___|  ___| |_  |_   _|_      _____

@@ -15,9 +15,7 @@ test.each(data)('/1-9999/+ve/default', (input: number, expected: string[]) => {
 const optionExpectSimplified: options[] = [
   {},
   {useTraditional: false},
-  {useTraditional: true},
   {displayPositive: false},
-  {useTraditional: true, displayPositive: false},
   {useTraditional: false, displayPositive: false},
   {useCapital: false},
 ];
@@ -32,9 +30,7 @@ test.each(generate(optionExpectSimplified, data))(
 const optionExpectSimplifiedPositive: options[] = [
   {displayPositive: true},
   {displayPositive: true, useTraditional: false},
-  {displayPositive: true, useTraditional: true},
   {displayPositive: true, useCapital: false},
-  {displayPositive: true, useTraditional: true, useCapital: false},
   {displayPositive: true, useTraditional: false, useCapital: false},
 ];
 
@@ -51,6 +47,29 @@ test.each(generate(optionExpectSimplifiedPositive, data))(
 // \___ \ / _ \ __| | | | | '_ \ / _ \
 //  ___) |  __/ |_  | |_| | | | |  __/
 // |____/ \___|\__|  \___/|_| |_|\___|
+
+const optionExpectTraditional: options[] = [
+  {useTraditional: true},
+  {useTraditional: true, displayPositive: false},
+];
+test.each(generate(optionExpectTraditional, data, 1))(
+  '/1-9999/+ve/traditional',
+  (options: options, input: number, expected: string) => {
+    expect(convertNumber(input, options)).toBe(expected);
+  }
+);
+
+const optionExpectTraditionalPositive: options[] = [
+  {displayPositive: true, useTraditional: true},
+  {displayPositive: true, useTraditional: true, useCapital: false},
+];
+test.each(generate(optionExpectTraditionalPositive, data, 1))(
+  '/1-9999/+ve/traditional+positive',
+  (options: options, input: number, expected: string) => {
+    expected = POSITIVE + expected;
+    expect(convertNumber(input, options)).toBe(expected);
+  }
+);
 
 //  ____       _     _____
 // / ___|  ___| |_  |_   _|_      _____
