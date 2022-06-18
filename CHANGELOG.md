@@ -1,9 +1,10 @@
 # Change Log
 
-## unrelease `1.6.1`
+## unrelease `1.6.1` - 18 June 2022
 
 - refactor tests
 - fix bug in capital simplified
+- refactor to remove nested ternary operator
 
 ## `1.6.0` - 17 June 2022
 
