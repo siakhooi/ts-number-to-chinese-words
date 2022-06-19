@@ -9,6 +9,8 @@ export type CHARACTER_SET_TYPE = {
   TRILLION: string;
   NEGATIVE: string;
   POSITIVE: string;
+  useTraditional: boolean;
+  useCapital: boolean;
 };
 
 const CHARACTER_SET_SIMPLIFIED_NORMAL: CHARACTER_SET_TYPE = {
@@ -22,6 +24,8 @@ const CHARACTER_SET_SIMPLIFIED_NORMAL: CHARACTER_SET_TYPE = {
   TRILLION: '兆',
   NEGATIVE: '负',
   POSITIVE: '正',
+  useTraditional: false,
+  useCapital: false,
 };
 
 const CHARACTER_SET_SIMPLIFIED_CAPITAL: CHARACTER_SET_TYPE = {
@@ -35,6 +39,8 @@ const CHARACTER_SET_SIMPLIFIED_CAPITAL: CHARACTER_SET_TYPE = {
   TRILLION: '兆',
   NEGATIVE: '负',
   POSITIVE: '正',
+  useTraditional: false,
+  useCapital: true,
 };
 
 const CHARACTER_SET_TRADITIONAL_NORMAL: CHARACTER_SET_TYPE = {
@@ -48,6 +54,8 @@ const CHARACTER_SET_TRADITIONAL_NORMAL: CHARACTER_SET_TYPE = {
   TRILLION: '兆',
   NEGATIVE: '負',
   POSITIVE: '正',
+  useTraditional: true,
+  useCapital: false,
 };
 const CHARACTER_SET_TRADITIONAL_CAPITAL: CHARACTER_SET_TYPE = {
   BASE: '零壹貳參肆伍陸柒捌玖',
@@ -60,19 +68,22 @@ const CHARACTER_SET_TRADITIONAL_CAPITAL: CHARACTER_SET_TYPE = {
   TRILLION: '兆',
   NEGATIVE: '負',
   POSITIVE: '正',
+  useTraditional: true,
+  useCapital: true,
 };
+
+const allCharacterSets = [
+  CHARACTER_SET_SIMPLIFIED_NORMAL,
+  CHARACTER_SET_SIMPLIFIED_CAPITAL,
+  CHARACTER_SET_TRADITIONAL_NORMAL,
+  CHARACTER_SET_TRADITIONAL_CAPITAL,
+];
 
 export function getCharacterSet(
   useTraditional = false,
   useCapital = false
 ): CHARACTER_SET_TYPE {
-  if (useTraditional) {
-    return useCapital
-      ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
-      : {...CHARACTER_SET_TRADITIONAL_NORMAL};
-  } else {
-    return useCapital
-      ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
-      : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
-  }
+  return allCharacterSets.filter(
+    x => x.useTraditional === useTraditional && x.useCapital === useCapital
+  )[0];
 }

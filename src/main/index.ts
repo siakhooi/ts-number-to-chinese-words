@@ -72,21 +72,23 @@ class Convertor {
     const char_quotient =
       this.convert_0_to_9999(quotient) + this.characterSet.TENTHOUSAND;
 
-    let char_remainder = '';
-    if (remainder > 0) char_remainder = this.convert_0_to_9999(remainder);
+    let char_remainder = this.convertIfNotZero(remainder);
+
     if (remainder > 0 && remainder < 1000)
       char_remainder = this.characterSet.ZERO + char_remainder;
 
     return char_quotient + char_remainder;
   }
+  private convertIfNotZero(segmentNumber: number, suffix = ''): string {
+    return segmentNumber > 0
+      ? this.convert_0_to_9999(segmentNumber) + suffix
+      : '';
+  }
   convert_1_0000_0000_to_9999_9999_9999_9999(number: number): string {
-    let char_segment1 = '';
     let char_zero_2 = '';
-    let char_segment2 = '';
     let char_zero_3 = '';
-    let char_segment3 = '';
     let char_zero_4 = '';
-    let char_segment4 = '';
+    const CS = this.characterSet;
 
     const segment1 = Math.floor(number / 1_0000_0000_0000);
     const segment_2_to_4 = number % 1_0000_0000_0000;
@@ -95,16 +97,10 @@ class Convertor {
     const segment3 = Math.floor(segment_3_to_4 / 1_0000);
     const segment4 = segment_3_to_4 % 1_0000;
 
-    if (segment1 > 0)
-      char_segment1 =
-        this.convert_0_to_9999(segment1) + this.characterSet.TRILLION;
-    if (segment2 > 0)
-      char_segment2 =
-        this.convert_0_to_9999(segment2) + this.characterSet.HUNDREDMILLION;
-    if (segment3 > 0)
-      char_segment3 =
-        this.convert_0_to_9999(segment3) + this.characterSet.TENTHOUSAND;
-    if (segment4 > 0) char_segment4 = this.convert_0_to_9999(segment4);
+    const char_segment1 = this.convertIfNotZero(segment1, CS.TRILLION);
+    const char_segment2 = this.convertIfNotZero(segment2, CS.HUNDREDMILLION);
+    const char_segment3 = this.convertIfNotZero(segment3, CS.TENTHOUSAND);
+    const char_segment4 = this.convertIfNotZero(segment4);
 
     if (segment4 > 0 && segment4 < 1000) char_zero_4 = this.characterSet.ZERO;
     if (segment3 > 0 && segment3 < 1000) char_zero_3 = this.characterSet.ZERO;
