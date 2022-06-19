@@ -11,7 +11,6 @@ test.each([
   expect(convertNumber(input, {displayPositive: true})).toBe(expected);
 });
 test.each([
-  [700_0000_0000, '正七百億'],
   [9999_9999_9999, '正九千九百九十九億九千九百九十九萬九千九百九十九'],
   [1_0000_0000_0000, '正一兆'],
   [
