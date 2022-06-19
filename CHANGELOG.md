@@ -7,6 +7,7 @@
 - refactor rename variables
 - add CodeClimate.com
 - add CodeFactor.io
+- add snyk.io
 
 ## `1.6.1` - 18 June 2022
 

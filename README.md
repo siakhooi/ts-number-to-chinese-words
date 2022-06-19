@@ -37,7 +37,7 @@
 ![Quality-Codecov](https://img.shields.io/badge/Quality-Codecov-purple)
 ![Codecov](https://img.shields.io/codecov/c/github/siakhooi/ts-number-to-chinese-words?logo=codecov)
 ![Quality-Codacy](https://img.shields.io/badge/Quality-Codacy-purple)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/153d0b6d94ba4e289514cd3b0f51a992)](https://www.codacy.com/gh/siakhooi/ts-hello-typescript/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-hello-typescript&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Coverage)
 ![Quality-CodeClimate](https://img.shields.io/badge/Quality-CodeClimate-purple)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3378c5776a49c26b8362/maintainability)](https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words/maintainability)
@@ -59,6 +59,9 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 ![Quality-CodeFactor](https://img.shields.io/badge/Quality-CodeFactor-purple)
 [![CodeFactor](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words/badge)](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words)
+![Quality-Snyk](https://img.shields.io/badge/Quality-Snyk-purple)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/siakhooi/ts-number-to-chinese-words)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@siakhooi/number-to-chinese-words)
 
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
@@ -134,3 +137,4 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 - <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>
 - <https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words>
 - <https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words>
+- <https://app.snyk.io/org/siakhooi/projects>
