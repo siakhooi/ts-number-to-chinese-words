@@ -1,9 +1,10 @@
 # Change Log
 
-## unrelease
+## unrelease - 19 June 2022
 
 - add CodeClimate
 - refactor tests (9ww-99ww)
+- fix workflow
 
 ## `1.6.1` - 18 June 2022
 
