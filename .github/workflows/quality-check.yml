@@ -32,11 +32,15 @@ jobs:
           SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
       - name: Upload to Codecov.io
         uses: codecov/codecov-action@v3
-      - name: Upload to codacy-coverage-reporter
+      - name: Upload to Codacy.com
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/clover.xml
+      - name: Upload to CodeClimate.com
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:

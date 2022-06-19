@@ -1,11 +1,13 @@
-import {data as data9} from './data-9';
-import {data as data99} from './data-99';
-import {data as data999} from './data-999';
-import {data as data9999} from './data-9999';
-import {data as data99999} from './data-99999';
-import {data as data999999} from './data-999999';
-import {data as data9999999} from './data-9999999';
-import {data as data99999999} from './data-99999999';
+import {data as data_01} from './data-digit-01';
+import {data as data_02} from './data-digit-02';
+import {data as data_03} from './data-digit-03';
+import {data as data_04} from './data-digit-04';
+import {data as data_05} from './data-digit-05';
+import {data as data_06} from './data-digit-06';
+import {data as data_07} from './data-digit-07';
+import {data as data_08} from './data-digit-08';
+import {data as data_09} from './data-digit-09';
+import {data as data_10} from './data-digit-10';
 
 export const NEGATIVE = {
   SIMPLIFIED: '负',
@@ -14,12 +16,14 @@ export const NEGATIVE = {
 export const POSITIVE = '正';
 
 export const data = [
-  ...data9,
-  ...data99,
-  ...data999,
-  ...data9999,
-  ...data99999,
-  ...data999999,
-  ...data9999999,
-  ...data99999999,
+  ...data_01,
+  ...data_02,
+  ...data_03,
+  ...data_04,
+  ...data_05,
+  ...data_06,
+  ...data_07,
+  ...data_08,
+  ...data_09,
+  ...data_10,
 ];

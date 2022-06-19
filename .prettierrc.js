@@ -2,7 +2,7 @@ module.exports = {
   ...require('gts/.prettierrc.json')
   , "overrides": [
     {
-      "files": "data-9999*.ts",
+      "files": "data-digit-*.ts",
       "options": {
         "printWidth": 999
       }
