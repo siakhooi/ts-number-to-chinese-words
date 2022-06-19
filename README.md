@@ -59,7 +59,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
-![visitors](https://xvisitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
 
 ## Features
 
