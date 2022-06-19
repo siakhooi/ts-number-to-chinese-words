@@ -16,47 +16,44 @@ class Convertor {
     return this.characterSet.BASE.charAt(number);
   }
   convert_10_to_99(number: number): string {
-    const quotient = Math.floor(number / 10);
-    const remainder = number % 10;
+    const segment1 = Math.floor(number / 10);
+    const segment2 = number % 10;
 
-    const char_quotient = this.convert_0_to_9(quotient) + this.characterSet.TEN;
-    const char_remainder =
-      remainder === 0 ? '' : this.convert_0_to_9(remainder);
+    const charSegment1 = this.convert_0_to_9(segment1) + this.characterSet.TEN;
+    const charSegment2 = segment2 === 0 ? '' : this.convert_0_to_9(segment2);
 
-    return char_quotient + char_remainder;
+    return charSegment1 + charSegment2;
   }
   convert_100_to_999(number: number): string {
-    const quotient = Math.floor(number / 100);
-    const remainder = number % 100;
+    const segment1 = Math.floor(number / 100);
+    const segment2 = number % 100;
 
-    const char_quotient =
-      this.convert_0_to_9(quotient) + this.characterSet.HUNDRED;
-    let char_remainder = '';
+    const charSegment1 =
+      this.convert_0_to_9(segment1) + this.characterSet.HUNDRED;
+    let charSegment2 = '';
 
-    if (remainder > 0 && remainder < 10)
-      char_remainder = this.characterSet.ZERO + this.convert_0_to_9(remainder);
-    else if (remainder >= 10) char_remainder = this.convert_10_to_99(remainder);
+    if (segment2 > 0 && segment2 < 10)
+      charSegment2 = this.characterSet.ZERO + this.convert_0_to_9(segment2);
+    else if (segment2 >= 10) charSegment2 = this.convert_10_to_99(segment2);
 
-    return char_quotient + char_remainder;
+    return charSegment1 + charSegment2;
   }
   convert_1000_to_9999(number: number): string {
-    const quotient = Math.floor(number / 1000);
-    const remainder = number % 1000;
+    const segment1 = Math.floor(number / 1000);
+    const segment2 = number % 1000;
 
-    const char_quotient =
-      this.convert_0_to_9(quotient) + this.characterSet.THOUSAND;
+    const charSegment1 =
+      this.convert_0_to_9(segment1) + this.characterSet.THOUSAND;
 
-    let char_remainder = '';
+    let charSegment2 = '';
 
-    if (remainder > 0 && remainder < 10)
-      char_remainder = this.characterSet.ZERO + this.convert_0_to_9(remainder);
-    else if (remainder >= 10 && remainder < 100)
-      char_remainder =
-        this.characterSet.ZERO + this.convert_10_to_99(remainder);
-    else if (remainder >= 100)
-      char_remainder = this.convert_100_to_999(remainder);
+    if (segment2 > 0 && segment2 < 10)
+      charSegment2 = this.characterSet.ZERO + this.convert_0_to_9(segment2);
+    else if (segment2 >= 10 && segment2 < 100)
+      charSegment2 = this.characterSet.ZERO + this.convert_10_to_99(segment2);
+    else if (segment2 >= 100) charSegment2 = this.convert_100_to_999(segment2);
 
-    return char_quotient + char_remainder;
+    return charSegment1 + charSegment2;
   }
   convert_0_to_9999(number: number): string {
     if (number < 10) return this.convert_0_to_9(number);
@@ -66,18 +63,18 @@ class Convertor {
   }
 
   convert_1_0000_to_9999_9999(number: number): string {
-    const quotient = Math.floor(number / 1_0000);
-    const remainder = number % 1_0000;
+    const segment1 = Math.floor(number / 1_0000);
+    const segment2 = number % 1_0000;
 
-    const char_quotient =
-      this.convert_0_to_9999(quotient) + this.characterSet.TENTHOUSAND;
+    const charSegment1 =
+      this.convert_0_to_9999(segment1) + this.characterSet.TENTHOUSAND;
 
-    let char_remainder = this.convertIfNotZero(remainder);
+    let charSegment2 = this.convertIfNotZero(segment2);
 
-    if (remainder > 0 && remainder < 1000)
-      char_remainder = this.characterSet.ZERO + char_remainder;
+    if (segment2 > 0 && segment2 < 1000)
+      charSegment2 = this.characterSet.ZERO + charSegment2;
 
-    return char_quotient + char_remainder;
+    return charSegment1 + charSegment2;
   }
   private convertIfNotZero(segmentNumber: number, suffix = ''): string {
     return segmentNumber > 0

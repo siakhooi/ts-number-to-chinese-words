@@ -2,8 +2,9 @@
 
 ## unrelease - 19 June 2022
 
-- refactor tests (9ww-999ww)
+- refactor tests (9ww-9999ww)
 - fix workflow
+- refactor rename variables
 - add CodeClimate.com
 - add CodeFactor.io
 
