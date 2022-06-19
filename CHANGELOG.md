@@ -2,9 +2,10 @@
 
 ## unrelease - 19 June 2022
 
-- add CodeClimate
+- add CodeClimate.com
 - refactor tests (9ww-99ww)
 - fix workflow
+- add CodeFactor.io
 
 ## `1.6.1` - 18 June 2022
 

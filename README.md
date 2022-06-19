@@ -57,6 +57,9 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=coverage)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
+![Quality-CodeFactor](https://img.shields.io/badge/Quality-CodeFactor-purple)
+[![CodeFactor](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words/badge)](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words)
+
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
@@ -130,3 +133,4 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 - <https://app.codecov.io/gh/siakhooi/ts-number-to-chinese-words>
 - <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>
 - <https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words>
+- <https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words>
