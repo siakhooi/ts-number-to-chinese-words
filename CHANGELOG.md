@@ -3,6 +3,7 @@
 ## unrelease
 
 - add CodeClimate
+- refactor tests (9ww-99ww)
 
 ## `1.6.1` - 18 June 2022
 

@@ -6,6 +6,8 @@ import {data as data99999} from './data-99999';
 import {data as data999999} from './data-999999';
 import {data as data9999999} from './data-9999999';
 import {data as data99999999} from './data-99999999';
+import {data as data999999999} from './data-9_9999_9999';
+import {data as data9999999999} from './data-99_9999_9999';
 
 export const NEGATIVE = {
   SIMPLIFIED: '负',
@@ -22,4 +24,6 @@ export const data = [
   ...data999999,
   ...data9999999,
   ...data99999999,
+  ...data999999999,
+  ...data9999999999,
 ];
