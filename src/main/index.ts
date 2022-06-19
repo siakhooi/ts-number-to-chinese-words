@@ -146,10 +146,13 @@ class Convertor {
     );
   }
 
-  convertNumber(number: number): string {
+  private checkNotSupportedCases(number: number) {
     if (number < -Number.MAX_SAFE_INTEGER || number > Number.MAX_SAFE_INTEGER)
       throw ERR_NOT_SUPPORTED;
     if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
+  }
+  convertNumber(number: number): string {
+    this.checkNotSupportedCases(number);
 
     let sign = '';
     if (number < 0) sign = this.characterSet.NEGATIVE;
