@@ -1,34 +1,15 @@
-import {
-  ERR_NOT_SUPPORTED,
-  CHARACTER_SET_SIMPLIFIED_NORMAL,
-  CHARACTER_SET_SIMPLIFIED_CAPITAL,
-  CHARACTER_SET_TRADITIONAL_NORMAL,
-  CHARACTER_SET_TRADITIONAL_CAPITAL,
-} from './Constants';
+import {ERR_NOT_SUPPORTED} from './Constants';
+import {getCharacterSet, CHARACTER_SET_TYPE} from './CharacterSets';
 
 class Convertor {
-  characterSet: typeof CHARACTER_SET_SIMPLIFIED_NORMAL;
+  characterSet: CHARACTER_SET_TYPE;
+  options: options;
   constructor(options: options) {
-    this.characterSet = this.getCharacterSet(
+    this.options = options;
+    this.characterSet = getCharacterSet(
       options.useTraditional,
       options.useCapital
     );
-    if (!options.displayPositive) this.characterSet.POSITIVE = '';
-  }
-
-  private getCharacterSet(
-    useTraditional = false,
-    useCapital = false
-  ): typeof CHARACTER_SET_SIMPLIFIED_NORMAL {
-    if (useTraditional) {
-      return useCapital
-        ? {...CHARACTER_SET_TRADITIONAL_CAPITAL}
-        : {...CHARACTER_SET_TRADITIONAL_NORMAL};
-    } else {
-      return useCapital
-        ? {...CHARACTER_SET_SIMPLIFIED_CAPITAL}
-        : {...CHARACTER_SET_SIMPLIFIED_NORMAL};
-    }
   }
 
   convert_0_to_9(number: number): string {
@@ -151,13 +132,20 @@ class Convertor {
       throw ERR_NOT_SUPPORTED;
     if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
   }
+
+  private getSign(number: number): string {
+    if (number < 0) return this.characterSet.NEGATIVE;
+
+    if (number > 0 && this.options.displayPositive)
+      return this.characterSet.POSITIVE;
+    return '';
+  }
   convertNumber(number: number): string {
     this.checkNotSupportedCases(number);
 
-    let sign = '';
-    if (number < 0) sign = this.characterSet.NEGATIVE;
-    if (number > 0) sign = this.characterSet.POSITIVE;
-    if (number < 0) number = -number;
+    const sign = this.getSign(number);
+
+    number = Math.abs(number);
 
     if (number < 1_0000) return sign + this.convert_0_to_9999(number);
     else if (number < 1_0000_0000)
