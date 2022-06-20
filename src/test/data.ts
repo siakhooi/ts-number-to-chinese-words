@@ -1,3 +1,4 @@
+import {data as data_local} from './data-digit-local';
 import {data as data_01} from './data-digit-01';
 import {data as data_02} from './data-digit-02';
 import {data as data_03} from './data-digit-03';
@@ -20,20 +21,28 @@ export const NEGATIVE = {
 };
 export const POSITIVE = '正';
 
-export const data = [
-  ...data_01,
-  ...data_02,
-  ...data_03,
-  ...data_04,
-  ...data_05,
-  ...data_06,
-  ...data_07,
-  ...data_08,
-  ...data_09,
-  ...data_10,
-  ...data_11,
-  ...data_12,
-  ...data_13,
-  ...data_14,
-  ...data_15,
-];
+let data1: [number, string[]][] = [];
+
+if (process.env.RUN_IN_LOCAL_PC === 'Y') {
+  data1 = [...data_local];
+} else {
+  data1 = [
+    ...data_01,
+    ...data_02,
+    ...data_03,
+    ...data_04,
+    ...data_05,
+    ...data_06,
+    ...data_07,
+    ...data_08,
+    ...data_09,
+    ...data_10,
+    ...data_11,
+    ...data_12,
+    ...data_13,
+    ...data_14,
+    ...data_15,
+  ];
+}
+
+export const data = [...data1];

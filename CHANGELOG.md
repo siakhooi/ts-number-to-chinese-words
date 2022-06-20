@@ -8,6 +8,7 @@
 - refactor convert_1_0000_0000_to_9999_9999_9999_9999
 - refactor CharacterSet, fillZeroIfTrue
 - refactor tests into Simplified_Normal, Traditional_Normal, Simplified_Capital, Traditional_Capital
+- add `RUN_IN_LOCAL_PC` environment variable support
 
 ## `1.6.1` - 18 June 2022
 
