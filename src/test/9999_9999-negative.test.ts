@@ -2,32 +2,6 @@ import {convertNumber, options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, NEGATIVE} from './data';
 
-//  ____       _     _____
-// / ___|  ___| |_  |__  /___ _ __ ___
-// \___ \ / _ \ __|   / // _ \ '__/ _ \
-//  ___) |  __/ |_   / /|  __/ | | (_) |
-// |____/ \___|\__| /____\___|_|  \___/
-
-test.each(data)('/1-9999/-ve/default', (input: number, expected: string[]) => {
-  const expectedValue = NEGATIVE.SIMPLIFIED + expected[0];
-  expect(convertNumber(-input)).toBe(expectedValue);
-});
-
-const optionExpectSimplified: options[] = [
-  {},
-  {useTraditional: false},
-  {displayPositive: false},
-  {useCapital: false},
-];
-
-test.each(generate(optionExpectSimplified, data))(
-  '/1-9999/-ve/simplified',
-  (options: options, input: number, expected: string) => {
-    expected = NEGATIVE.SIMPLIFIED + expected;
-    expect(convertNumber(-input, options)).toBe(expected);
-  }
-);
-
 //  ____       _      ___
 // / ___|  ___| |_   / _ \ _ __   ___
 // \___ \ / _ \ __| | | | | '_ \ / _ \
