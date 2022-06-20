@@ -2,35 +2,6 @@ import {convertNumber, options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, POSITIVE} from './data';
 
-//  ____       _      ___
-// / ___|  ___| |_   / _ \ _ __   ___
-// \___ \ / _ \ __| | | | | '_ \ / _ \
-//  ___) |  __/ |_  | |_| | | | |  __/
-// |____/ \___|\__|  \___/|_| |_|\___|
-
-const optionExpectTraditional: options[] = [
-  {useTraditional: true},
-  {useTraditional: true, displayPositive: false},
-];
-test.each(generate(optionExpectTraditional, data, 1))(
-  '/1-9999/+ve/traditional',
-  (options: options, input: number, expected: string) => {
-    expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-
-const optionExpectTraditionalPositive: options[] = [
-  {displayPositive: true, useTraditional: true},
-  {displayPositive: true, useTraditional: true, useCapital: false},
-];
-test.each(generate(optionExpectTraditionalPositive, data, 1))(
-  '/1-9999/+ve/traditional+positive',
-  (options: options, input: number, expected: string) => {
-    expected = POSITIVE + expected;
-    expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-
 //  ____       _     _____
 // / ___|  ___| |_  |_   _|_      _____
 // \___ \ / _ \ __|   | | \ \ /\ / / _ \
