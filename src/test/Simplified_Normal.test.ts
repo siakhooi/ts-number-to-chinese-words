@@ -25,12 +25,6 @@ test.each(data)(
   }
 );
 
-//  _   _                            _
-// | \ | | ___  _ __ _ __ ___   __ _| |
-// |  \| |/ _ \| '__| '_ ` _ \ / _` | |
-// | |\  | (_) | |  | | | | | | (_| | |
-// |_| \_|\___/|_|  |_| |_| |_|\__,_|_|
-
 const optionExpectSimplified: options[] = [
   {},
   {useTraditional: false},
@@ -39,6 +33,19 @@ const optionExpectSimplified: options[] = [
   {displayPositive: false},
 ];
 
+const optionExpectSimplifiedPositive: options[] = [
+  {displayPositive: true},
+  {displayPositive: true, useTraditional: false},
+  {displayPositive: true, useCapital: false},
+  {displayPositive: true, useTraditional: false, useCapital: false},
+];
+
+//  _   _                            _
+// | \ | | ___  _ __ _ __ ___   __ _| |
+// |  \| |/ _ \| '__| '_ ` _ \ / _` | |
+// | |\  | (_) | |  | | | | | | (_| | |
+// |_| \_|\___/|_|  |_| |_| |_|\__,_|_|
+
 test.each(generate(optionExpectSimplified, data))(
   TESTSUITE + '/+ve/option',
   (options: options, input: number, expected: string) => {
@@ -46,7 +53,9 @@ test.each(generate(optionExpectSimplified, data))(
   }
 );
 
-test.each(generate(optionExpectSimplified, data))(
+test.each(
+  generate({...optionExpectSimplified, ...optionExpectSimplifiedPositive}, data)
+)(
   TESTSUITE + '/-ve/option',
   (options: options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
@@ -61,24 +70,10 @@ test.each(generate(optionExpectSimplified, data))(
 //  \__,_|_|___/ .__/|_|\__,_|\__, | |_|   \___/|___/_|\__|_| \_/ \___|
 //             |_|            |___/
 
-const optionExpectSimplifiedPositive: options[] = [
-  {displayPositive: true},
-  {displayPositive: true, useTraditional: false},
-  {displayPositive: true, useCapital: false},
-  {displayPositive: true, useTraditional: false, useCapital: false},
-];
-
 test.each(generate(optionExpectSimplifiedPositive, data))(
   TESTSUITE + '/+ve/option/displayPositive',
   (options: options, input: number, expected: string) => {
     expected = POSITIVE + expected;
     expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-test.each(generate(optionExpectSimplifiedPositive, data))(
-  TESTSUITE + '/-ve/option/displayPositive',
-  (options: options, input: number, expected: string) => {
-    expected = NEGATIVE.SIMPLIFIED + expected;
-    expect(convertNumber(-input, options)).toBe(expected);
   }
 );
