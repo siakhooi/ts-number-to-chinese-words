@@ -1,8 +1,8 @@
 import {ERR_NOT_SUPPORTED} from './Constants';
-import {getCharacterSet, CHARACTER_SET_TYPE} from './CharacterSets';
+import {getCharacterSet, CharacterSet} from './CharacterSets';
 
 class Convertor {
-  characterSet: CHARACTER_SET_TYPE;
+  characterSet: CharacterSet;
   options: options;
   constructor(options: options) {
     this.options = options;
