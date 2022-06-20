@@ -81,6 +81,9 @@ class Convertor {
       ? this.convert_0_to_9999(segmentNumber) + suffix
       : '';
   }
+  private fillZeroIfTrue(expression: boolean): string {
+    return expression ? this.characterSet.ZERO : '';
+  }
   convert_1_0000_0000_to_9999_9999_9999_9999(number: number): string {
     const CS = this.characterSet;
 
@@ -96,16 +99,14 @@ class Convertor {
     const char_segment3 = this.convertIfNotZero(segment3, CS.TENTHOUSAND);
     const char_segment4 = this.convertIfNotZero(segment4);
 
-    const char_zero_4 = segment4 > 0 && segment4 < 1000 ? CS.ZERO : '';
-    const char_zero_3 =
+    const char_zero_4 = this.fillZeroIfTrue(segment4 > 0 && segment4 < 1000);
+    const char_zero_3 = this.fillZeroIfTrue(
       (segment3 > 0 && segment3 < 1000) || (segment3 === 0 && segment4 >= 1000)
-        ? CS.ZERO
-        : '';
-    const char_zero_2 =
+    );
+    const char_zero_2 = this.fillZeroIfTrue(
       (segment1 > 0 && segment2 > 0 && segment2 < 1000) ||
-      (segment1 > 0 && segment2 === 0 && segment3 >= 1000)
-        ? CS.ZERO
-        : '';
+        (segment1 > 0 && segment2 === 0 && segment3 >= 1000)
+    );
 
     return (
       char_segment1 +
