@@ -2,46 +2,6 @@ import {convertNumber, options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, POSITIVE} from './data';
 
-//  ____       _     _____
-// / ___|  ___| |_  |__  /___ _ __ ___
-// \___ \ / _ \ __|   / // _ \ '__/ _ \
-//  ___) |  __/ |_   / /|  __/ | | (_) |
-// |____/ \___|\__| /____\___|_|  \___/
-
-test.each(data)('/1-9999/+ve/default', (input: number, expected: string[]) => {
-  expect(convertNumber(input)).toBe(expected[0]);
-});
-
-const optionExpectSimplified: options[] = [
-  {},
-  {useTraditional: false},
-  {displayPositive: false},
-  {useTraditional: false, displayPositive: false},
-  {useCapital: false},
-];
-
-test.each(generate(optionExpectSimplified, data))(
-  '/1-9999/+ve/simplified',
-  (options: options, input: number, expected: string) => {
-    expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-
-const optionExpectSimplifiedPositive: options[] = [
-  {displayPositive: true},
-  {displayPositive: true, useTraditional: false},
-  {displayPositive: true, useCapital: false},
-  {displayPositive: true, useTraditional: false, useCapital: false},
-];
-
-test.each(generate(optionExpectSimplifiedPositive, data))(
-  '/1-9999/+ve/simplified+positive',
-  (options: options, input: number, expected: string) => {
-    expected = POSITIVE + expected;
-    expect(convertNumber(input, options)).toBe(expected);
-  }
-);
-
 //  ____       _      ___
 // / ___|  ___| |_   / _ \ _ __   ___
 // \___ \ / _ \ __| | | | | '_ \ / _ \
