@@ -4,7 +4,7 @@
 
 - refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww, 999www)
 - fix workflow
-- add CodeClimate.com, CodeFactor.io, snyk.io
+- add CodeClimate.com, CodeFactor.io, snyk.io, LGTM
 - refactor convert_1_0000_0000_to_9999_9999_9999_9999
 - refactor CharacterSet, fillZeroIfTrue
 - refactor tests into Simplified_Normal, Traditional_Normal, Simplified_Capital, Traditional_Capital
