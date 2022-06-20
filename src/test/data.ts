@@ -12,6 +12,7 @@ import {data as data_11} from './data-digit-11';
 import {data as data_12} from './data-digit-12';
 import {data as data_13} from './data-digit-13';
 import {data as data_14} from './data-digit-14';
+import {data as data_15} from './data-digit-15';
 
 export const NEGATIVE = {
   SIMPLIFIED: '负',
@@ -34,4 +35,5 @@ export const data = [
   ...data_12,
   ...data_13,
   ...data_14,
+  ...data_15,
 ];

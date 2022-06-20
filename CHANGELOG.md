@@ -2,7 +2,7 @@
 
 ## unrelease - 20 June 2022
 
-- refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww)
+- refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww, 999www)
 - fix workflow
 - add CodeClimate.com, CodeFactor.io, snyk.io
 - refactor convert_1_0000_0000_to_9999_9999_9999_9999
