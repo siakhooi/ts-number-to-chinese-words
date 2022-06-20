@@ -4,13 +4,10 @@
 
 - refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww)
 - fix workflow
-- add CodeClimate.com
-- add CodeFactor.io
-- add snyk.io
-- refactor rename variables
+- add CodeClimate.com, CodeFactor.io, snyk.io
 - refactor convert_1_0000_0000_to_9999_9999_9999_9999
 - refactor CharacterSet
-- refactor test into Simplified_Normal
+- refactor test into Simplified_Normal, Traditional_Normal, Simplified_Capital
 
 ## `1.6.1` - 18 June 2022
 
