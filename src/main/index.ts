@@ -82,9 +82,6 @@ class Convertor {
       : '';
   }
   convert_1_0000_0000_to_9999_9999_9999_9999(number: number): string {
-    let char_zero_2 = '';
-    let char_zero_3 = '';
-    let char_zero_4 = '';
     const CS = this.characterSet;
 
     const segment1 = Math.floor(number / 1_0000_0000_0000);
@@ -99,15 +96,16 @@ class Convertor {
     const char_segment3 = this.convertIfNotZero(segment3, CS.TENTHOUSAND);
     const char_segment4 = this.convertIfNotZero(segment4);
 
-    if (segment4 > 0 && segment4 < 1000) char_zero_4 = this.characterSet.ZERO;
-    if (segment3 > 0 && segment3 < 1000) char_zero_3 = this.characterSet.ZERO;
-    if (segment1 > 0 && segment2 > 0 && segment2 < 1000)
-      char_zero_2 = this.characterSet.ZERO;
-
-    if (segment4 >= 1000 && segment3 === 0)
-      char_zero_3 = this.characterSet.ZERO;
-    if (segment1 > 0 && segment3 >= 1000 && segment2 === 0)
-      char_zero_2 = this.characterSet.ZERO;
+    const char_zero_4 = segment4 > 0 && segment4 < 1000 ? CS.ZERO : '';
+    const char_zero_3 =
+      (segment3 > 0 && segment3 < 1000) || (segment3 === 0 && segment4 >= 1000)
+        ? CS.ZERO
+        : '';
+    const char_zero_2 =
+      (segment1 > 0 && segment2 > 0 && segment2 < 1000) ||
+      (segment1 > 0 && segment2 === 0 && segment3 >= 1000)
+        ? CS.ZERO
+        : '';
 
     return (
       char_segment1 +

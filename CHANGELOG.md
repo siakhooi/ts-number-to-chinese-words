@@ -9,6 +9,7 @@
 - add CodeClimate.com
 - add CodeFactor.io
 - add snyk.io
+- refactor convert_1_0000_0000_to_9999_9999_9999_9999
 
 ## `1.6.1` - 18 June 2022
 
