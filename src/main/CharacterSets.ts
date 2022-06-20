@@ -15,29 +15,22 @@ export class CharacterSet {
   useCapital: boolean;
 
   constructor(
-    BASE: string,
-    ZERO: string,
-    TEN: string,
-    HUNDRED: string,
-    THOUSAND: string,
-    TENTHOUSAND: string,
-    HUNDREDMILLION: string,
-    TRILLION: string,
-    NEGATIVE: string,
-    POSITIVE: string,
+    Base: string,
+    Magnitudes: string,
+    Sign: string,
     useTraditional: boolean,
     useCapital: boolean
   ) {
-    this.BASE = BASE;
-    this.ZERO = ZERO;
-    this.TEN = TEN;
-    this.HUNDRED = HUNDRED;
-    this.THOUSAND = THOUSAND;
-    this.TENTHOUSAND = TENTHOUSAND;
-    this.HUNDREDMILLION = HUNDREDMILLION;
-    this.TRILLION = TRILLION;
-    this.NEGATIVE = NEGATIVE;
-    this.POSITIVE = POSITIVE;
+    this.BASE = Base;
+    this.ZERO = Base[0];
+    this.TEN = Magnitudes[0];
+    this.HUNDRED = Magnitudes[1];
+    this.THOUSAND = Magnitudes[2];
+    this.TENTHOUSAND = Magnitudes[3];
+    this.HUNDREDMILLION = Magnitudes[4];
+    this.TRILLION = Magnitudes[5];
+    this.POSITIVE = Sign[0];
+    this.NEGATIVE = Sign[1];
     this.useTraditional = useTraditional;
     this.useCapital = useCapital;
   }
