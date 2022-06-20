@@ -2,10 +2,13 @@
 
 ## unrelease - 19 June 2022
 
-- refactor tests (9ww-999ww)
+- refactor tests (9ww,99ww,999ww,9999ww,9www)
 - fix workflow
+- refactor rename variables
+- refactor into CharacterSet class
 - add CodeClimate.com
 - add CodeFactor.io
+- add snyk.io
 
 ## `1.6.1` - 18 June 2022
 
