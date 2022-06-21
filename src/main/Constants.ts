@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {CharacterSet} from './CharacterSets';
 
 export const ERR_NOT_SUPPORTED = 'Not Supported';

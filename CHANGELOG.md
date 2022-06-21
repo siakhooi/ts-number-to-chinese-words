@@ -9,6 +9,7 @@
 - refactor CharacterSet, fillZeroIfTrue
 - refactor tests into Simplified_Normal, Traditional_Normal, Simplified_Capital, Traditional_Capital
 - add `RUN_IN_LOCAL_PC` environment variable support
+- remove eslint rules
 
 ## `1.6.1` - 18 June 2022
 
