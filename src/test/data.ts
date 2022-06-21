@@ -46,3 +46,4 @@ if (process.env.RUN_IN_LOCAL_PC === 'Y') {
 }
 
 export const data = [...data1];
+data1 = [];

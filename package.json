@@ -4,7 +4,7 @@
   "description": "Library to translate number into chinese words",
   "main": "dist/main/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles --logHeapUsage",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
