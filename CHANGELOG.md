@@ -2,15 +2,14 @@
 
 ## unrelease - 20 June 2022
 
-- refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww)
+- refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww, 999www)
 - fix workflow
-- add CodeClimate.com
-- add CodeFactor.io
-- add snyk.io
-- refactor rename variables
+- add CodeClimate.com, CodeFactor.io, snyk.io, LGTM
 - refactor convert_1_0000_0000_to_9999_9999_9999_9999
-- refactor CharacterSet
-- refactor test into Simplified_Normal
+- refactor CharacterSet, fillZeroIfTrue
+- refactor tests into Simplified_Normal, Traditional_Normal, Simplified_Capital, Traditional_Capital
+- add `RUN_IN_LOCAL_PC` environment variable support
+- remove eslint rules
 
 ## `1.6.1` - 18 June 2022
 
