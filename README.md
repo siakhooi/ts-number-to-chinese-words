@@ -84,6 +84,7 @@
   - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
   - optionally use capital (大写). (`options: {useCapital: true}`)
+  - optionally leading one. (`options: {removeLeadingOne: true}`)
 
 ## Usage
 
@@ -99,6 +100,9 @@ console.log(NumberToChinese.convertNumber(7, {displayPositive: true}));
 
 const NumberToChinese = require('@siakhooi/number-to-chinese-words');
 console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
+
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(17, {removeLeadingOne: true}));
 ```
 
 ### Example
@@ -136,6 +140,19 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 | -----: | ----------------- | ------------------------------------- |
 |   -107 | 负壹佰零柒        | 負壹佰零柒                            |
 |   2345 | 贰仟叁佰肆拾伍    | 貳仟參佰肆拾伍                        |
+
+#### remove Leading One
+
+|      number | Simplified                     | Traditional                    |
+| ----------: | ------------------------------ | ------------------------------ |
+|          17 | 十七                           | 十七                           |
+|       10101 | 万零一百零一                   | 萬零一百零一                   |
+|      100001 | 十万零一                       | 十萬零一                       |
+|    10000001 | 千万零一                       | 千萬零一                       |
+|    12345678 | 千二百三十四万五千六百七十八   | 千二百三十四萬五千六百七十八   |
+|   100000000 | 亿                             | 億                             |
+|  1010101010 | 十亿一千零一十万一千零一十     | 十億一千零一十萬一千零一十     |
+| 10101010101 | 百零一亿零一百零一万零一百零一 | 百零一億零一百零一萬零一百零一 |
 
 ## Locations
 

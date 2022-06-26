@@ -1,6 +1,10 @@
 # Change Log
 
-## unrelease - 20 June 2022
+## `1.7.0` - 26 June 2022
+
+- `#14`, as user, i want to optionally remove leading one.
+
+## unrelease - 26 June 2022
 
 - refactor tests (9ww,99ww,999ww,9999ww,9www, 99wwww, 999www, 9999www)
 - add CodeClimate.com, CodeFactor.io, snyk.io, LGTM

@@ -12,24 +12,33 @@ class Convertor {
     );
   }
 
-  convert_0_to_9(number: number): string {
+  convert_0_to_9(
+    number: number,
+    ignoreZero = false,
+    ignoreOne = false
+  ): string {
+    if ((ignoreZero && number === 0) || (ignoreOne && number === 1)) return '';
     return this.characterSet.BASE.charAt(number);
   }
-  convert_10_to_99(number: number): string {
+  convert_10_to_99(number: number, removeLeadingOne = false): string {
     const segment1 = Math.floor(number / 10);
     const segment2 = number % 10;
 
-    const charSegment1 = this.convert_0_to_9(segment1) + this.characterSet.TEN;
-    const charSegment2 = segment2 === 0 ? '' : this.convert_0_to_9(segment2);
+    const charSegment1 =
+      this.convert_0_to_9(segment1, false, removeLeadingOne) +
+      this.characterSet.TEN;
+    const charSegment2 = this.convert_0_to_9(segment2, true);
 
     return charSegment1 + charSegment2;
   }
-  convert_100_to_999(number: number): string {
+
+  convert_100_to_999(number: number, removeLeadingOne = false): string {
     const segment1 = Math.floor(number / 100);
     const segment2 = number % 100;
 
     const charSegment1 =
-      this.convert_0_to_9(segment1) + this.characterSet.HUNDRED;
+      this.convert_0_to_9(segment1, false, removeLeadingOne) +
+      this.characterSet.HUNDRED;
     let charSegment2 = '';
 
     if (segment2 > 0 && segment2 < 10)
@@ -38,12 +47,13 @@ class Convertor {
 
     return charSegment1 + charSegment2;
   }
-  convert_1000_to_9999(number: number): string {
+  convert_1000_to_9999(number: number, removeLeadingOne = false): string {
     const segment1 = Math.floor(number / 1000);
     const segment2 = number % 1000;
 
     const charSegment1 =
-      this.convert_0_to_9(segment1) + this.characterSet.THOUSAND;
+      this.convert_0_to_9(segment1, false, removeLeadingOne) +
+      this.characterSet.THOUSAND;
 
     let charSegment2 = '';
 
@@ -55,19 +65,26 @@ class Convertor {
 
     return charSegment1 + charSegment2;
   }
-  convert_0_to_9999(number: number): string {
-    if (number < 10) return this.convert_0_to_9(number);
-    else if (number < 100) return this.convert_10_to_99(number);
-    else if (number < 1000) return this.convert_100_to_999(number);
-    else return this.convert_1000_to_9999(number);
+  convert_0_to_9999(number: number, removeLeadingOne = false): string {
+    if (number < 10)
+      return this.convert_0_to_9(number, false, removeLeadingOne);
+    else if (number < 100)
+      return this.convert_10_to_99(number, removeLeadingOne);
+    else if (number < 1000)
+      return this.convert_100_to_999(number, removeLeadingOne);
+    else return this.convert_1000_to_9999(number, removeLeadingOne);
   }
 
-  convert_1_0000_to_9999_9999(number: number): string {
+  convert_1_0000_to_9999_9999(
+    number: number,
+    removeLeadingOne = false
+  ): string {
     const segment1 = Math.floor(number / 1_0000);
     const segment2 = number % 1_0000;
 
     const charSegment1 =
-      this.convert_0_to_9999(segment1) + this.characterSet.TENTHOUSAND;
+      this.convert_0_to_9999(segment1, removeLeadingOne) +
+      this.characterSet.TENTHOUSAND;
 
     let charSegment2 = this.convertIfNotZero(segment2);
 
@@ -76,15 +93,22 @@ class Convertor {
 
     return charSegment1 + charSegment2;
   }
-  private convertIfNotZero(segmentNumber: number, suffix = ''): string {
+  private convertIfNotZero(
+    segmentNumber: number,
+    suffix = '',
+    removeLeadingOne = false
+  ): string {
     return segmentNumber > 0
-      ? this.convert_0_to_9999(segmentNumber) + suffix
+      ? this.convert_0_to_9999(segmentNumber, removeLeadingOne) + suffix
       : '';
   }
   private fillZeroIfTrue(expression: boolean): string {
     return expression ? this.characterSet.ZERO : '';
   }
-  convert_1_0000_0000_to_9999_9999_9999_9999(number: number): string {
+  convert_1_0000_0000_to_9999_9999_9999_9999(
+    number: number,
+    removeLeadingOne = false
+  ): string {
     const CS = this.characterSet;
 
     const segment1 = Math.floor(number / 1_0000_0000_0000);
@@ -94,8 +118,16 @@ class Convertor {
     const segment3 = Math.floor(segment_3_to_4 / 1_0000);
     const segment4 = segment_3_to_4 % 1_0000;
 
-    const char_segment1 = this.convertIfNotZero(segment1, CS.TRILLION);
-    const char_segment2 = this.convertIfNotZero(segment2, CS.HUNDREDMILLION);
+    const char_segment1 = this.convertIfNotZero(
+      segment1,
+      CS.TRILLION,
+      removeLeadingOne
+    );
+    const char_segment2 = this.convertIfNotZero(
+      segment2,
+      CS.HUNDREDMILLION,
+      removeLeadingOne && segment1 === 0
+    );
     const char_segment3 = this.convertIfNotZero(segment3, CS.TENTHOUSAND);
     const char_segment4 = this.convertIfNotZero(segment4);
 
@@ -138,17 +170,31 @@ class Convertor {
     const sign = this.getSign(number);
 
     number = Math.abs(number);
+    let convertedValue: string;
 
-    if (number < 1_0000) return sign + this.convert_0_to_9999(number);
+    if (number < 1_0000)
+      convertedValue = this.convert_0_to_9999(
+        number,
+        this.options.removeLeadingOne
+      );
     else if (number < 1_0000_0000)
-      return sign + this.convert_1_0000_to_9999_9999(number);
-    else return sign + this.convert_1_0000_0000_to_9999_9999_9999_9999(number);
+      convertedValue = this.convert_1_0000_to_9999_9999(
+        number,
+        this.options.removeLeadingOne
+      );
+    else
+      convertedValue = this.convert_1_0000_0000_to_9999_9999_9999_9999(
+        number,
+        this.options.removeLeadingOne
+      );
+    return sign + convertedValue;
   }
 }
 export type options = {
   useTraditional?: boolean;
   displayPositive?: boolean;
   useCapital?: boolean;
+  removeLeadingOne?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);
