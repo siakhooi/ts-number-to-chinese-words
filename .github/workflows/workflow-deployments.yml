@@ -1,0 +1,10 @@
+name: Deployment
+on:
+  release:
+    types: [created]
+
+jobs:
+  npm:
+    uses: ./.github/workflows/publish-npm.yml
+  gpr:
+    uses: ./.github/workflows/publish-gpr.yml

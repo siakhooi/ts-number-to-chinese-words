@@ -1,0 +1,19 @@
+name: SonarCloud.io
+
+on: workflow_call
+
+jobs:
+  SonarCloud:
+    name: SonarCloud.io
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: coverage-report
+          path: ./coverage/
+      - run: ls -R
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}

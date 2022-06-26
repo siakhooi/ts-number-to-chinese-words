@@ -1,10 +1,9 @@
 name: Publish to npm registry
-on:
-  release:
-    types: [created]
+
+on: workflow_call
 
 jobs:
-  publish_npm:
+  npmjs:
     name: Publish to npm registry
     runs-on: ubuntu-latest
     steps:

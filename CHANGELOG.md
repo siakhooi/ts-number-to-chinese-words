@@ -3,6 +3,7 @@
 ## `1.7.0` - 26 June 2022
 
 - `#14`, as user, i want to optionally remove leading one.
+- refactor workflows
 
 ## unrelease - 26 June 2022
 
