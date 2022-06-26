@@ -11,70 +11,89 @@ class Convertor {
       options.useCapital
     );
   }
-
   convert_0_to_9(
     number: number,
     ignoreZero = false,
-    ignoreOne = false
+    ignoreOne = false,
+    suffix = ''
   ): string {
-    if ((ignoreZero && number === 0) || (ignoreOne && number === 1)) return '';
-    return this.characterSet.BASE.charAt(number);
+    const c = this.characterSet.BASE.charAt(number);
+    if (number === 0) return ignoreZero ? '' : c;
+
+    if (ignoreOne && number === 1) return suffix;
+    return c + suffix;
   }
-  convert_10_to_99(number: number, removeLeadingOne = false): string {
-    const segment1 = Math.floor(number / 10);
-    const segment2 = number % 10;
-
-    const charSegment1 =
-      this.convert_0_to_9(segment1, false, removeLeadingOne) +
-      this.characterSet.TEN;
-    const charSegment2 = this.convert_0_to_9(segment2, true);
-
-    return charSegment1 + charSegment2;
+  convert_digit_1(
+    number: number,
+    removeLeadingOne: boolean,
+    digit1: number
+  ): string {
+    return this.convert_0_to_9(
+      digit1,
+      number > 9,
+      number < 10 && removeLeadingOne,
+      ''
+    );
   }
-
-  convert_100_to_999(number: number, removeLeadingOne = false): string {
-    const segment1 = Math.floor(number / 100);
-    const segment2 = number % 100;
-
-    const charSegment1 =
-      this.convert_0_to_9(segment1, false, removeLeadingOne) +
-      this.characterSet.HUNDRED;
-    let charSegment2 = '';
-
-    if (segment2 > 0 && segment2 < 10)
-      charSegment2 = this.characterSet.ZERO + this.convert_0_to_9(segment2);
-    else if (segment2 >= 10) charSegment2 = this.convert_10_to_99(segment2);
-
-    return charSegment1 + charSegment2;
+  convert_digit_10(
+    number: number,
+    removeLeadingOne: boolean,
+    digit2: number,
+    digit1: number,
+    digit3: number
+  ): string {
+    return this.convert_0_to_9(
+      digit2,
+      (number >= 100 && digit1 === 0) ||
+        (number >= 1000 && digit3 === 0) ||
+        number < 10,
+      number < 100 && removeLeadingOne,
+      this.characterSet.TEN
+    );
   }
-  convert_1000_to_9999(number: number, removeLeadingOne = false): string {
-    const segment1 = Math.floor(number / 1000);
-    const segment2 = number % 1000;
-
-    const charSegment1 =
-      this.convert_0_to_9(segment1, false, removeLeadingOne) +
-      this.characterSet.THOUSAND;
-
-    let charSegment2 = '';
-
-    if (segment2 > 0 && segment2 < 10)
-      charSegment2 = this.characterSet.ZERO + this.convert_0_to_9(segment2);
-    else if (segment2 >= 10 && segment2 < 100)
-      charSegment2 = this.characterSet.ZERO + this.convert_10_to_99(segment2);
-    else if (segment2 >= 100) charSegment2 = this.convert_100_to_999(segment2);
-
-    return charSegment1 + charSegment2;
+  convert_digit_100(
+    number: number,
+    removeLeadingOne: boolean,
+    digit3: number
+  ): string {
+    return this.convert_0_to_9(
+      digit3,
+      (number >= 1000 && number % 100 === 0) || number < 100,
+      number < 1000 && removeLeadingOne,
+      this.characterSet.HUNDRED
+    );
+  }
+  convert_digit_1000(
+    number: number,
+    removeLeadingOne: boolean,
+    digit4: number
+  ) {
+    return this.convert_0_to_9(
+      digit4,
+      number < 1000,
+      number > 999 && removeLeadingOne,
+      this.characterSet.THOUSAND
+    );
   }
   convert_0_to_9999(number: number, removeLeadingOne = false): string {
-    if (number < 10)
-      return this.convert_0_to_9(number, false, removeLeadingOne);
-    else if (number < 100)
-      return this.convert_10_to_99(number, removeLeadingOne);
-    else if (number < 1000)
-      return this.convert_100_to_999(number, removeLeadingOne);
-    else return this.convert_1000_to_9999(number, removeLeadingOne);
-  }
+    const digit1 = number % 10;
+    const digit2 = Math.floor(number / 10) % 10;
+    const digit3 = Math.floor(number / 100) % 10;
+    const digit4 = Math.floor(number / 1000);
 
+    const char1 = this.convert_digit_1(number, removeLeadingOne, digit1);
+    const char2 = this.convert_digit_10(
+      number,
+      removeLeadingOne,
+      digit2,
+      digit1,
+      digit3
+    );
+    const char3 = this.convert_digit_100(number, removeLeadingOne, digit3);
+    const char4 = this.convert_digit_1000(number, removeLeadingOne, digit4);
+
+    return char4 + char3 + char2 + char1;
+  }
   convert_1_0000_to_9999_9999(
     number: number,
     removeLeadingOne = false
