@@ -1,4 +1,3 @@
-import {data as data_local} from './data-digit-local';
 import {data as data_01} from './data-digit-01';
 import {data as data_02} from './data-digit-02';
 import {data as data_03} from './data-digit-03';
@@ -14,6 +13,7 @@ import {data as data_12} from './data-digit-12';
 import {data as data_13} from './data-digit-13';
 import {data as data_14} from './data-digit-14';
 import {data as data_15} from './data-digit-15';
+import {data as data_16} from './data-digit-16';
 
 export const NEGATIVE = {
   SIMPLIFIED: '负',
@@ -23,9 +23,7 @@ export const POSITIVE = '正';
 
 let data1: [number, string[]][] = [];
 
-if (process.env.RUN_IN_LOCAL_PC === 'Y') {
-  data1 = [...data_local];
-} else {
+if (process.env.TEST_TYPE === 'FULL') {
   data1 = [
     ...data_01,
     ...data_02,
@@ -42,7 +40,10 @@ if (process.env.RUN_IN_LOCAL_PC === 'Y') {
     ...data_13,
     ...data_14,
     ...data_15,
+    ...data_16,
   ];
+} else {
+  data1 = [...data_05, ...data_13];
 }
 
 export const data = [...data1];
