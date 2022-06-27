@@ -1,6 +1,10 @@
 name: SonarCloud.io
 
-on: workflow_call
+on:
+  workflow_call:
+    secrets:
+      SONARCLOUD_TOKEN:
+        required: true
 
 jobs:
   SonarCloud:

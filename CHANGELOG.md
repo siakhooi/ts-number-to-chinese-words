@@ -1,6 +1,6 @@
 # Change Log
 
-## `1.7.0` - 26 June 2022
+## `1.7.0` - 27 June 2022
 
 - `#14`, as user, i want to optionally remove leading one.
 - refactor workflows
