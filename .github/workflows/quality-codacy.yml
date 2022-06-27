@@ -1,6 +1,10 @@
 name: Codacy
 
-on: workflow_call
+on:
+  workflow_call:
+    secrets:
+      CODACY_PROJECT_TOKEN:
+        required: true
 
 jobs:
   Codacy:
