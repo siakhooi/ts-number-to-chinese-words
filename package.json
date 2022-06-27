@@ -1,6 +1,6 @@
 {
   "name": "@siakhooi/number-to-chinese-words",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "Library to translate number into chinese words",
   "main": "dist/main/index.js",
   "scripts": {

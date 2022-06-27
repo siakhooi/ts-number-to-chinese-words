@@ -1,0 +1,23 @@
+name: CodeClimate.com
+
+on:
+  workflow_call:
+    secrets:
+      CODE_CLIMATE_REPORT_TOKEN:
+        required: true
+
+jobs:
+  CodeClimate:
+    name: CodeClimate.com
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: coverage-report
+          path: ./coverage/
+      - run: ls -R
+      - name: Upload to CodeClimate.com
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}

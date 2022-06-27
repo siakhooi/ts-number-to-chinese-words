@@ -1,0 +1,30 @@
+name: Build with Quality Check
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    uses: ./.github/workflows/build-npm-test.yml
+  codecov:
+    needs: test
+    uses: ./.github/workflows/quality-codecov.yml
+  coveralls:
+    needs: test
+    uses: ./.github/workflows/quality-coveralls.yml
+  sonarcloud:
+    needs: test
+    uses: ./.github/workflows/quality-sonarcloud.yml
+    secrets:
+      SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+  codacy:
+    needs: test
+    uses: ./.github/workflows/quality-codacy.yml
+    secrets:
+      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  codeclimate:
+    needs: test
+    uses: ./.github/workflows/quality-codeclimate.yml
+    secrets:
+      CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}

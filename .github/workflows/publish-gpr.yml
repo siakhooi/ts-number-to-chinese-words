@@ -1,7 +1,10 @@
 name: Publish to gpr registry
+
 on:
-  release:
-    types: [created]
+  workflow_call:
+    secrets:
+      PUBLISH_GITHUB_TOKEN:
+        required: true
 
 jobs:
   publish_gqr:
