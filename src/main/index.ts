@@ -98,15 +98,17 @@ class Convertor {
 
     return char4 + char3 + char2 + char1 + suffix;
   }
+  getZeroOrEmptyIf(expression: boolean): string {
+    return expression ? this.characterSet.ZERO : '';
+  }
   convert_w(segment1: number, number: number, removeLeadingOne: boolean) {
-    if (segment1 === 0) return number > 0 ? '' : this.characterSet.ZERO;
+    if (segment1 === 0) return this.getZeroOrEmptyIf(number === 0);
     const c = this.convert_0_to_9999(
       segment1,
       number < 1_0000 && removeLeadingOne,
       ''
     );
-    const prefix =
-      segment1 < 1_000 && number >= 1_0000 ? this.characterSet.ZERO : '';
+    const prefix = this.getZeroOrEmptyIf(segment1 < 1_000 && number >= 1_0000);
     return prefix + c;
   }
   convert_ww(
@@ -115,19 +117,17 @@ class Convertor {
     removeLeadingOne: boolean,
     segment1: number
   ) {
-    if (segment2 === 0) {
-      if (number >= 1_0000_0000 && segment1 >= 1000)
-        return this.characterSet.ZERO;
-      else return '';
-    }
+    if (segment2 === 0)
+      return this.getZeroOrEmptyIf(number >= 1_0000_0000 && segment1 >= 1000);
 
     const c = this.convert_0_to_9999(
       segment2,
       number < 1_0000_0000 && removeLeadingOne,
       this.characterSet.TENTHOUSAND
     );
-    const prefix =
-      segment2 < 1000 && number >= 1_0000_0000 ? this.characterSet.ZERO : '';
+    const prefix = this.getZeroOrEmptyIf(
+      segment2 < 1000 && number >= 1_0000_0000
+    );
     return prefix + c;
   }
   convert_www(
@@ -136,20 +136,19 @@ class Convertor {
     removeLeadingOne: boolean,
     segment2: number
   ) {
-    if (segment3 === 0) {
-      if (number >= 1_0000_0000_0000 && segment2 >= 1000)
-        return this.characterSet.ZERO;
-      else return '';
-    }
+    if (segment3 === 0)
+      return this.getZeroOrEmptyIf(
+        number >= 1_0000_0000_0000 && segment2 >= 1000
+      );
+
     const c = this.convert_0_to_9999(
       segment3,
       number < 1_0000_0000_0000 && removeLeadingOne,
       this.characterSet.HUNDREDMILLION
     );
-    const prefix =
+    const prefix = this.getZeroOrEmptyIf(
       segment3 < 1000 && number >= 1_0000_0000_0000
-        ? this.characterSet.ZERO
-        : '';
+    );
     return prefix + c;
   }
   convert_wwww(segment4: number, number: number, removeLeadingOne: boolean) {
