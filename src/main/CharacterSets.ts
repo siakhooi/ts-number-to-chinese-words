@@ -1,4 +1,4 @@
-import {allCharacterSets} from './Constants';
+/* eslint-disable prettier/prettier */
 
 export class CharacterSet {
   BASE: string;
@@ -14,13 +14,7 @@ export class CharacterSet {
   useTraditional: boolean;
   useCapital: boolean;
 
-  constructor(
-    Base: string,
-    Magnitudes: string,
-    Sign: string,
-    useTraditional: boolean,
-    useCapital: boolean
-  ) {
+  constructor(Base: string, Magnitudes: string, Sign: string, useTraditional: boolean, useCapital: boolean) {
     this.BASE = Base;
     this.ZERO = Base[0];
     this.TEN = Magnitudes[0];
@@ -36,11 +30,14 @@ export class CharacterSet {
   }
 }
 
-export function getCharacterSet(
-  useTraditional = false,
-  useCapital = false
-): CharacterSet {
-  return allCharacterSets.filter(
-    x => x.useTraditional === useTraditional && x.useCapital === useCapital
-  )[0];
+const allCharacterSets = [
+  //
+  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', false, false),
+  new CharacterSet('零壹贰叁肆伍陆柒捌玖', '拾佰仟萬億兆', '正负', false, true),
+  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', true, false),
+  new CharacterSet('零壹貳參肆伍陸柒捌玖', '拾佰仟萬億兆', '正負', true, true),
+];
+
+export function getCharacterSet(useTraditional = false, useCapital = false): CharacterSet {
+  return allCharacterSets.filter(x => x.useTraditional === useTraditional && x.useCapital === useCapital)[0];
 }
