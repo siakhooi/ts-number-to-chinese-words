@@ -28,3 +28,9 @@ jobs:
     uses: ./.github/workflows/quality-codeclimate.yml
     secrets:
       CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+  Coverity:
+    needs: test
+    uses: ./.github/workflows/quality-coverity.yml
+    secrets:
+      COVERITY_SCAN_EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
+      COVERITY_SCAN_TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
