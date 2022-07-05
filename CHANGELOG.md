@@ -1,5 +1,9 @@
 # Change Log
 
+## `1.8.0`
+
+- `#13`, As user, i want to translate floating point numbers
+
 ## `1.7.0` - 27 June 2022
 
 - `#14`, as user, i want to optionally remove leading one.

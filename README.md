@@ -84,6 +84,7 @@
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
   - optionally use capital (大写). (`options: {useCapital: true}`)
   - optionally leading one. (`options: {removeLeadingOne: true}`)
+  - support decimal points
 
 ## Usage
 
@@ -152,6 +153,13 @@ console.log(NumberToChinese.convertNumber(17, {removeLeadingOne: true}));
 |   100000000 | 亿                             | 億                             |
 |  1010101010 | 十亿一千零一十万一千零一十     | 十億一千零一十萬一千零一十     |
 | 10101010101 | 百零一亿零一百零一万零一百零一 | 百零一億零一百零一萬零一百零一 |
+
+#### Decimal Points
+
+|          number | Simplified                     | Traditional                    |
+| --------------: | ------------------------------ | ------------------------------ |
+|           12.13 | 一十二点一三                   | 一十二點一三                   |
+| 10.123456789012 | 一十点一二三四五六七八九零一二 | 一十點一二三四五六七八九零一二 |
 
 ## Locations
 

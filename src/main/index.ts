@@ -1,5 +1,5 @@
 import {CharacterSet, getCharacterSet} from './CharacterSets';
-import {ERR_NOT_SUPPORTED} from './Constants';
+import {ERR_NOT_SUPPORTED, MAX_DECIMAL_POINTS} from './Constants';
 
 class Convertor {
   characterSet: CharacterSet;
@@ -184,7 +184,13 @@ class Convertor {
   private checkNotSupportedCases(number: number) {
     if (number < -Number.MAX_SAFE_INTEGER || number > Number.MAX_SAFE_INTEGER)
       throw ERR_NOT_SUPPORTED;
-    if (number !== Math.floor(number)) throw ERR_NOT_SUPPORTED;
+    if (number !== Math.floor(number)) {
+      if (
+        new String(number).length >
+        MAX_DECIMAL_POINTS + 1 + new String(Math.floor(number)).length
+      )
+        throw ERR_NOT_SUPPORTED;
+    }
   }
 
   private getSign(number: number): string {
@@ -194,16 +200,34 @@ class Convertor {
       return this.characterSet.POSITIVE;
     return '';
   }
+  convertFloat(number: number) {
+    if (number - Math.floor(number) === 0) return '';
+
+    const start = new String(Math.floor(number)).length + 1;
+    const s = new String(number);
+    const stop = s.length;
+
+    let r = this.characterSet.DOT;
+
+    for (let i = start; i < stop; i++) {
+      const j = parseInt(s.substring(i, i + 1));
+      r += this.convert_0_to_9(j, false, false, '');
+    }
+
+    return r;
+  }
   convertNumber(number: number): string {
     this.checkNotSupportedCases(number);
 
     const sign = this.getSign(number);
 
     number = Math.abs(number);
+    const integering = Math.floor(number);
+    const convertedFloat = this.convertFloat(number);
 
-    const convertedValue = this.convert_0_to_wwww(number);
+    const convertedInteger = this.convert_0_to_wwww(integering);
 
-    return sign + convertedValue;
+    return sign + convertedInteger + convertedFloat;
   }
 }
 export type options = {
