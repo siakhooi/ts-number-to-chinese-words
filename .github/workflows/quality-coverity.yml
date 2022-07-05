@@ -24,5 +24,11 @@ jobs:
         uses: vapier/coverity-scan-action@v1
         with:
           build_language: 'javascript'
+          command: 'npm run compile'
           email: ${{ secrets.COVERITY_SCAN_EMAIL }}
           token: ${{ secrets.COVERITY_SCAN_TOKEN }}
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverity-scan
+          path: ./cov-int/
