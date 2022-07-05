@@ -1,0 +1,22 @@
+name: Coverity Scan
+
+on:
+  workflow_call:
+    secrets:
+      COVERITY_SCAN_EMAIL:
+        required: true
+      COVERITY_SCAN_TOKEN:
+        required: true
+
+jobs:
+  Coverity:
+    name: Coverity Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ls -R
+      - name: Coverity Scan
+        uses: vapier/coverity-scan-action@v1
+        with:
+          email: ${{ secrets.COVERITY_SCAN_EMAIL }}
+          token: ${{ secrets.COVERITY_SCAN_TOKEN }}

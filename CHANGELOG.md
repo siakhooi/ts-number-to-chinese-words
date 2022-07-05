@@ -1,8 +1,9 @@
 # Change Log
 
-## `1.8.0`
+## `1.8.0` - 5 July 2022
 
 - `#13`, As user, i want to translate floating point numbers
+- add coverity scan
 
 ## `1.7.0` - 27 June 2022
 

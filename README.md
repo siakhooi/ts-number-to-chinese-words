@@ -68,10 +68,11 @@
 ![Quality-Snyk](https://img.shields.io/badge/Quality-Snyk-purple)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/siakhooi/ts-number-to-chinese-words)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@siakhooi/number-to-chinese-words)
-![LGTM-Snyk](https://img.shields.io/badge/Quality-LGTM-purple)
+![Quality-LGTM](https://img.shields.io/badge/Quality-LGTM-purple)
 ![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/siakhooi/ts-number-to-chinese-words)
 ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/siakhooi/ts-number-to-chinese-words)
-
+![Quality-Coverity](https://img.shields.io/badge/Quality-Snyk-purple)
+![Coverity Scan](https://img.shields.io/coverity/scan/siakhooi-ts-number-to-chinese-words)
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
@@ -173,3 +174,4 @@ console.log(NumberToChinese.convertNumber(17, {removeLeadingOne: true}));
 - <https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words>
 - <https://app.snyk.io/org/siakhooi/projects>
 - <https://lgtm.com/people/siakhooi/project:1515605457625>
+- <https://scan.coverity.com/projects/siakhooi-ts-number-to-chinese-words?tab=overview>
