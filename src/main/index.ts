@@ -186,8 +186,8 @@ class Convertor {
       throw ERR_NOT_SUPPORTED;
     if (number !== Math.floor(number)) {
       if (
-        new String(number).length >
-        MAX_DECIMAL_POINTS + 1 + new String(Math.floor(number)).length
+        number.toString().length >
+        MAX_DECIMAL_POINTS + 1 + Math.floor(number).toString().length
       )
         throw ERR_NOT_SUPPORTED;
     }
@@ -203,8 +203,8 @@ class Convertor {
   convertFloat(number: number) {
     if (number - Math.floor(number) === 0) return '';
 
-    const start = new String(Math.floor(number)).length + 1;
-    const s = new String(number);
+    const start = Math.floor(number).toString().length + 1;
+    const s = number.toString();
     const stop = s.length;
 
     let r = this.characterSet.DOT;
