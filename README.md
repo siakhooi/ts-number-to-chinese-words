@@ -71,7 +71,7 @@
 ![Quality-LGTM](https://img.shields.io/badge/Quality-LGTM-purple)
 ![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/siakhooi/ts-number-to-chinese-words)
 ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/siakhooi/ts-number-to-chinese-words)
-![Quality-Coverity](https://img.shields.io/badge/Quality-Snyk-purple)
+![Quality-Coverity](https://img.shields.io/badge/Quality-Coverity-purple)
 ![Coverity Scan](https://img.shields.io/coverity/scan/siakhooi-ts-number-to-chinese-words)
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
