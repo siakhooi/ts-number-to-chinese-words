@@ -151,7 +151,7 @@ class Convertor {
     );
     return prefix + c;
   }
-  convert_wwww(segment4: number, number: number, removeLeadingOne: boolean) {
+  convert_wwww(segment4: number, removeLeadingOne: boolean) {
     if (segment4 === 0) return '';
     const c = this.convert_0_to_9999(
       segment4,
@@ -176,7 +176,7 @@ class Convertor {
       removeLeadingOne,
       segment2
     );
-    const char4 = this.convert_wwww(segment4, number, removeLeadingOne);
+    const char4 = this.convert_wwww(segment4, removeLeadingOne);
 
     return char4 + char3 + char2 + char1;
   }
