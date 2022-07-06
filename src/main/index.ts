@@ -153,12 +153,11 @@ class Convertor {
   }
   convert_wwww(segment4: number, removeLeadingOne: boolean) {
     if (segment4 === 0) return '';
-    const c = this.convert_0_to_9999(
+    return this.convert_0_to_9999(
       segment4,
       segment4 > 0 && removeLeadingOne,
       this.characterSet.TRILLION
     );
-    return c;
   }
   convert_0_to_wwww(number: number): string {
     const removeLeadingOne = !!this.options.removeLeadingOne;
