@@ -111,44 +111,25 @@ class Convertor {
     const prefix = this.getZeroOrEmptyIf(segment1 < 1_000 && number >= 1_0000);
     return prefix + c;
   }
-  convert_ww(
-    segment2: number,
+  convert_ww_and_www(
+    segment: number,
     number: number,
     removeLeadingOne: boolean,
-    segment1: number
+    smallerSegment: number,
+    threshold: number,
+    suffix: string
   ) {
-    if (segment2 === 0)
-      return this.getZeroOrEmptyIf(number >= 1_0000_0000 && segment1 >= 1000);
-
-    const c = this.convert_0_to_9999(
-      segment2,
-      number < 1_0000_0000 && removeLeadingOne,
-      this.characterSet.TENTHOUSAND
-    );
-    const prefix = this.getZeroOrEmptyIf(
-      segment2 < 1000 && number >= 1_0000_0000
-    );
-    return prefix + c;
-  }
-  convert_www(
-    segment3: number,
-    number: number,
-    removeLeadingOne: boolean,
-    segment2: number
-  ) {
-    if (segment3 === 0)
+    if (segment === 0)
       return this.getZeroOrEmptyIf(
-        number >= 1_0000_0000_0000 && segment2 >= 1000
+        number >= threshold && smallerSegment >= 1000
       );
 
     const c = this.convert_0_to_9999(
-      segment3,
-      number < 1_0000_0000_0000 && removeLeadingOne,
-      this.characterSet.HUNDREDMILLION
+      segment,
+      number < threshold && removeLeadingOne,
+      suffix
     );
-    const prefix = this.getZeroOrEmptyIf(
-      segment3 < 1000 && number >= 1_0000_0000_0000
-    );
+    const prefix = this.getZeroOrEmptyIf(segment < 1000 && number >= threshold);
     return prefix + c;
   }
   convert_wwww(segment4: number, removeLeadingOne: boolean) {
@@ -168,12 +149,21 @@ class Convertor {
     const segment4 = Math.floor(number / 1_0000_0000_0000);
 
     const char1 = this.convert_w(segment1, number, removeLeadingOne);
-    const char2 = this.convert_ww(segment2, number, removeLeadingOne, segment1);
-    const char3 = this.convert_www(
+    const char2 = this.convert_ww_and_www(
+      segment2,
+      number,
+      removeLeadingOne,
+      segment1,
+      1_0000_0000,
+      this.characterSet.TENTHOUSAND
+    );
+    const char3 = this.convert_ww_and_www(
       segment3,
       number,
       removeLeadingOne,
-      segment2
+      segment2,
+      1_0000_0000_0000,
+      this.characterSet.HUNDREDMILLION
     );
     const char4 = this.convert_wwww(segment4, removeLeadingOne);
 
