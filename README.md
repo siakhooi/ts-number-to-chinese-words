@@ -86,7 +86,7 @@
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
   - optionally use capital (大写). (`options: {useCapital: true}`)
   - optionally remove leading one. (`options: {removeLeadingOne: true}`)
-  - optionally use contractions (`廿卅卌圩圆进枯`)
+  - optionally use contractions (`廿卅卌圩圆进枯桦`)
 
 ## Options and Default values
 
@@ -104,6 +104,7 @@ options: {
   useContraction60: false;
   useContraction70: false;
   useContraction80: false;
+  useContraction90: false;
 }
 ```
 

@@ -10,6 +10,7 @@
 - `#57`, as user, i want to optionally use contraction 60.
 - `#58`, as user, i want to optionally use contraction 70.
 - `#59`, as user, i want to optionally use contraction 80.
+- `#60`, as user, i want to optionally use contraction 90.
 
 ## `1.8.0` - 5 July 2022
 
