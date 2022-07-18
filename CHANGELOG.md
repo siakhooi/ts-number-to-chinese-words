@@ -1,5 +1,18 @@
 # Change Log
 
+## `1.9.0`
+
+- `#52`, as user, i want to optionally use contraction 20.
+- `#53`, as user, i want to optionally use contraction 30.
+- `#54`, as user, i want to optionally use contraction 40.
+- `#55`, as user, i want to optionally use all contractions.
+- `#56`, as user, i want to optionally use contraction 50.
+- `#57`, as user, i want to optionally use contraction 60.
+- `#58`, as user, i want to optionally use contraction 70.
+- `#59`, as user, i want to optionally use contraction 80.
+- `#60`, as user, i want to optionally use contraction 90.
+- `#61`, as user, i want to optionally use contraction 200.
+
 ## `1.8.0` - 5 July 2022
 
 - `#13`, As user, i want to translate floating point numbers

@@ -71,7 +71,7 @@
 ![Quality-LGTM](https://img.shields.io/badge/Quality-LGTM-purple)
 ![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/siakhooi/ts-number-to-chinese-words)
 ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/siakhooi/ts-number-to-chinese-words)
-![Quality-Coverity](https://img.shields.io/badge/Quality-Snyk-purple)
+![Quality-Coverity](https://img.shields.io/badge/Quality-Coverity-purple)
 ![Coverity Scan](https://img.shields.io/coverity/scan/siakhooi-ts-number-to-chinese-words)
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
@@ -81,11 +81,33 @@
 
 - Translate numbers into Chinese characters for:
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
+  - support decimal points
   - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
   - optionally use capital (大写). (`options: {useCapital: true}`)
-  - optionally leading one. (`options: {removeLeadingOne: true}`)
-  - support decimal points
+  - optionally remove leading one. (`options: {removeLeadingOne: true}`)
+  - optionally use contractions (`廿卅卌圩圆进枯桦皕`)
+
+## Options and Default values
+
+```javascript
+options: {
+  useTraditional: false;
+  displayPositive: false;
+  useCapital: false;
+  removeLeadingOne: false;
+  useContractionAll: false;
+  useContraction20: false;
+  useContraction30: false;
+  useContraction40: false;
+  useContraction50: false;
+  useContraction60: false;
+  useContraction70: false;
+  useContraction80: false;
+  useContraction90: false;
+  useContraction200: false;
+}
+```
 
 ## Usage
 
