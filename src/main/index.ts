@@ -89,6 +89,16 @@ class Convertor {
       )
     ) {
       return this.characterSet.CONTRACTION_50;
+    } else if (
+      this.useContraction(
+        this.options.useContraction60,
+        this.options.useContractionAll,
+        digit,
+        6,
+        this.characterSet.CONTRACTION_60
+      )
+    ) {
+      return this.characterSet.CONTRACTION_60;
     }
     return defaultValue;
   }
@@ -287,6 +297,7 @@ export type options = {
   useContraction30?: boolean;
   useContraction40?: boolean;
   useContraction50?: boolean;
+  useContraction60?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);

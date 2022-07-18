@@ -7,6 +7,7 @@
 - `#54`, as user, i want to optionally use contraction 40.
 - `#55`, as user, i want to optionally use all contractions.
 - `#56`, as user, i want to optionally use contraction 50.
+- `#57`, as user, i want to optionally use contraction 60.
 
 ## `1.8.0` - 5 July 2022
 
