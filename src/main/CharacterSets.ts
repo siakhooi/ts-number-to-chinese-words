@@ -14,6 +14,7 @@ export class CharacterSet {
   DOT: string;
   CONTRACTION_20: string;
   CONTRACTION_30: string;
+  CONTRACTION_40: string;
   useTraditional: boolean;
   useCapital: boolean;
 
@@ -33,14 +34,15 @@ export class CharacterSet {
     this.useCapital = useCapital;
     this.CONTRACTION_20 = contraction[0];
     this.CONTRACTION_30 = contraction[1];
+    this.CONTRACTION_40 = contraction[2];
   }
 }
 
 const allCharacterSets = [
   //
-  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', '点', '廿卅', false, false),
+  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', '点', '廿卅卌', false, false),
   new CharacterSet('零壹贰叁肆伍陆柒捌玖', '拾佰仟萬億兆', '正负', '点', '念', false, true),
-  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', '點', '廿卅', true, false),
+  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', '點', '廿卅卌', true, false),
   new CharacterSet('零壹貳參肆伍陸柒捌玖', '拾佰仟萬億兆', '正負', '點', '念', true, true),
 ];
 

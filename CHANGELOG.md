@@ -4,6 +4,7 @@
 
 - `#52`, as user, i want to optionally use contraction 20.
 - `#53`, as user, i want to optionally use contraction 30.
+- `#54`, as user, i want to optionally use contraction 40.
 
 ## `1.8.0` - 5 July 2022
 

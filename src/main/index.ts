@@ -48,6 +48,12 @@ class Convertor {
       this.characterSet.CONTRACTION_30 !== undefined
     ) {
       return this.characterSet.CONTRACTION_30;
+    } else if (
+      this.options.use_contraction_40 &&
+      digit === 4 &&
+      this.characterSet.CONTRACTION_40 !== undefined
+    ) {
+      return this.characterSet.CONTRACTION_40;
     }
     return defaultValue;
   }
@@ -243,6 +249,7 @@ export type options = {
   removeLeadingOne?: boolean;
   use_contraction_20?: boolean;
   use_contraction_30?: boolean;
+  use_contraction_40?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);
