@@ -35,9 +35,19 @@ class Convertor {
       ''
     );
   }
-  getContraction(digit2: number, defaultValue: string): string {
-    if (this.options.use_contraction_20 && digit2 === 2) {
+  getContraction(digit: number, defaultValue: string): string {
+    if (
+      this.options.use_contraction_20 &&
+      digit === 2 &&
+      this.characterSet.CONTRACTION_20 !== undefined
+    ) {
       return this.characterSet.CONTRACTION_20;
+    } else if (
+      this.options.use_contraction_30 &&
+      digit === 3 &&
+      this.characterSet.CONTRACTION_30 !== undefined
+    ) {
+      return this.characterSet.CONTRACTION_30;
     }
     return defaultValue;
   }
@@ -232,6 +242,7 @@ export type options = {
   useCapital?: boolean;
   removeLeadingOne?: boolean;
   use_contraction_20?: boolean;
+  use_contraction_30?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);

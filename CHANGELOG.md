@@ -3,6 +3,7 @@
 ## `1.9.0`
 
 - `#52`, as user, i want to optionally use contraction 20.
+- `#53`, as user, i want to optionally use contraction 30.
 
 ## `1.8.0` - 5 July 2022
 
