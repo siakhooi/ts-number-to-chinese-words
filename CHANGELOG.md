@@ -1,5 +1,9 @@
 # Change Log
 
+## `1.9.0`
+
+- `#52`, as user, i want to optionally use contraction 20.
+
 ## `1.8.0` - 5 July 2022
 
 - `#13`, As user, i want to translate floating point numbers

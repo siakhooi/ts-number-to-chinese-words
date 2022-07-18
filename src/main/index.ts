@@ -35,6 +35,12 @@ class Convertor {
       ''
     );
   }
+  getContraction(digit2: number, defaultValue: string): string {
+    if (this.options.use_contraction_20 && digit2 === 2) {
+      return this.characterSet.CONTRACTION_20;
+    }
+    return defaultValue;
+  }
   convert_digit_10(
     number: number,
     removeLeadingOne: boolean,
@@ -42,7 +48,7 @@ class Convertor {
     digit1: number,
     digit3: number
   ): string {
-    return this.convert_0_to_9(
+    const normalTranslation = this.convert_0_to_9(
       digit2,
       (number >= 100 && digit1 === 0) ||
         (number >= 1000 && digit3 === 0) ||
@@ -50,6 +56,7 @@ class Convertor {
       number < 100 && removeLeadingOne,
       this.characterSet.TEN
     );
+    return this.getContraction(digit2, normalTranslation);
   }
   convert_digit_100(
     number: number,
@@ -224,6 +231,7 @@ export type options = {
   displayPositive?: boolean;
   useCapital?: boolean;
   removeLeadingOne?: boolean;
+  use_contraction_20?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);

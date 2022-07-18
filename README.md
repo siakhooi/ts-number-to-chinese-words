@@ -81,11 +81,24 @@
 
 - Translate numbers into Chinese characters for:
   - Integer -9007,1992,5474,0991 to +9007,1992,5474,0991 (`Number.MAX_SAFE_INTEGER`)
+  - support decimal points
   - Simplified Chinese or Traditional Chinese (`options: {useTraditional: true}`)
   - optionally display `正` for positive numbers. (`options:{displayPositive: true}`)
   - optionally use capital (大写). (`options: {useCapital: true}`)
-  - optionally leading one. (`options: {removeLeadingOne: true}`)
-  - support decimal points
+  - optionally remove leading one. (`options: {removeLeadingOne: true}`)
+  - optionally use contractions (`廿`)
+
+## Options and Default values
+
+```javascript
+options: {
+  useTraditional: false;
+  displayPositive: false;
+  useCapital: false;
+  removeLeadingOne: false;
+  useContraction20: false;
+}
+```
 
 ## Usage
 
