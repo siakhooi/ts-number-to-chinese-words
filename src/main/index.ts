@@ -154,12 +154,23 @@ class Convertor {
     removeLeadingOne: boolean,
     digit3: number
   ): string {
-    return this.convert_0_to_9(
-      digit3,
-      (number >= 1000 && number % 100 === 0) || number < 100,
-      number < 1000 && removeLeadingOne,
-      this.characterSet.HUNDRED
-    );
+    if (
+      this.useContraction(
+        this.options.useContraction200,
+        this.options.useContractionAll,
+        digit3,
+        2,
+        this.characterSet.CONTRACTION_200
+      )
+    )
+      return this.characterSet.CONTRACTION_200;
+    else
+      return this.convert_0_to_9(
+        digit3,
+        (number >= 1000 && number % 100 === 0) || number < 100,
+        number < 1000 && removeLeadingOne,
+        this.characterSet.HUNDRED
+      );
   }
   convert_digit_1000(
     number: number,
@@ -331,6 +342,7 @@ export type options = {
   useContraction70?: boolean;
   useContraction80?: boolean;
   useContraction90?: boolean;
+  useContraction200?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);

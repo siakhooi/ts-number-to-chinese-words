@@ -6,5 +6,6 @@ import {data as data_60} from './data-contraction-60';
 import {data as data_70} from './data-contraction-70';
 import {data as data_80} from './data-contraction-80';
 import {data as data_90} from './data-contraction-90';
+import {data as data_200} from './data-contraction-200';
 
-export const data = [...data_20, ...data_30, ...data_40, ...data_50, ...data_60, ...data_70, ...data_80, ...data_90];
+export const data = [...data_20, ...data_30, ...data_40, ...data_50, ...data_60, ...data_70, ...data_80, ...data_90, ...data_200];

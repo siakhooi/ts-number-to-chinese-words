@@ -20,6 +20,7 @@ export class CharacterSet {
   CONTRACTION_70: string;
   CONTRACTION_80: string;
   CONTRACTION_90: string;
+  CONTRACTION_200: string;
   useTraditional: boolean;
   useCapital: boolean;
 
@@ -45,14 +46,15 @@ export class CharacterSet {
     this.CONTRACTION_70 = contraction[5];
     this.CONTRACTION_80 = contraction[6];
     this.CONTRACTION_90 = contraction[7];
+    this.CONTRACTION_200 = contraction[8];
   }
 }
 
 const allCharacterSets = [
   //
-  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', '点', '廿卅卌圩圆进枯桦', false, false),
+  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', '点', '廿卅卌圩圆进枯桦皕', false, false),
   new CharacterSet('零壹贰叁肆伍陆柒捌玖', '拾佰仟萬億兆', '正负', '点', '念', false, true),
-  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', '點', '廿卅卌圩圓進枯樺', true, false),
+  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', '點', '廿卅卌圩圓進枯樺皕', true, false),
   new CharacterSet('零壹貳參肆伍陸柒捌玖', '拾佰仟萬億兆', '正負', '點', '念', true, true),
 ];
 
