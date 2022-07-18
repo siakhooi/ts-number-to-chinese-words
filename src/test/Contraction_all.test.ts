@@ -1,16 +1,16 @@
 import {convertNumber, options} from '../main/index';
-import {data} from './data-contraction-30';
+import {data} from './data-contraction-all';
 import {generate} from './TestUtils';
 
-const TESTSUITE = 'Contraction_30';
+const TESTSUITE = 'Contraction_all';
 
-export const option0: options[] = [{useContraction30: true}];
+export const option0: options[] = [{useContractionAll: true}];
 export const option1: options[] = [
-  {useContraction30: true, useTraditional: true},
+  {useContractionAll: true, useTraditional: true},
 ];
-export const option2: options[] = [{useContraction30: true, useCapital: true}];
+export const option2: options[] = [{useContractionAll: true, useCapital: true}];
 export const option3: options[] = [
-  {useContraction30: true, useTraditional: true, useCapital: true},
+  {useContractionAll: true, useTraditional: true, useCapital: true},
 ];
 
 test.each(generate(option0, data, 0))(

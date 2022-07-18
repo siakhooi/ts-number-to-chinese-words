@@ -96,6 +96,7 @@ options: {
   displayPositive: false;
   useCapital: false;
   removeLeadingOne: false;
+  useContractionAll: false;
   useContraction20: false;
   useContraction30: false;
   useContraction40: false;

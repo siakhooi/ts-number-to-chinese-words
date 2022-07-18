@@ -4,15 +4,13 @@ import {generate} from './TestUtils';
 
 const TESTSUITE = 'Contraction_20';
 
-export const option0: options[] = [{use_contraction_20: true}];
+export const option0: options[] = [{useContraction20: true}];
 export const option1: options[] = [
-  {use_contraction_20: true, useTraditional: true},
+  {useContraction20: true, useTraditional: true},
 ];
-export const option2: options[] = [
-  {use_contraction_20: true, useCapital: true},
-];
+export const option2: options[] = [{useContraction20: true, useCapital: true}];
 export const option3: options[] = [
-  {use_contraction_20: true, useTraditional: true, useCapital: true},
+  {useContraction20: true, useTraditional: true, useCapital: true},
 ];
 
 test.each(generate(option0, data, 0))(

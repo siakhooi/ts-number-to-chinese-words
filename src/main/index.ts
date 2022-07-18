@@ -35,23 +35,48 @@ class Convertor {
       ''
     );
   }
+  useContraction(
+    useContractionDigit: boolean | undefined,
+    useContractionAll: boolean | undefined,
+    digit: number,
+    testValue: number,
+    contractedCharacter: string
+  ): boolean {
+    return (
+      (!!useContractionDigit || !!useContractionAll) &&
+      digit === testValue &&
+      contractedCharacter !== undefined
+    );
+  }
   getContraction(digit: number, defaultValue: string): string {
     if (
-      this.options.use_contraction_20 &&
-      digit === 2 &&
-      this.characterSet.CONTRACTION_20 !== undefined
+      this.useContraction(
+        this.options.useContraction20,
+        this.options.useContractionAll,
+        digit,
+        2,
+        this.characterSet.CONTRACTION_20
+      )
     ) {
       return this.characterSet.CONTRACTION_20;
     } else if (
-      this.options.use_contraction_30 &&
-      digit === 3 &&
-      this.characterSet.CONTRACTION_30 !== undefined
+      this.useContraction(
+        this.options.useContraction30,
+        this.options.useContractionAll,
+        digit,
+        3,
+        this.characterSet.CONTRACTION_30
+      )
     ) {
       return this.characterSet.CONTRACTION_30;
     } else if (
-      this.options.use_contraction_40 &&
-      digit === 4 &&
-      this.characterSet.CONTRACTION_40 !== undefined
+      this.useContraction(
+        this.options.useContraction40,
+        this.options.useContractionAll,
+        digit,
+        4,
+        this.characterSet.CONTRACTION_40
+      )
     ) {
       return this.characterSet.CONTRACTION_40;
     }
@@ -247,9 +272,10 @@ export type options = {
   displayPositive?: boolean;
   useCapital?: boolean;
   removeLeadingOne?: boolean;
-  use_contraction_20?: boolean;
-  use_contraction_30?: boolean;
-  use_contraction_40?: boolean;
+  useContractionAll?: boolean;
+  useContraction20?: boolean;
+  useContraction30?: boolean;
+  useContraction40?: boolean;
 };
 export function convertNumber(number: number, options: options = {}): string {
   const convertor = new Convertor(options);
