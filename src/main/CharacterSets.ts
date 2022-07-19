@@ -19,7 +19,7 @@ export class CharacterSet {
   useTraditional: boolean;
   useCapital: boolean;
 
-  constructor(Base: string, Magnitudes: string, Sign: string, Dot: string, traditionalFloatingUnit: string, contraction: string, useTraditional: boolean, useCapital: boolean) {
+  constructor(Base: string, Magnitudes: string, SignAndDot: string, traditionalFloatingUnit: string, contraction: string, useTraditional: boolean, useCapital: boolean) {
     this.BASE = Base;
     this.ZERO = Base[0];
     this.TEN = Magnitudes[0];
@@ -28,10 +28,10 @@ export class CharacterSet {
     this.TENTHOUSAND = Magnitudes[3];
     this.HUNDREDMILLION = Magnitudes[4];
     this.TRILLION = Magnitudes[5];
-    this.POSITIVE = Sign[0];
-    this.NEGATIVE = Sign[1];
-    this.DOT = Dot[0];
-    this.TRADITIONAL_DOT = Dot[1];
+    this.POSITIVE = SignAndDot[0];
+    this.NEGATIVE = SignAndDot[1];
+    this.DOT = SignAndDot[2];
+    this.TRADITIONAL_DOT = SignAndDot[3];
     this.TRADITIONAL_FLOATING_UNIT = traditionalFloatingUnit;
     this.CONTRACTION = [];
     this.CONTRACTION[2] = contraction[0];
@@ -50,10 +50,10 @@ export class CharacterSet {
 
 const allCharacterSets = [
   //
-  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负', '点又', '分厘毫秒忽微纤沙尘埃渺漠', '廿卅卌圩圆进枯桦皕', false, false),
-  new CharacterSet('零壹贰叁肆伍陆柒捌玖', '拾佰仟萬億兆', '正负', '点又', '分厘毫秒忽微纤沙尘埃渺漠', '念', false, true),
-  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負', '點又', '分釐毫秒忽微纖沙塵埃渺漠', '廿卅卌圩圓進枯樺皕', true, false),
-  new CharacterSet('零壹貳參肆伍陸柒捌玖', '拾佰仟萬億兆', '正負', '點又', '分釐毫秒忽微纖沙塵埃渺漠', '念', true, true),
+  new CharacterSet('零一二三四五六七八九', '十百千万亿兆', '正负点又', '分厘毫秒忽微纤沙尘埃渺漠', '廿卅卌圩圆进枯桦皕', false, false),
+  new CharacterSet('零壹贰叁肆伍陆柒捌玖', '拾佰仟萬億兆', '正负点又', '分厘毫秒忽微纤沙尘埃渺漠', '念', false, true),
+  new CharacterSet('零一二三四五六七八九', '十百千萬億兆', '正負點又', '分釐毫秒忽微纖沙塵埃渺漠', '廿卅卌圩圓進枯樺皕', true, false),
+  new CharacterSet('零壹貳參肆伍陸柒捌玖', '拾佰仟萬億兆', '正負點又', '分釐毫秒忽微纖沙塵埃渺漠', '念', true, true),
 ];
 
 export function getCharacterSet(useTraditional = false, useCapital = false): CharacterSet {
