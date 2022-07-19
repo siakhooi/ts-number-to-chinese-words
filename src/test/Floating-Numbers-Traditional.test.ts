@@ -1,16 +1,18 @@
 import {convertNumber, Options} from '../main/index';
-import {data} from './data-contraction-40';
 import {generate} from './TestUtils';
+import {data} from './data-floating-numbers-traditional';
 
-const TESTSUITE = 'Contraction_40';
+const TESTSUITE = 'Floating-Numbers-Traditional';
 
-export const option0: Options[] = [{useContraction40: true}];
+export const option0: Options[] = [{useTraditionalFloatingUnit: true}];
 export const option1: Options[] = [
-  {useContraction40: true, useTraditional: true},
+  {useTraditionalFloatingUnit: true, useTraditional: true},
 ];
-export const option2: Options[] = [{useContraction40: true, useCapital: true}];
+export const option2: Options[] = [
+  {useTraditionalFloatingUnit: true, useCapital: true},
+];
 export const option3: Options[] = [
-  {useContraction40: true, useTraditional: true, useCapital: true},
+  {useTraditionalFloatingUnit: true, useTraditional: true, useCapital: true},
 ];
 
 test.each(generate(option0, data, 0))(

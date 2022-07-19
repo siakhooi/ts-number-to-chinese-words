@@ -1,4 +1,4 @@
-import {convertNumber, options} from '../main/index';
+import {convertNumber, Options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, NEGATIVE} from './data';
 import {
@@ -16,7 +16,7 @@ const TESTSUITE = 'Simplified/Capital/-ve';
 
 test.each(generate([...optionCapital, ...optionCapitalPositive], data, 2))(
   TESTSUITE + '/option',
-  (options: options, input: number, expected: string) => {
+  (options: Options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
     expect(convertNumber(-input, options)).toBe(expected);
   }

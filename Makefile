@@ -1,4 +1,4 @@
-doget:
+generateTestData:
 	npx tsc
 	node dist/generateTestData.js
 

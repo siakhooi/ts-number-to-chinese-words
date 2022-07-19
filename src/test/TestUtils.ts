@@ -1,11 +1,11 @@
-import {options} from '../main/index';
+import {Options} from '../main/index';
 
 export function generate(
-  options: options[],
+  options: Options[],
   data: [number, string[]][],
   index = 0
-): [options, number, string][] {
-  const r1: [options, number, string][] = [];
+): [Options, number, string][] {
+  const r1: [Options, number, string][] = [];
 
   for (const d of data) {
     for (const o of options) {

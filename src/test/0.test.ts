@@ -1,4 +1,4 @@
-import {convertNumber, options} from '../main/index';
+import {convertNumber, Options} from '../main/index';
 
 const INPUT = 0;
 const EXPECTED = '零';
@@ -7,7 +7,7 @@ test('0/default', () => {
   expect(convertNumber(INPUT)).toBe(EXPECTED);
 });
 
-const OPTIONS: options[] = [
+const OPTIONS: Options[] = [
   {},
   {useTraditional: false},
   {useTraditional: true},
@@ -35,6 +35,6 @@ const OPTIONS: options[] = [
   {useCapital: false, useTraditional: false, displayPositive: false},
 ];
 
-test.each(OPTIONS)('0', (options: options) => {
+test.each(OPTIONS)('0', (options: Options) => {
   expect(convertNumber(INPUT, options)).toBe(EXPECTED);
 });

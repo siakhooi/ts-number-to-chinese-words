@@ -1,4 +1,4 @@
-import {convertNumber, options} from '../main/index';
+import {convertNumber, Options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, NEGATIVE} from './data';
 import {
@@ -17,7 +17,7 @@ test.each(
   generate([...optionCapitalTraditional, ...optionCapitalTradPositive], data, 3)
 )(
   TESTSUITE + '/option',
-  (options: options, input: number, expected: string) => {
+  (options: Options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
   }
