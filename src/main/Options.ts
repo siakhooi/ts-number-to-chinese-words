@@ -13,4 +13,5 @@ export type Options = {
   useContraction80?: boolean;
   useContraction90?: boolean;
   useContraction200?: boolean;
+  useTraditionalFloatingUnit?: boolean;
 };

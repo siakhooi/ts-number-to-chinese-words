@@ -87,6 +87,7 @@
   - optionally use capital (大写). (`options: {useCapital: true}`)
   - optionally remove leading one. (`options: {removeLeadingOne: true}`)
   - optionally use contractions (`廿卅卌圩圆进枯桦皕`)
+  - optionally use traditional units for floating numbers.(`分厘毫秒忽微纤沙尘埃渺漠`)
 
 ## Options and Default values
 
@@ -106,6 +107,7 @@ options: {
   useContraction80: false;
   useContraction90: false;
   useContraction200: false;
+  useTraditionalFloatingUnit: false;
 }
 ```
 

@@ -231,21 +231,64 @@ export class Convertor {
       return this.characterSet.POSITIVE;
     return '';
   }
-  convertFloat(number: number) {
-    if (number - Math.floor(number) === 0) return '';
-
-    const start = Math.floor(number).toString().length + 1;
-    const s = number.toString();
-    const stop = s.length;
-
-    let r = this.characterSet.DOT;
+  convertModernFloatingNumber(
+    start: number,
+    stop: number,
+    numberToConvert: string
+  ): string {
+    let r = '';
 
     for (let i = start; i < stop; i++) {
-      const j = parseInt(s.substring(i, i + 1));
+      const j = parseInt(numberToConvert.substring(i, i + 1));
       r += this.convert_0_to_9(j, false, false, '');
     }
 
     return r;
+  }
+  convertTraditionalFloatingNumber(
+    start: number,
+    stop: number,
+    numberToConvert: string
+  ): string {
+    let r = '';
+    for (let i = start; i < stop; i++) {
+      const j = parseInt(numberToConvert.substring(i, i + 1));
+      if (j !== 0)
+        r +=
+          this.convert_0_to_9(j, false, false, '') +
+          this.characterSet.TRADITIONAL_FLOATING_UNIT[i - start];
+    }
+
+    return r;
+  }
+  convertFloat(number: number) {
+    if (number - Math.floor(number) === 0) return '';
+
+    const start = Math.floor(number).toString().length + 1;
+    const numberToConvert = number.toString();
+    const stop = numberToConvert.length;
+
+    return this.options.useTraditionalFloatingUnit
+      ? this.convertTraditionalFloatingNumber(start, stop, numberToConvert)
+      : this.convertModernFloatingNumber(start, stop, numberToConvert);
+  }
+  combine(
+    sign: string,
+    convertedInteger: string,
+    convertedFloat: string,
+    integerNumber: number
+  ): string {
+    if (convertedFloat.length === 0) {
+      return sign + convertedInteger;
+    } else {
+      const dot = this.options.useTraditionalFloatingUnit
+        ? this.characterSet.TRADITIONAL_DOT
+        : this.characterSet.DOT;
+
+      if (!!this.options.useTraditionalFloatingUnit && integerNumber === 0) {
+        return sign + convertedFloat;
+      } else return sign + convertedInteger + dot + convertedFloat;
+    }
   }
   convertNumber(number: number): string {
     this.checkNotSupportedCases(number);
@@ -253,11 +296,9 @@ export class Convertor {
     const sign = this.getSign(number);
 
     number = Math.abs(number);
-    const integering = Math.floor(number);
+    const integerNumber = Math.floor(number);
     const convertedFloat = this.convertFloat(number);
-
-    const convertedInteger = this.convert_0_to_wwww(integering);
-
-    return sign + convertedInteger + convertedFloat;
+    const convertedInteger = this.convert_0_to_wwww(integerNumber);
+    return this.combine(sign, convertedInteger, convertedFloat, integerNumber);
   }
 }

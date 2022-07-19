@@ -13,6 +13,7 @@
 - `#60`, as user, i want to optionally use contraction 90.
 - `#61`, as user, i want to optionally use contraction 200.
 - code refactoring
+- `#63`, as user, i want to optionally use traditional units for floating numbers.
 
 ## `1.8.0` - 5 July 2022
 
