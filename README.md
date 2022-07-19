@@ -203,6 +203,13 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 |     90 | 桦         | 樺          |
 |    200 | 皕         | 皕          |
 
+#### Traditional Floating Unit
+
+|         number | Simplified                                       | Traditional                                      |
+| -------------: | ------------------------------------------------ | ------------------------------------------------ |
+|          12.13 | 一十二又一分三厘                                 | 一十二又一分三釐                                 |
+| 0.123456789123 | 一分二厘三毫四秒五忽六微七纤八沙九尘一埃二渺三漠 | 一分二釐三毫四秒五忽六微七纖八沙九塵一埃二渺三漠 |
+
 ## Locations
 
 - <https://github.com/siakhooi/ts-number-to-chinese-words>

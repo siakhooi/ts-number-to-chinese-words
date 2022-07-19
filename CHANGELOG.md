@@ -1,6 +1,6 @@
 # Change Log
 
-## `1.9.0`
+## `1.9.0` - 19 July 2022
 
 - `#52`, as user, i want to optionally use contraction 20.
 - `#53`, as user, i want to optionally use contraction 30.
