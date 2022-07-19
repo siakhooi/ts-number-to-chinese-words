@@ -1,6 +1,6 @@
-import {options} from '../main/index';
+import {Options} from '../main/index';
 
-export const optionSimplified: options[] = [
+export const optionSimplified: Options[] = [
   {},
   {useTraditional: false},
   {useCapital: false},
@@ -11,7 +11,7 @@ export const optionSimplified: options[] = [
   {useTraditional: false, displayPositive: false, useCapital: false},
 ];
 
-export const optionSimplifiedPositive: options[] = [
+export const optionSimplifiedPositive: Options[] = [
   {displayPositive: true},
   {displayPositive: true, useTraditional: false},
   {displayPositive: true, useCapital: false},

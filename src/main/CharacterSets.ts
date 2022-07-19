@@ -12,14 +12,7 @@ export class CharacterSet {
   NEGATIVE: string;
   POSITIVE: string;
   DOT: string;
-  CONTRACTION_20: string;
-  CONTRACTION_30: string;
-  CONTRACTION_40: string;
-  CONTRACTION_50: string;
-  CONTRACTION_60: string;
-  CONTRACTION_70: string;
-  CONTRACTION_80: string;
-  CONTRACTION_90: string;
+  CONTRACTION: string[];
   CONTRACTION_200: string;
   useTraditional: boolean;
   useCapital: boolean;
@@ -38,14 +31,16 @@ export class CharacterSet {
     this.DOT = Dot;
     this.useTraditional = useTraditional;
     this.useCapital = useCapital;
-    this.CONTRACTION_20 = contraction[0];
-    this.CONTRACTION_30 = contraction[1];
-    this.CONTRACTION_40 = contraction[2];
-    this.CONTRACTION_50 = contraction[3];
-    this.CONTRACTION_60 = contraction[4];
-    this.CONTRACTION_70 = contraction[5];
-    this.CONTRACTION_80 = contraction[6];
-    this.CONTRACTION_90 = contraction[7];
+    this.CONTRACTION = [];
+    this.CONTRACTION[2] = contraction[0];
+    this.CONTRACTION[3] = contraction[1];
+    this.CONTRACTION[4] = contraction[2];
+    this.CONTRACTION[5] = contraction[3];
+    this.CONTRACTION[6] = contraction[4];
+    this.CONTRACTION[7] = contraction[5];
+    this.CONTRACTION[8] = contraction[6];
+    this.CONTRACTION[9] = contraction[7];
+
     this.CONTRACTION_200 = contraction[8];
   }
 }

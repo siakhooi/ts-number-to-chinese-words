@@ -126,6 +126,9 @@ console.log(NumberToChinese.convertNumber(7, {useCapital: true}));
 
 const NumberToChinese = require('@siakhooi/number-to-chinese-words');
 console.log(NumberToChinese.convertNumber(17, {removeLeadingOne: true}));
+
+const NumberToChinese = require('@siakhooi/number-to-chinese-words');
+console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 ```
 
 ### Example
@@ -183,6 +186,20 @@ console.log(NumberToChinese.convertNumber(17, {removeLeadingOne: true}));
 | --------------: | ------------------------------ | ------------------------------ |
 |           12.13 | 一十二点一三                   | 一十二點一三                   |
 | 10.123456789012 | 一十点一二三四五六七八九零一二 | 一十點一二三四五六七八九零一二 |
+
+#### Contraction
+
+| number | Simplified | Traditional |
+| -----: | ---------- | ----------- |
+|     20 | 廿         | 廿          |
+|     30 | 卅         | 卅          |
+|     40 | 卌         | 卌          |
+|     50 | 圩         | 圩          |
+|     60 | 圆         | 圓          |
+|     70 | 进         | 進          |
+|     80 | 枯         | 枯          |
+|     90 | 桦         | 樺          |
+|    200 | 皕         | 皕          |
 
 ## Locations
 

@@ -1,4 +1,4 @@
-import {convertNumber, options} from '../main/index';
+import {convertNumber, Options} from '../main/index';
 import {generate} from './TestUtils';
 import {data, POSITIVE} from './data';
 import {
@@ -15,7 +15,7 @@ const TESTSUITE = 'Traditional/Capital/+ve';
 // |_| \_|\___/|_|  |_| |_| |_|\__,_|_|
 test.each(generate(optionCapitalTraditional, data, 3))(
   TESTSUITE + '/option',
-  (options: options, input: number, expected: string) => {
+  (options: Options, input: number, expected: string) => {
     expect(convertNumber(input, options)).toBe(expected);
   }
 );
@@ -29,7 +29,7 @@ test.each(generate(optionCapitalTraditional, data, 3))(
 
 test.each(generate(optionCapitalTradPositive, data, 3))(
   TESTSUITE + '/option/displayPositive',
-  (options: options, input: number, expected: string) => {
+  (options: Options, input: number, expected: string) => {
     expected = POSITIVE + expected;
     expect(convertNumber(input, options)).toBe(expected);
   }
