@@ -9,3 +9,7 @@ src
 jest.config.js
 tsconfig.json
 sonar-project.properties
+generateTestData.js
+generateTestData.d.ts
+Makefile
+site

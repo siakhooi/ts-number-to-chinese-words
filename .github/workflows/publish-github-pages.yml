@@ -1,0 +1,17 @@
+name: Publish to Github pages
+
+on: workflow_call
+
+jobs:
+  npmjs:
+    name: Publish to Github pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: ./site/
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>number-to-chinese-words</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="./number-to-chinese-words.bundle.js"></script>
+  </head>
+  <body>
+    <div class="w3-container w3-teal">
+      <h1>number-to-chinese-words</h1>
+    </div>
+
+    <div class="w3-container">
+      <p>The library number-to-chinese-words can be used in 2 ways:
+        <ol><li>npm</li><li>cdn</li></ol>
+      </p>
+    </div>
+
+    <div class="w3-container w3-teal">
+      <h2>npm</h2>
+    </div>
+    <div class="w3-container">
+      Install:
+      <pre>
+        $ npm i @siakhooi/number-to-chinese-words
+      </pre>
+      Then in javascript file:
+      <pre>
+        const NumberToChineseWords = require('@siakhooi/number-to-chinese-words');
+        console.log(NumberToChineseWords.convertNumber(7));
+      </pre>
+    </div>
+    <div class="w3-container w3-teal">
+      <h2>cdn (browser)</h2>
+    </div>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Use one of these</h3>
+      
+      <div class="w3-code">
+        &lt;script src="https://siakhooi.github.io/ts-number-to-chinese-words/number-to-chinese-words.bundle.js">&lt;/script></br></br>
+        &lt;script src="https://unpkg.com/@siakhooi/number-to-chinese-words/dist/number-to-chinese-words.bundle.js">&lt;/script></br></br>
+        &lt;script src="https://cdn.jsdelivr.net/npm/@siakhooi/number-to-chinese-words/dist/number-to-chinese-words.bundle.js">&lt;/script>
+      </div>
+      </div>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Example</h3>
+        <div class="w3-code">
+          <pre>
+          &lt;HTML>
+          &lt;HEAD>
+            &lt;script src="https://siakhooi.github.io/ts-number-to-chinese-words/number-to-chinese-words.bundle.js">&lt;/script>
+          &lt;/HEAD>
+          &lt;BODY>
+          &lt;div id="demo">&lt;/div>
+          &lt;script>
+              document.getElementById('demo').innerHTML = '1777=' + convertNumber(1777);
+            &lt;/script>
+          &lt;/BODY>
+        &lt;/HTML>
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container w3-teal">
+      <h3>Demo</h3>
+    </div>
+    <div class="w3-container w3-padding-16">
+      <input type="number" id="fromNumber" max=9007199254740991 value=0 maxlength=16><input type="button" onClick="convertThis()" value="Convert This!">
+    <div class="w3-container" id="result"><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+      <script>
+        function convertThis(){
+          let x=document.getElementById('fromNumber').value;
+          let s='';
+          let y=convertNumber(x);
+          s+=`<P>簡體: ${y}</P>`;
+          y=convertNumber(x, {useTraditional: true});
+          s+=`<P>繁體: ${y}</P>`;
+          y=convertNumber(x, {useCapital: true});
+          s+=`<P>簡體大寫: ${y}</P>`;
+          y=convertNumber(x, {useTraditional: true, useCapital: true});
+          s+=`<P>繁體大寫: ${y}</P>`;
+
+          document.getElementById('result').innerHTML = s;  
+        }
+      </script>
+    </div>
+  </body>
+</html>

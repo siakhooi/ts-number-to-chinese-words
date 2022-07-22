@@ -1,0 +1,30 @@
+name: Build with npm test, webpack
+
+on: workflow_call
+
+jobs:
+  build:
+    name: npm test and webpack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm test
+      - run: . .github/scripts/run-webpack.sh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: ./coverage/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: ./site/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: ./dist/

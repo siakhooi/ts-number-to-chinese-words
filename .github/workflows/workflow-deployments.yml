@@ -4,11 +4,18 @@ on:
     types: [created]
 
 jobs:
+  build:
+    uses: ./.github/workflows/build-npm-test-webpack.yml
   npm:
+    needs: build
     uses: ./.github/workflows/publish-npm.yml
     secrets:
       PUBLISH_NPM_TOKEN: ${{ secrets.PUBLISH_NPM_TOKEN }}
   gpr:
+    needs: build
     uses: ./.github/workflows/publish-gpr.yml
     secrets:
       PUBLISH_GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
+  github-pages:
+    needs: build
+    uses: ./.github/workflows/publish-github-pages.yml

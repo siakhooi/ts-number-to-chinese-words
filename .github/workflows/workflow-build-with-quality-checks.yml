@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/build-npm-test.yml
+    uses: ./.github/workflows/build-npm-test-webpack.yml
   codecov:
     needs: test
     uses: ./.github/workflows/quality-codecov.yml
