@@ -10,10 +10,67 @@
       <h1>number-to-chinese-words</h1>
     </div>
 
+    <div class="w3-container w3-padding-16">
+      <input type="number" id="fromNumber" max=9007199254740991 value=0 maxlength=16><br/>
+      <input type="checkbox" id="useTraditional">繁體 (useTraditional)<br/>
+      <input type="checkbox" id="useCapital">大寫 (useCapital)<br/>
+      <input type="checkbox" id="displayPositive">顯示【正】 (displayPositive)<br/>
+      <input type="checkbox" id="removeLeadingOne">不顯示第一個【一】 (removeLeadingOne)<br/>
+      <input type="checkbox" id="useContractionAll">複合數字：全部 (useContractionAll)<br/>
+      <input type="checkbox" id="useContraction20">複合數字：20 (useContraction20)<br/>
+      <input type="checkbox" id="useContraction30">複合數字：30 (useContraction30)<br/>
+      <input type="checkbox" id="useContraction40">複合數字：40 (useContraction40)<br/>
+      <input type="checkbox" id="useContraction50">複合數字：50 (useContraction50)<br/>
+      <input type="checkbox" id="useContraction60">複合數字：60 (useContraction60)<br/>
+      <input type="checkbox" id="useContraction70">複合數字：70 (useContraction70)<br/>
+      <input type="checkbox" id="useContraction80">複合數字：80 (useContraction80)<br/>
+      <input type="checkbox" id="useContraction90">複合數字：90 (useContraction90)<br/>
+      <input type="checkbox" id="useContraction200">複合數字：200 (useContraction200)<br/>
+      <input type="checkbox" id="useTraditionalFloatingUnit">傳統小數 (useTraditionalFloatingUnit)<br/>
+      <input type="button" onClick="convertThis()" value="Convert This!">
+    <div class="w3-container" id="result"><P>&nbsp;</P></div>
+      <script>
+        function convertThis(){
+          let x=document.getElementById('fromNumber').value;
+          let s='';
+          let o={
+            useTraditional: document.getElementById('useTraditional').checked,
+            useCapital: document.getElementById('useCapital').checked,
+            displayPositive: document.getElementById('displayPositive').checked,
+            removeLeadingOne: document.getElementById('removeLeadingOne').checked,
+            useContractionAll: document.getElementById('useContractionAll').checked,
+            useContraction20: document.getElementById('useContraction20').checked,
+            useContraction30: document.getElementById('useContraction30').checked,
+            useContraction40: document.getElementById('useContraction40').checked,
+            useContraction50: document.getElementById('useContraction50').checked,
+            useContraction60: document.getElementById('useContraction60').checked,
+            useContraction70: document.getElementById('useContraction70').checked,
+            useContraction80: document.getElementById('useContraction80').checked,
+            useContraction90: document.getElementById('useContraction90').checked,
+            useContraction200: document.getElementById('useContraction200').checked,
+            useTraditionalFloatingUnit: document.getElementById('useTraditionalFloatingUnit').checked,
+          }
+          let y='';
+          try{
+            y=convertNumber(x, o);
+          }catch(e){
+            y=e;  
+          }
+          s+=`<P>結果: ${y}</P>`;
+
+          document.getElementById('result').innerHTML = s;  
+        }
+      </script>
+    </div>
+    <div class="w3-container w3-teal">
+      <h2>Install</h2>
+    </div>
+
     <div class="w3-container">
       <p>The library number-to-chinese-words can be used in 2 ways:
         <ol><li>npm</li><li>cdn</li></ol>
       </p>
+      <p>Repo: <a href="https://github.com/siakhooi/ts-number-to-chinese-words">https://github.com/siakhooi/ts-number-to-chinese-words/</a></p>
     </div>
 
     <div class="w3-container w3-teal">
@@ -60,29 +117,6 @@
       </pre>
         </div>
       </div>
-    </div>
-    <div class="w3-container w3-teal">
-      <h3>Demo</h3>
-    </div>
-    <div class="w3-container w3-padding-16">
-      <input type="number" id="fromNumber" max=9007199254740991 value=0 maxlength=16><input type="button" onClick="convertThis()" value="Convert This!">
-    <div class="w3-container" id="result"><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
-      <script>
-        function convertThis(){
-          let x=document.getElementById('fromNumber').value;
-          let s='';
-          let y=convertNumber(x);
-          s+=`<P>簡體: ${y}</P>`;
-          y=convertNumber(x, {useTraditional: true});
-          s+=`<P>繁體: ${y}</P>`;
-          y=convertNumber(x, {useCapital: true});
-          s+=`<P>簡體大寫: ${y}</P>`;
-          y=convertNumber(x, {useTraditional: true, useCapital: true});
-          s+=`<P>繁體大寫: ${y}</P>`;
-
-          document.getElementById('result').innerHTML = s;  
-        }
-      </script>
     </div>
   </body>
 </html>
