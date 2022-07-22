@@ -212,6 +212,7 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 
 ## Locations
 
+- <https://siakhooi.github.io/ts-number-to-chinese-words/>
 - <https://github.com/siakhooi/ts-number-to-chinese-words>
 - <https://www.npmjs.com/package/@siakhooi/number-to-chinese-words>
 - <https://coveralls.io/github/siakhooi/ts-number-to-chinese-words>

@@ -1,6 +1,6 @@
 {
   "name": "@siakhooi/number-to-chinese-words",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "Library to translate number into chinese words",
   "main": "dist/main/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/siakhooi/ts-number-to-chinese-words/issues"
   },
-  "homepage": "https://github.com/siakhooi/ts-number-to-chinese-words#readme",
+  "homepage": "https://siakhooi.github.io/ts-number-to-chinese-words/",
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^14.11.2",
