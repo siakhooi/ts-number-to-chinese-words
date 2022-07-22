@@ -1,6 +1,6 @@
 {
   "name": "@siakhooi/number-to-chinese-words",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Library to translate number into chinese words",
   "main": "dist/main/index.js",
   "scripts": {
@@ -35,10 +35,12 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^14.11.2",
     "coveralls": "^3.1.1",
-    "gts": "^3.1.0",
+    "gts": "^4.0.0",
     "jest": "^28.1.0",
     "ts-jest": "^28.0.3",
-    "typescript": "^4.7.2"
+    "typescript": "^4.7.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "ts-node": "^10.8.0"

@@ -1,5 +1,10 @@
 # Change Log
 
+## `1.10.0`
+
+- add Github Pages
+- add cdn : unpkg.com, jsdelivr.net
+
 ## `1.9.0` - 19 July 2022
 
 - `#52`, as user, i want to optionally use contraction 20.
