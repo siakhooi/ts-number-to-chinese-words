@@ -1,6 +1,12 @@
 # Change Log
 
-## `1.10.0`
+## `1.12.0` - 28 Dec 2022
+- update dependencies
+
+## `1.11.0` - 22 July 2022 
+- update site
+
+## `1.10.0` - 22 July 2022
 
 - add Github Pages
 - add cdn : unpkg.com, jsdelivr.net
