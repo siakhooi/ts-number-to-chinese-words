@@ -37,7 +37,7 @@
 
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.number-to-chinese-words&left_color=grey&right_color=#33cb56)
+![count](https://hit-tztugwlsja-uc.a.run.app/?outputtype=badge&counter=github.com-siakhooi-ts-number-to-chinese-words)
 
 ## Features
 
