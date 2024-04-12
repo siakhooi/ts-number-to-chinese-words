@@ -11,8 +11,8 @@ jobs:
     name: SonarCloud.io
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: coverage-report
           path: ./coverage/
