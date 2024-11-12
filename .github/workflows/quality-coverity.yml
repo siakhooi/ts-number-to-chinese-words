@@ -21,7 +21,7 @@ jobs:
       - name: npm install
         run: npm install
       - name: Coverity Scan
-        uses: vapier/coverity-scan-action@v4
+        uses: vapier/coverity-scan-action@v1
         with:
           build_language: 'javascript'
           command: '--no-command --fs-capture-search ./src/'
