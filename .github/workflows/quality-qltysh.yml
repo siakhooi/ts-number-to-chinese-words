@@ -1,0 +1,20 @@
+name: Qlty.sh
+
+on:
+  workflow_call:
+    secrets:
+      QLTY_COVERAGE_TOKEN:
+        required: true
+
+jobs:
+  QltySh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v6
+        with:
+          name: target
+          path: ./target/
+      - run: .github/bin/qlty-coverage-publish.sh
+        env:
+          QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}

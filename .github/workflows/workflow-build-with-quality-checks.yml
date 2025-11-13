@@ -17,20 +17,26 @@ jobs:
     needs: test
     uses: ./.github/workflows/quality-sonarcloud.yml
     secrets:
-      SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   codacy:
     needs: test
     uses: ./.github/workflows/quality-codacy.yml
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
-  codeclimate:
+  # codeclimate:
+  #   needs: test
+  #   uses: ./.github/workflows/quality-codeclimate.yml
+  #   secrets:
+  #     CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+  qltysh:
     needs: test
-    uses: ./.github/workflows/quality-codeclimate.yml
+    uses: ./.github/workflows/quality-qltysh.yml
     secrets:
-      CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
-  Coverity:
-    needs: test
-    uses: ./.github/workflows/quality-coverity.yml
-    secrets:
-      COVERITY_SCAN_EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
-      COVERITY_SCAN_TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
+      QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+
+  # Coverity:
+  #   needs: test
+  #   uses: ./.github/workflows/quality-coverity.yml
+  #   secrets:
+  #     COVERITY_SCAN_EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
+  #     COVERITY_SCAN_TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
