@@ -16,6 +16,6 @@ jobs:
           name: coverage-report
           path: ./coverage/
       - run: ls -R
-      - run: .github/bin/qlty-coverage-publish.sh
+      - run: .github/scripts/qlty-coverage-publish.sh
         env:
           QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
