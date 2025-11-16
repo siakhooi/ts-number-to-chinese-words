@@ -19,3 +19,8 @@ build:
 	npm install
 	npm test
 	.github/scripts/run-webpack.sh
+
+release:
+	# update package.json
+	scripts/create-release.sh
+
