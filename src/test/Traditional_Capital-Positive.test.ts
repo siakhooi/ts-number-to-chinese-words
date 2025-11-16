@@ -17,7 +17,7 @@ test.each(generate(optionCapitalTraditional, data, 3))(
   TESTSUITE + '/option',
   (options: Options, input: number, expected: string) => {
     expect(convertNumber(input, options)).toBe(expected);
-  }
+  },
 );
 
 //      _ _           _               ____           _ _   _
@@ -32,5 +32,5 @@ test.each(generate(optionCapitalTradPositive, data, 3))(
   (options: Options, input: number, expected: string) => {
     expected = POSITIVE + expected;
     expect(convertNumber(input, options)).toBe(expected);
-  }
+  },
 );

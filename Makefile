@@ -10,8 +10,12 @@ pack:
 										--output-path ./site \
 										--output-filename number-to-chinese-words.bundle.js \
 										--output-library-type window \
-										--mode production 
+										--mode production
 
 clean:
 	rm -rf dist coverage site/*.js
 
+build:
+	npm install
+	npm test
+	.github/scripts/run-webpack.sh

@@ -14,11 +14,15 @@ const TESTSUITE = 'Traditional/Capital/ve';
 // | |\  | (_) | |  | | | | | | (_| | |
 // |_| \_|\___/|_|  |_| |_| |_|\__,_|_|
 test.each(
-  generate([...optionCapitalTraditional, ...optionCapitalTradPositive], data, 3)
+  generate(
+    [...optionCapitalTraditional, ...optionCapitalTradPositive],
+    data,
+    3,
+  ),
 )(
   TESTSUITE + '/option',
   (options: Options, input: number, expected: string) => {
     expected = NEGATIVE.TRADITIONAL + expected;
     expect(convertNumber(-input, options)).toBe(expected);
-  }
+  },
 );

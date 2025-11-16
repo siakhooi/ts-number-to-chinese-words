@@ -19,5 +19,5 @@ test.each(generate([...optionCapital, ...optionCapitalPositive], data, 2))(
   (options: Options, input: number, expected: string) => {
     expected = NEGATIVE.SIMPLIFIED + expected;
     expect(convertNumber(-input, options)).toBe(expected);
-  }
+  },
 );

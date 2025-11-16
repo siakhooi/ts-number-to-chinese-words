@@ -10,7 +10,7 @@ export class ConversionContext {
     this.options = options;
     this.characterSet = getCharacterSet(
       options.useTraditional,
-      options.useCapital
+      options.useCapital,
     );
     this.isContraction = [];
     this.isContraction[2] = !!options.useContraction20;

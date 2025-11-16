@@ -3,7 +3,7 @@ import {Options} from '../main/index';
 export function generate(
   options: Options[],
   data: [number, string[]][],
-  index = 0
+  index = 0,
 ): [Options, number, string][] {
   const r1: [Options, number, string][] = [];
 

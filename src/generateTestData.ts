@@ -1,5 +1,5 @@
 import {convertNumber} from './main/index';
-import fs from 'fs';
+import * as fs from 'fs';
 
 const DIGIT = 16;
 

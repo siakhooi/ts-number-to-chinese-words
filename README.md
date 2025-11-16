@@ -69,7 +69,6 @@
 ### Quality
 
 - <https://sonarcloud.io/project/overview?id=siakhooi_ts-number-to-chinese-words>
-- <https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words>
 - <https://coveralls.io/github/siakhooi/ts-number-to-chinese-words>
 - <https://app.codecov.io/gh/siakhooi/ts-number-to-chinese-words>
 - <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>

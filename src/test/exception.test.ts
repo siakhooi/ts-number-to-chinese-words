@@ -12,18 +12,18 @@ test.each(data)('Not Supported error - default', (input: number) => {
   const errmsg = 'Not Supported';
   expect(() => {
     convertNumber(input);
-  }).toThrowError(errmsg);
+  }).toThrow(errmsg);
 });
 
 test.each(data)('Not Supported error - simplified', (input: number) => {
   const errmsg = 'Not Supported';
   expect(() => {
     convertNumber(input, {useTraditional: false});
-  }).toThrowError(errmsg);
+  }).toThrow(errmsg);
 });
 test.each(data)('Not Supported error - traditional', (input: number) => {
   const errmsg = 'Not Supported';
   expect(() => {
     convertNumber(input, {useTraditional: true});
-  }).toThrowError(errmsg);
+  }).toThrow(errmsg);
 });

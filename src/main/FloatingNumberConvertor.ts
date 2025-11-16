@@ -23,7 +23,7 @@ export class FloatingNumberConvertor {
   convertTraditionalFloatingNumber(
     start: number,
     stop: number,
-    numberToConvert: string
+    numberToConvert: string,
   ): string {
     let r = '';
     for (let i = start; i < stop; i++) {
@@ -39,7 +39,7 @@ export class FloatingNumberConvertor {
   convertModernFloatingNumber(
     start: number,
     stop: number,
-    numberToConvert: string
+    numberToConvert: string,
   ): string {
     let r = '';
 

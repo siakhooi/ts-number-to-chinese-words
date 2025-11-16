@@ -20,7 +20,7 @@ export class Convertor {
     const c = this.basicNumber.convert_0_to_9999(
       segment1,
       number < 1_0000 && removeLeadingOne,
-      ''
+      '',
     );
     const prefix = this.getZeroOrEmptyIf(segment1 < 1_000 && number >= 1_0000);
     return prefix + c;
@@ -31,17 +31,17 @@ export class Convertor {
     removeLeadingOne: boolean,
     smallerSegment: number,
     threshold: number,
-    suffix: string
+    suffix: string,
   ) {
     if (segment === 0)
       return this.getZeroOrEmptyIf(
-        number >= threshold && smallerSegment >= 1000
+        number >= threshold && smallerSegment >= 1000,
       );
 
     const c = this.basicNumber.convert_0_to_9999(
       segment,
       number < threshold && removeLeadingOne,
-      suffix
+      suffix,
     );
     const prefix = this.getZeroOrEmptyIf(segment < 1000 && number >= threshold);
     return prefix + c;
@@ -51,7 +51,7 @@ export class Convertor {
     return this.basicNumber.convert_0_to_9999(
       segment4,
       segment4 > 0 && removeLeadingOne,
-      this.context.characterSet.TRILLION
+      this.context.characterSet.TRILLION,
     );
   }
   convert_0_to_wwww(number: number): string {
@@ -69,7 +69,7 @@ export class Convertor {
       removeLeadingOne,
       segment1,
       1_0000_0000,
-      this.context.characterSet.TENTHOUSAND
+      this.context.characterSet.TENTHOUSAND,
     );
     const char3 = this.convert_ww_and_www(
       segment3,
@@ -77,7 +77,7 @@ export class Convertor {
       removeLeadingOne,
       segment2,
       1_0000_0000_0000,
-      this.context.characterSet.HUNDREDMILLION
+      this.context.characterSet.HUNDREDMILLION,
     );
     const char4 = this.convert_wwww(segment4, removeLeadingOne);
 
@@ -108,7 +108,7 @@ export class Convertor {
     sign: string,
     convertedInteger: string,
     convertedFloat: string,
-    integerNumber: number
+    integerNumber: number,
   ): string {
     if (convertedFloat.length === 0) {
       return sign + convertedInteger;
