@@ -17,12 +17,9 @@
 ![npm](https://img.shields.io/npm/dt/@siakhooi/number-to-chinese-words?logo=npm)
 ![npm type definitions](https://img.shields.io/npm/types/@siakhooi/number-to-chinese-words?logo=npm)
 
-![Quality-CodeClimate](https://img.shields.io/badge/Quality-CodeClimate-purple)
-[![Maintainability](https://api.codeclimate.com/v1/badges/3378c5776a49c26b8362/maintainability)](https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words/maintainability)
-![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/siakhooi/ts-number-to-chinese-words)
-![Code Climate issues](https://img.shields.io/codeclimate/issues/siakhooi/ts-number-to-chinese-words)
-![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/siakhooi/ts-number-to-chinese-words)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/3378c5776a49c26b8362/test_coverage)](https://codeclimate.com/github/siakhooi/ts-number-to-chinese-words/test_coverage)
+![Quality-Qlty](https://img.shields.io/badge/Quality-Qlty-purple)
+[![Maintainability](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words)
+[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words)
 
 ![Quality-Sonar](https://img.shields.io/badge/Quality-SonarCloud-purple)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
@@ -69,13 +66,8 @@
 ### Quality
 
 - <https://sonarcloud.io/project/overview?id=siakhooi_ts-number-to-chinese-words>
-- <https://coveralls.io/github/siakhooi/ts-number-to-chinese-words>
-- <https://app.codecov.io/gh/siakhooi/ts-number-to-chinese-words>
+- <https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words>
 - <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>
-- <https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words>
-- <https://app.snyk.io/org/siakhooi/projects>
-- <https://lgtm.com/people/siakhooi/project:1515605457625>
-- <https://scan.coverity.com/projects/siakhooi-ts-number-to-chinese-words?tab=overview>
 
 ## Options and Default values
 
@@ -201,7 +193,6 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 ## Other Badges
 
 ![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/ts-number-to-chinese-words?logo=github)
-![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/ts-number-to-chinese-words?logo=github)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/ts-number-to-chinese-words?logo=github)
 ![Workflow](https://img.shields.io/badge/Workflow-github-purple)
@@ -226,20 +217,6 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 ![Sonar Violations (short format)](https://img.shields.io/sonar/minor_violations/siakhooi_ts-number-to-chinese-words?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Violations (short format)](https://img.shields.io/sonar/info_violations/siakhooi_ts-number-to-chinese-words?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Violations (long format)](https://img.shields.io/sonar/violations/siakhooi_ts-number-to-chinese-words?format=long&server=http%3A%2F%2Fsonarcloud.io)
-![Quality-Coveralls](https://img.shields.io/badge/Quality-Coveralls-purple)
-[![Coverage Status](https://coveralls.io/repos/github/siakhooi/ts-number-to-chinese-words/badge.svg?branch=main)](https://coveralls.io/github/siakhooi/ts-number-to-chinese-words?branch=main)
-![Quality-Codecov](https://img.shields.io/badge/Quality-Codecov-purple)
-![Codecov](https://img.shields.io/codecov/c/github/siakhooi/ts-number-to-chinese-words?logo=codecov)
 ![Quality-Codacy](https://img.shields.io/badge/Quality-Codacy-purple)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Coverage)
-![Quality-CodeFactor](https://img.shields.io/badge/Quality-CodeFactor-purple)
-[![CodeFactor](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words/badge)](https://www.codefactor.io/repository/github/siakhooi/ts-number-to-chinese-words)
-![Quality-Snyk](https://img.shields.io/badge/Quality-Snyk-purple)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/siakhooi/ts-number-to-chinese-words)
-![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@siakhooi/number-to-chinese-words)
-![Quality-LGTM](https://img.shields.io/badge/Quality-LGTM-purple)
-![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/siakhooi/ts-number-to-chinese-words)
-![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/siakhooi/ts-number-to-chinese-words)
-![Quality-Coverity](https://img.shields.io/badge/Quality-Coverity-purple)
-![Coverity Scan](https://img.shields.io/coverity/scan/siakhooi-ts-number-to-chinese-words)

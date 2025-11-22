@@ -13,7 +13,8 @@ pack:
 										--mode production
 
 clean:
-	rm -rf dist coverage site/*.js
+	rm -rf dist coverage site/*.js tmp
+	rm -rf .qlty/logs .qlty/out .qlty/plugin_cachedir .qlty/results .qlty/sources
 
 build:
 	npm install
@@ -23,4 +24,3 @@ build:
 release:
 	# update package.json
 	scripts/create-release.sh
-

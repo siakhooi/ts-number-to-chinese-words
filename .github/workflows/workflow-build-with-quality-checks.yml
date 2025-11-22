@@ -10,12 +10,6 @@ on:
 jobs:
   test:
     uses: ./.github/workflows/build-npm-test-webpack.yml
-  codecov:
-    needs: test
-    uses: ./.github/workflows/quality-codecov.yml
-  coveralls:
-    needs: test
-    uses: ./.github/workflows/quality-coveralls.yml
   sonarcloud:
     needs: test
     uses: ./.github/workflows/quality-sonarcloud.yml
@@ -31,10 +25,3 @@ jobs:
     uses: ./.github/workflows/quality-qltysh.yml
     secrets:
       QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-
-  # Coverity:
-  #   needs: test
-  #   uses: ./.github/workflows/quality-coverity.yml
-  #   secrets:
-  #     COVERITY_SCAN_EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
-  #     COVERITY_SCAN_TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
