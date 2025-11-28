@@ -11,13 +11,14 @@ jobs:
     name: Codacy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
         with:
           name: coverage-report
           path: ./coverage/
+
       - run: ls -R
-      - name: Upload to Codacy.com
-        uses: codacy/codacy-coverage-reporter-action@v1
+
+      - uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1.3.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/clover.xml
