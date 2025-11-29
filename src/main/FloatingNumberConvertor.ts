@@ -27,7 +27,7 @@ export class FloatingNumberConvertor {
   ): string {
     let r = '';
     for (let i = start; i < stop; i++) {
-      const j = parseInt(numberToConvert.substring(i, i + 1));
+      const j = Number.parseInt(numberToConvert.substring(i, i + 1));
       if (j !== 0)
         r +=
           this.basicNumber.convert_0_to_9(j, false, false, '') +
@@ -44,7 +44,7 @@ export class FloatingNumberConvertor {
     let r = '';
 
     for (let i = start; i < stop; i++) {
-      const j = parseInt(numberToConvert.substring(i, i + 1));
+      const j = Number.parseInt(numberToConvert.substring(i, i + 1));
       r += this.basicNumber.convert_0_to_9(j, false, false, '');
     }
 

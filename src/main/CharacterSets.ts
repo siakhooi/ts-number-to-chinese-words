@@ -57,5 +57,5 @@ const allCharacterSets = [
 ];
 
 export function getCharacterSet(useTraditional = false, useCapital = false): CharacterSet {
-  return allCharacterSets.filter(x => x.useTraditional === useTraditional && x.useCapital === useCapital)[0];
+  return allCharacterSets.find(x => x.useTraditional === useTraditional && x.useCapital === useCapital)!;
 }
