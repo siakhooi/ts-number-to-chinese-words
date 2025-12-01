@@ -14,13 +14,17 @@ pack:
 
 clean:
 	rm -rf dist coverage site/*.js tmp
-	rm -rf .qlty/logs .qlty/out .qlty/plugin_cachedir .qlty/results .qlty/sources
 
 build:
 	npm install
 	npm test
 	.github/scripts/run-webpack.sh
 
+all: clean set-version build
+
+set-version:
+	scripts/set-version.sh
+commit:
+	scripts/git-commit-and-push.sh
 release:
-	# update package.json
 	scripts/create-release.sh
