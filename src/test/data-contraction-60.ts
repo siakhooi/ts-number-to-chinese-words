@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export const data: [number, string[]][] = [
   [60, ['圆', '圓', '陆拾', '陸拾']],
   [61, ['圆一', '圓一', '陆拾壹', '陸拾壹']],

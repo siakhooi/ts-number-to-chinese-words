@@ -5,10 +5,10 @@
   "main": "dist/main/index.js",
   "scripts": {
     "test": "NODE_OPTIONS='--max-old-space-size=8192' jest --detectOpenHandles --logHeapUsage",
-    "lint": "gts lint",
+    "lint": "eslint .",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
+    "fix": "eslint . --fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint"
@@ -32,10 +32,11 @@
   },
   "homepage": "https://siakhooi.github.io/ts-number-to-chinese-words/",
   "devDependencies": {
+    "@eslint/eslintrc": "3.3.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.2",
     "coveralls": "^3.1.1",
-    "gts": "^6.0.2",
+    "gts": "^7.0.0",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.5",
     "typescript": "^5.9.3",

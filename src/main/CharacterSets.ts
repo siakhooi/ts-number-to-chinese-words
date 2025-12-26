@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-
 export class CharacterSet {
   BASE: string;
   ZERO: string;

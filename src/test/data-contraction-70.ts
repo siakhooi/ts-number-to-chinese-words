@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export const data: [number, string[]][] = [
   [70, ['进', '進', '柒拾', '柒拾']],
   [71, ['进一', '進一', '柒拾壹', '柒拾壹']],
