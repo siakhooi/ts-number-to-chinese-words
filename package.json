@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/siakhooi/ts-number-to-chinese-words.git"
+    "url": "git+https://github.com/siakhooi/number-to-chinese-words.git"
   },
   "keywords": [
     "number",
@@ -28,9 +28,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/siakhooi/ts-number-to-chinese-words/issues"
+    "url": "https://github.com/siakhooi/number-to-chinese-words/issues"
   },
-  "homepage": "https://siakhooi.github.io/ts-number-to-chinese-words/",
+  "homepage": "https://siakhooi.github.io/number-to-chinese-words/",
   "devDependencies": {
     "@eslint/eslintrc": "3.3.3",
     "@types/jest": "^30.0.0",

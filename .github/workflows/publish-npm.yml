@@ -6,6 +6,10 @@ on:
       PUBLISH_NPM_TOKEN:
         required: true
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   npmjs:
     name: Publish to npm registry

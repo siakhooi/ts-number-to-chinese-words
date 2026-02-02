@@ -2,15 +2,15 @@
 
 - npm package to translate number to chinese words
 
-![License](https://img.shields.io/github/license/siakhooi/ts-number-to-chinese-words?logo=github)
+![License](https://img.shields.io/github/license/siakhooi/number-to-chinese-words?logo=github)
 [![Code Style](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
-![GitHub last commit](https://img.shields.io/github/last-commit/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub issues](https://img.shields.io/github/issues/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/ts-number-to-chinese-words?logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/siakhooi/number-to-chinese-words?logo=github)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/number-to-chinese-words?logo=github)
+![GitHub issues](https://img.shields.io/github/issues/siakhooi/number-to-chinese-words?logo=github)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/number-to-chinese-words?logo=github)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/siakhooi/number-to-chinese-words?logo=github)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/siakhooi/number-to-chinese-words?logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/number-to-chinese-words?logo=github)
 
 ![Release](https://img.shields.io/badge/Release-npm-purple)
 ![npm](https://img.shields.io/npm/v/@siakhooi/number-to-chinese-words?color=0e7fc0&label=NPM%20release&logo=npm)
@@ -18,8 +18,8 @@
 ![npm type definitions](https://img.shields.io/npm/types/@siakhooi/number-to-chinese-words?logo=npm)
 
 ![Quality-Qlty](https://img.shields.io/badge/Quality-Qlty-purple)
-[![Maintainability](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words)
-[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words)
+[![Maintainability](https://qlty.sh/gh/siakhooi/projects/number-to-chinese-words/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/number-to-chinese-words)
+[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/number-to-chinese-words/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/number-to-chinese-words)
 
 ![Quality-Sonar](https://img.shields.io/badge/Quality-SonarCloud-purple)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_ts-number-to-chinese-words&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_ts-number-to-chinese-words)
@@ -52,22 +52,22 @@
 
 ### Demo
 
-- <https://siakhooi.github.io/ts-number-to-chinese-words/>
+- <https://siakhooi.github.io/number-to-chinese-words/>
 
 ### Source Code
 
-- <https://github.com/siakhooi/ts-number-to-chinese-words>
+- <https://github.com/siakhooi/number-to-chinese-words>
 
 ### Distributions
 
 - <https://www.npmjs.com/package/@siakhooi/number-to-chinese-words>
-- <https://github.com/siakhooi/ts-number-to-chinese-words/pkgs/npm/number-to-chinese-words>
+- <https://github.com/siakhooi/number-to-chinese-words/pkgs/npm/number-to-chinese-words>
 
 ### Quality
 
 - <https://sonarcloud.io/project/overview?id=siakhooi_ts-number-to-chinese-words>
-- <https://qlty.sh/gh/siakhooi/projects/ts-number-to-chinese-words>
-- <https://app.codacy.com/gh/siakhooi/ts-number-to-chinese-words>
+- <https://qlty.sh/gh/siakhooi/projects/number-to-chinese-words>
+- <https://app.codacy.com/gh/siakhooi/number-to-chinese-words>
 
 ## Options and Default values
 
@@ -192,16 +192,16 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 
 ## Other Badges
 
-![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/ts-number-to-chinese-words?logo=github)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/ts-number-to-chinese-words?logo=github)
+![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/number-to-chinese-words?logo=github)
+![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/number-to-chinese-words?logo=github)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/number-to-chinese-words?logo=github)
 ![Workflow](https://img.shields.io/badge/Workflow-github-purple)
-![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/workflow-build-with-quality-checks.yml/badge.svg)
-![workflow](https://github.com/siakhooi/ts-number-to-chinese-words/actions/workflows/workflow-deployments.yml/badge.svg)
+![workflow](https://github.com/siakhooi/number-to-chinese-words/actions/workflows/workflow-build-with-quality-checks.yml/badge.svg)
+![workflow](https://github.com/siakhooi/number-to-chinese-words/actions/workflows/workflow-deployments.yml/badge.svg)
 ![Release](https://img.shields.io/badge/Release-github-purple)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/ts-number-to-chinese-words?label=GPR%20release&logo=github)
-![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/ts-number-to-chinese-words/total?color=33cb56&logo=github)
-![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/ts-number-to-chinese-words?logo=github)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/number-to-chinese-words?label=GPR%20release&logo=github)
+![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/number-to-chinese-words/total?color=33cb56&logo=github)
+![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/number-to-chinese-words?logo=github)
 ![Quality-npms.io](https://img.shields.io/badge/Quality-npms.io-purple)
 ![npms.io (final)](https://img.shields.io/npms-io/final-score/@siakhooi/number-to-chinese-words?logo=npm)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/@siakhooi/number-to-chinese-words?logo=npm)
@@ -218,5 +218,5 @@ console.log(NumberToChinese.convertNumber(70, {useContraction70: true}));
 ![Sonar Violations (short format)](https://img.shields.io/sonar/info_violations/siakhooi_ts-number-to-chinese-words?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Violations (long format)](https://img.shields.io/sonar/violations/siakhooi_ts-number-to-chinese-words?format=long&server=http%3A%2F%2Fsonarcloud.io)
 ![Quality-Codacy](https://img.shields.io/badge/Quality-Codacy-purple)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Grade)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/ts-number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/ts-number-to-chinese-words&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/number-to-chinese-words&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/b3f6b7b122b44e6f8f43833c05a70a71)](https://www.codacy.com/gh/siakhooi/number-to-chinese-words/dashboard?utm_source=github.com&utm_medium=referral&utm_content=siakhooi/number-to-chinese-words&utm_campaign=Badge_Coverage)
