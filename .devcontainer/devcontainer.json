@@ -1,0 +1,28 @@
+{
+	"name": "Node.js 24 Development Dev Container",
+	"image": "siakhooi/devcontainer:nodejs24",
+	"remoteUser": "maui",
+	"containerUser": "maui",
+	"updateRemoteUserUID": true,
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"github.copilot-chat",
+				"lfm.vscode-makefile-term",
+				"kisstkondoros.vscode-codemetrics",
+				"dbaeumer.vscode-eslint",
+				"redhat.vscode-yaml",
+				"esbenp.prettier-vscode",
+				"github.vscode-github-actions"
+			]
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/maui/.ssh,type=bind,consistency=cached"
+	],
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	}
+}
