@@ -32,7 +32,7 @@
   },
   "homepage": "https://siakhooi.github.io/number-to-chinese-words/",
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.4",
+    "@eslint/eslintrc": "3.3.5",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.2",
     "coveralls": "^3.1.1",
